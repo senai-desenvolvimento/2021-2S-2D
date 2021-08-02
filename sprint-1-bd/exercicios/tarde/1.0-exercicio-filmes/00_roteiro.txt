@@ -1,0 +1,4 @@
+Você deverá criar a modelagem para o catálogo de filmes, observando a seguinte situação:
+
+- um filme possui apenas um único gênero.
+- um gênero pode definir mais de um filme.

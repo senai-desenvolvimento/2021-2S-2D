@@ -1,0 +1,9 @@
+﻿A empresa MicroManu possui uma grande quantidade de clientes que leva seus equipamentos 
+como computadores, celulares, video games e até tvs para que seus colaboradores realizem o conserto.
+E eles querem que você desenvolva a base para armazenar todos os dados de seus clientes e seus respectivos consertos.
+Para isto, desenvolva a modelagem para atender a demanda acima. Levando em conta o exemplo abaixo:
+O cliente A levou seu computador na MicroManu, o Erik e o Claudio realizaram a manutenção deste item.
+O cliente B levou sua tv na MicroManu e o Daniel realizou a limpeza de todas as peças.
+
+O cliente pode verificar seus consertos no site da MicroManu.
+O colaborador pode encerrar o conserto.

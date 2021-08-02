@@ -1,0 +1,7 @@
+E-Commerce - SenaiShop
+
+Uma Loja possui várias categorias
+Uma categoria possui subcategorias
+Um produto possui uma subcategoria
+Um cliente efetua um pedido
+Um pedido pode ter 1 ou vários produtos
