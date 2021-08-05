@@ -5,3 +5,11 @@ Uma clínica veterinária deseja cadastrar os pets que são atendidos em seu local.
 - os pets deverão ter raça;
 - os pets deverão ter donos;
 - a clínica deseja cadastrar seus veterinários e todo atendimento de pet será feito por um veterinário;
+
+DML
+
+- cada atendimento deve registrar qual veterinário atendeu, qual pet foi atendido, descrição da consulta e data da consulta
+
+DQL
+
+- listar todos os registros de todas as entidades

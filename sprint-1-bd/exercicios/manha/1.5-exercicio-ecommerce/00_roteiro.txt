@@ -5,3 +5,7 @@ Uma categoria possui subcategorias
 Um produto possui uma subcategoria
 Um cliente efetua um pedido
 Um pedido pode ter 1 ou vários produtos
+
+DQL
+
+- listar todos os registros de todas as entidades
