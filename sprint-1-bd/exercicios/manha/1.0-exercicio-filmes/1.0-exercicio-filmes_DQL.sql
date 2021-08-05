@@ -1,0 +1,5 @@
+USE catalogo;
+GO
+
+SELECT * FROM GENERO
+SELECT * FROM FILME 
