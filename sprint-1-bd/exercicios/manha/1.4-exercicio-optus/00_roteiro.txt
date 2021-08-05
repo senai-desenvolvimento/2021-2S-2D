@@ -1,3 +1,12 @@
 A Optus é uma empresa no ramo musical que deseja realizar o gerenciamento dos lançamentos de novos cds de seus artistas. Cada álbum lançado poderá conter mais de um estilo vinculado (ex.: Indie e Folk).
 É importante que você crie também uma estratégia para que os usuários possuam acesso à plataforma.
 Os usuários deverão conter nome, email, senha e o tipo de permissão (eles podem ser do tipo administrador ou comum).
+
+Observações:
+Os Artistas deverão possuir somente nome.
+Estilos: nome.
+Albuns: titulo, data de lançamento, localizacao, quantidade de minutos, se o álbum está ativo para visualização, a quem pertence (somente um artista por álbum) e quais os estilos vinculados.
+
+DQL
+
+- listar todos os registros de todas as entidades
