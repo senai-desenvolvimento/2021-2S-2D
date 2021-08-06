@@ -1,4 +1,3 @@
-
 --COMENTARIO DE UMA LINHA
 
 	/*
@@ -10,16 +9,16 @@
 	*/
 
 ---CRIA UM BANCO DE DADOS CHAMADO CATALOGO.
-create database CATALOGO;
+CREATE DATABASE CATALOGO_T;
 GO 
 
 --define o banco de dados que sera utilizado
-USE CATALOGO;
+USE CATALOGO_T;
 GO
 
 CREATE TABLE GENERO (
   idGenero TINYINT PRIMARY KEY IDENTITY(1,1),
-  nomeGenero VARCHAR(20)
+  nomeGenero VARCHAR(20) NOT NULL
 );
 GO
 
