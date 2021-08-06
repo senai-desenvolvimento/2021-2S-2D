@@ -1,11 +1,12 @@
-USE catalogo;
+USE CATALOGO_M;
 GO
 
 INSERT INTO GENERO (nomeGenero)
-VALUES ('AÇÃO'), ('ROMANCE');
+VALUES ('AÇÃO'), ('COMÉDIA');
 GO
+
 INSERT INTO GENERO (nomeGenero)
-VALUES ('COMÉDIA');
+VALUES ('ROMANCE'), ('TERROR');
 GO
 
 
@@ -15,8 +16,8 @@ VALUES (1,'RAMBO'), (1,'VINGADORES'),
        (3,'GHOST'), (3,'DIARIO DE UMA PAIXAO');
 GO
 
-INSERT INTO FILME (idGenero, tituloFilme)
-VALUES (4,'FILME NOVO');
+INSERT INTO FILME (tituloFilme)
+VALUES ('HER'), ('HOMEM-ARANHA');
 GO
 
 
