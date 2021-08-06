@@ -10,4 +10,5 @@ O colaborador pode encerrar o conserto.
 
 DQL
 
-- listar todos os registros de todas as entidades
+- listar todos os pedidos dos clientes
+- listar todos os pedidos de um determinado cliente, mostrando quais foram os colaboradores que executaram o serviço, qual foi o tipo de conserto, qual item foi consertado e o nome deste cliente

@@ -9,4 +9,7 @@ Albuns: titulo, data de lançamento, localizacao, quantidade de minutos, se o álb
 
 DQL
 
-- listar todos os registros de todas as entidades
+- listar todos os usuários administradores, sem exibir suas senhas
+- listar todos os álbuns lançados após o um determinado ano de lançamento
+- listar os dados de um usuário através do e-mail e senha
+- listar todos os álbuns ativos, mostrando o nome do artista e os estilos do álbum 
