@@ -13,7 +13,7 @@ namespace senai_filmes_webAPI.Interfaces
     {
         // Estrutura de métodos da Interface
         // TipoRetorno NomeMetodo (TipoParametro NomeParametro);
-        // void Listar();
+        // void Cadastrar(GeneroDomain novoGenero);
 
         /// <summary>
         /// Retorna todos os gêneros
@@ -37,17 +37,17 @@ namespace senai_filmes_webAPI.Interfaces
         /// <summary>
         /// Atualiza um gênero existente passando o id pelo corpo da requisição
         /// </summary>
-        /// <param name="genero">Objeto genero com os novos dados</param>
+        /// <param name="generoAtualizado">Objeto generoAtualizado com os novos dados</param>
         /// ex: http://localhost:5000/api/generos
-        void AtualizarIdCorpo(GeneroDomain genero);
+        void AtualizarIdCorpo(GeneroDomain generoAtualizado);
 
         /// <summary>
         /// Atualiza um gênero existente passando o id pela URL da requisição
         /// </summary>
         /// <param name="idGenero">id do gênero que será atualizado</param>
-        /// <param name="genero">Objeto genero com os novos dados</param>
+        /// <param name="generoAtualizado">Objeto generoAtualizado com os novos dados</param>
         /// ex: http://localhost:5000/api/generos/4
-        void AtualizarIdUrl(int idGenero, GeneroDomain genero);
+        void AtualizarIdUrl(int idGenero, GeneroDomain generoAtualizado);
 
         /// <summary>
         /// Deleta um gênero
