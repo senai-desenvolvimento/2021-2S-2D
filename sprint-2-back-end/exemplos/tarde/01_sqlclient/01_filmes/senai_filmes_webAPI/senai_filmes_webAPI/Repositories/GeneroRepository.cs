@@ -43,9 +43,24 @@ namespace senai_filmes_webAPI.Repositories
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Cadastro um novo gênero
+        /// </summary>
+        /// <param name="novoGenero">Objeto nomeGenero com as informações que serão cadastradas.</param>
         public void Cadastrar(GeneroDomain novoGenero)
         {
-            throw new NotImplementedException();
+            using(SqlConnection con = new SqlConnection(stringConexao))
+            {
+                string queryInsert = "INSERT INTO GENERO (nomeGenero) VALUES ('" + novoGenero.nomeGenero + "')";
+
+                con.Open();
+
+                using(SqlCommand cmd = new SqlCommand(queryInsert, con))
+                {
+                    //Executa a query
+                    cmd.ExecuteNonQuery();
+                }
+            }            
         }
 
         public void Deletar(int idGenero)
