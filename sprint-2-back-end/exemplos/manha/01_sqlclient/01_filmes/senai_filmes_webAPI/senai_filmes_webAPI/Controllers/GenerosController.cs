@@ -49,5 +49,18 @@ namespace senai_filmes_webAPI.Controllers
             //Retorna os status code 200(OK) com a lista generos no formato JSON
             return Ok(listaGeneros);
         }
+
+        [HttpPost]
+        public IActionResult Post(GeneroDomain novoGenero)
+        {
+            //Fazer a chamada para o método .Cadastrar();
+            _GeneroRepository.Cadastrar(novoGenero);
+
+            //Retorna um status code 201 - Created.
+            return StatusCode(201);
+        }
+
+
+
     }
 }
