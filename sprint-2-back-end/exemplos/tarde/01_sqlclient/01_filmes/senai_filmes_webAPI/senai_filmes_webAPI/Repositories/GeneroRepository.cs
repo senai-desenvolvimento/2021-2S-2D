@@ -22,9 +22,10 @@ namespace senai_filmes_webAPI.Repositories
         /// integrated security=true = Faz autenticação com o usuario do sistema (Windows)
         /// 
         /// </summary>
-        private string stringConexao = "Data Source=DESKTOP-U20H53U; initial catalog=catalogo_tarde; user Id=sa; pwd=Senai@132";
+        //private string stringConexao = "Data Source=DESKTOP-U20H53U; initial catalog=catalogo_tarde; user Id=sa; pwd=Senai@132";
+        private string stringConexao = "Data Source=DESKTOP-30RGV41\\SQLEXPRESS; initial catalog=CATALOGO_T; user Id=sa; pwd=senai@132";
 
-       
+
         /// <param name="generoAtualizado"></param>
         //private string stringConexao = "Data Source=DESKTOP-U20H53U; initial catalog=catalogo_tarde; integrated security=true";
 
@@ -51,12 +52,27 @@ namespace senai_filmes_webAPI.Repositories
         {
             using(SqlConnection con = new SqlConnection(stringConexao))
             {
-                string queryInsert = "INSERT INTO GENERO (nomeGenero) VALUES ('" + novoGenero.nomeGenero + "')";
+                                     // "INSERT INTO GENERO (nomeGenero) VALUES ('teste')"
+                                     // "INSERT INTO GENERO (nomeGenero) VALUES ('Joana D'Arc')"            // erro de sintaxe, com o efeito Joana D'Arc
+                                     // "INSERT INTO GENERO (nomeGenero) VALUES ('')DROP TABLE FILME--')"   // permite SQL Injection
+                // string queryInsert = "INSERT INTO GENERO (nomeGenero) VALUES ('" + novoGenero.nomeGenero + "')";
+
+                // Não usar dessa forma, pois pode causar o efeito Joana D'Arc
+                // Além de permitir SQL Injection
+                // por exemplo
+                // "nomeGenero" : "')DROP TABLE FILME--"
+                // Ao tentar cadastrar usando o comando acima, irá deletar a tabela FILME do banco de dados
+                // https://www.devmedia.com.br/sql-injection/6102
+
+
+                string queryInsert = "INSERT INTO GENERO (nomeGenero) VALUES (@nomeGenero)";
 
                 con.Open();
 
                 using(SqlCommand cmd = new SqlCommand(queryInsert, con))
                 {
+                    cmd.Parameters.AddWithValue("@nomeGenero", novoGenero.nomeGenero);
+
                     //Executa a query
                     cmd.ExecuteNonQuery();
                 }
@@ -65,7 +81,25 @@ namespace senai_filmes_webAPI.Repositories
 
         public void Deletar(int idGenero)
         {
-            throw new NotImplementedException();
+            // Declara a SqlConnection con passando a string de conexão como parâmetro
+            using (SqlConnection con = new SqlConnection(stringConexao))
+            {
+                // Define a query a ser executada passando o id do gênero como parâmetro
+                string queryDelete = "DELETE FROM GENERO WHERE idGenero = @idGenero";
+
+                // Declara o SqlCommand cmd passando a query que será executada e a conexão como parâmetros
+                using (SqlCommand cmd = new SqlCommand(queryDelete, con))
+                {
+                    // Define o valor do id recebido no método como o valor do parâmetro @idGenero
+                    cmd.Parameters.AddWithValue("@idGenero", idGenero);
+
+                    // Abre a conexão com o banco de dados
+                    con.Open();
+
+                    // Executa o comando
+                    cmd.ExecuteNonQuery();
+                }
+            }
         }
 
         

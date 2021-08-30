@@ -63,5 +63,21 @@ namespace senai_filmes_webAPI.Controllers
             //Retorna um status code 201 - Created
             return StatusCode(201);
         }
+
+        /// <summary>
+        /// Deleta um gênero existente
+        /// </summary>
+        /// <param name="id">id do gênero que será deletado</param>
+        /// <returns>Um status code 204 - No Content</returns>
+        /// ex: http://localhost:5000/api/generos/excluir/9
+        [HttpDelete("excluir/{id}")]
+        public IActionResult Delete(int id)
+        {
+            // Faz a chamada para o método .Deletar()
+            _generoRepository.Deletar(id);
+
+            // Retorna um status code 204 - No Content
+            return NoContent();
+        }
     }
 }
