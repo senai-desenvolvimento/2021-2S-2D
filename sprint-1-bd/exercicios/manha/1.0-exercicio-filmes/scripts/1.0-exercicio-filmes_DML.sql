@@ -36,7 +36,12 @@ GO
 --WHERE idGenero IN(2,1);
 --GO
 
+--INSERT INTO GENERO (nomeGenero)
+--VALUES			   ('teste2')
+--GO
 
+--INSERT INTO GENERO (nomeGenero)
+--VALUES			 (' ')DROP TABLE Filme -- '),;
+--GO
 
-
-
+--DELETE FROM GENERO WHERE idGenero = 8;
