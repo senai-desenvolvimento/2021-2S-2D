@@ -28,5 +28,5 @@ WHERE idFilme in(2,3)
 DELETE FROM GENERO
 WHERE idGenero = 2 
 
-
-
+--INSERT INTO GENERO (nomeGenero) VALUES ('teste');
+--INSERT INTO GENERO (nomeGenero) VALUES ('')DROP TABLE FILME --')
