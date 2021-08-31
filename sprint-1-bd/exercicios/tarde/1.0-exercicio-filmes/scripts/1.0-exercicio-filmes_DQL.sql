@@ -49,3 +49,5 @@ ON FILME.idGenero = GENERO.idGenero;
 --ON FILME.idGenero = GENERO.idGenero
 --INNER JOIN DIRETOR
 --ON FILME.idDiretor = DIRETOR.idDiretor;
+
+SELECT nomeGenero, idGenero FROM GENERO WHERE idGenero = 6;

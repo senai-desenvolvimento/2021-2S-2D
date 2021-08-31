@@ -30,3 +30,5 @@ WHERE idGenero = 2
 
 --INSERT INTO GENERO (nomeGenero) VALUES ('teste');
 --INSERT INTO GENERO (nomeGenero) VALUES ('')DROP TABLE FILME --')
+
+UPDATE GENERO SET nomeGenero = 'Suspense' WHERE idGenero = 5 
