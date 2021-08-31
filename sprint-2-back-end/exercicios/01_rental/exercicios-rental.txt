@@ -15,10 +15,11 @@ Script 03 :
 
 Backend:
 Criar um projeto chamado Senai.Rental.WebApi;
-Criar o domínio correspondente;
-Criar a interface correspondente que contenha as ações de: listar, buscar por id, deletar, atualizar e inserir;
-Criar o repositório correspondente à interface;
-Criar o controller contendo os seguintes métodos(verbos) para alugéis, veículos e clientes. Por exemplo:
+Criar os domínios correspondentes;
+Criar as interfaces correspondentes que contenham as ações de: listar, buscar por id, deletar, atualizar e inserir;
+Criar os repositórios correspondentes à interface;
+Criar os controlleres contendo os métodos(verbos) de um CRUD básico para alugéis, veículos e clientes. 
+Por exemplo:
 
 GET 		/api/alugueis
 POST 		/api/alugueis
@@ -29,7 +30,7 @@ DELETE 		/api/alugueis/{id}
 
 Postman:
 Você deverá criar uma coleção no postman chamada: Senai.Rental.Manha/Senai.Rental.Tarde com os endpoints correspondentes ao item acima;
-Logo, você terá 5 itens dentro da pasta de cada Controller com os verbos correspondentes;
+Logo, você terá 5 itens dentro da pasta de cada Controller com os respectivos verbos;
 
 GitHub:
 Você deverá criar um repositório ou adicionar ao seu repositório de backend existente:
@@ -41,12 +42,16 @@ Você deverá criar um repositório ou adicionar ao seu repositório de backend exis
 - exportar a coleção do postman e disponibilizar essa coleção dentro do repositório.
 
 Desafios Extras:
-Incluir data de nascimento para os clientes;
-Criar um endpoint chamado /api/clientes/buscar/{nome} passando como parâmetro o nome do cliente e realizando a determinada busca no banco;
-Criar um endpoint chamado /api/clientes/nomescompletos que na saída do json, o nome e o sobrenome venham na mesma chave. Ex.: { "nomeCompleto" : "Catarina Strada" };
-Fazer com que o nome do cliente do backend seja obrigatório e mostre uma mensagem de erro, caso o usuário não envie.
 
-Criar APENAS UM endpoint para que seja listado os nomes dos clientes em ordem crescente ou decrescente. Da seguinte maneira:
+- Incluir data de nascimento para os clientes;
+
+- Criar um endpoint chamado /api/clientes/buscar/{nome} passando como parâmetro o nome do cliente e realizando a determinada busca no banco;
+
+- Criar um endpoint chamado /api/clientes/nomescompletos que na saída do json, o nome e o sobrenome venham na mesma chave. Ex.: { "nomeCompleto" : "Catarina Strada" };
+
+- Fazer com que o nome do cliente do backend seja obrigatório e mostre uma mensagem de erro, caso o usuário não envie.
+
+- Criar APENAS UM endpoint para que seja listado os nomes dos clientes em ordem crescente ou decrescente. Da seguinte maneira:
 GET /api/clientes/ordenacao/{ordem}
 GET /api/clientes/ordenacao/asc ou 
 GET /api/clientes/ordenacao/desc

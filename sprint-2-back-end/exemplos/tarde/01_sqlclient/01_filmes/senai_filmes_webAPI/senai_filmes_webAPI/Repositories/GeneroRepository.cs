@@ -13,7 +13,6 @@ namespace senai_filmes_webAPI.Repositories
     /// </summary>
     public class GeneroRepository : IGeneroRepository
     {
-
         /// <summary>
         /// String de conexão com o banco de dados que recebe os parâmetros.
         /// Data Source= Nome do Servidor
@@ -31,17 +30,74 @@ namespace senai_filmes_webAPI.Repositories
 
         public void AtualizarIdCorpo(GeneroDomain generoAtualizado)
         {
-            throw new NotImplementedException();
+            if (generoAtualizado.nomeGenero != null)
+            {
+                using (SqlConnection con = new SqlConnection(stringConexao))
+                {
+                    string queryUpdateBody = "UPDATE GENERO SET nomeGenero = @nomeGenero WHERE idGenero = @idGenero";
+
+                    using (SqlCommand cmd = new SqlCommand(queryUpdateBody, con))
+                    {
+                        cmd.Parameters.AddWithValue("@nomeGenero", generoAtualizado.nomeGenero);
+                        cmd.Parameters.AddWithValue("@idGenero", generoAtualizado.idGenero);
+
+                        con.Open();
+
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
         }
 
         public void AtualizarIdUrl(int idGenero, GeneroDomain generoAtualizado)
         {
-            throw new NotImplementedException();
+            using (SqlConnection con = new SqlConnection(stringConexao))
+            {
+                string queryUpdateUrl = "UPDATE GENERO SET nomeGenero = @nomeGenero WHERE idGenero = @idGenero";
+
+                using (SqlCommand cmd = new SqlCommand(queryUpdateUrl, con))
+                {
+                    cmd.Parameters.AddWithValue("@nomeGenero", generoAtualizado.nomeGenero);
+                    cmd.Parameters.AddWithValue("@idGenero", idGenero);
+
+                    con.Open();
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
         }
 
         public GeneroDomain BuscarPorId(int idGenero)
         {
-            throw new NotImplementedException();
+            using (SqlConnection con = new SqlConnection(stringConexao))
+            {
+                string querySelectById = "SELECT nomeGenero, idGenero FROM GENERO WHERE idGenero = @idGenero";
+
+                con.Open();
+
+                SqlDataReader reader;
+
+                using (SqlCommand cmd = new SqlCommand(querySelectById, con))
+                {
+                    cmd.Parameters.AddWithValue("@idGenero", idGenero);
+
+                    reader = cmd.ExecuteReader();
+
+                    if (reader.Read())
+                    {
+                        GeneroDomain generoBuscado = new GeneroDomain
+                        {
+                            idGenero = Convert.ToInt32(reader["idGenero"]),
+
+                            nomeGenero = reader["nomeGenero"].ToString()
+                        };
+
+                        return generoBuscado;
+                    }
+
+                    return null;
+                }
+            }
         }
 
         /// <summary>
