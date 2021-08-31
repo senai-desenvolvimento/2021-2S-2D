@@ -57,3 +57,6 @@ ON FILME.idGenero = GENERO.idGenero;
 -- ON FILME.idGenero = GENERO.idGenero
 -- FULL OUTER JOIN DIRETOR
 -- ON FILME.idDiretor (FK) = DIRETOR.idDiretor (PK);
+
+SELECT nomeGenero, idGenero FROM GENERO WHERE idGenero = 3;
+

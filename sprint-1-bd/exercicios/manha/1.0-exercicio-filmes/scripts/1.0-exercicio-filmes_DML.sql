@@ -45,3 +45,8 @@ GO
 --GO
 
 --DELETE FROM GENERO WHERE idGenero = 8;
+
+UPDATE GENERO  
+SET nomeGenero = 'Suspense'
+WHERE idGenero = 5; 
+GO
