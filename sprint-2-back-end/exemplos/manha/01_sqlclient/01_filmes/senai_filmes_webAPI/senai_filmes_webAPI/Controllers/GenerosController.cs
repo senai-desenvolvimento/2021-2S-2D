@@ -50,6 +50,20 @@ namespace senai_filmes_webAPI.Controllers
             return Ok(listaGeneros);
         }
 
+        [HttpGet("{id}")]
+        public IActionResult GetById(int id)
+        {
+            GeneroDomain generoBuscado = _GeneroRepository.BuscarPorId(id);
+
+            if (generoBuscado == null)
+            {
+                return NotFound("Nenhum gênero encontrado!");
+            }
+
+            return Ok(generoBuscado);
+            //return StatusCode(200, generoBuscado);
+        }
+
         [HttpPost]
         public IActionResult Post(GeneroDomain novoGenero)
         {
@@ -58,6 +72,71 @@ namespace senai_filmes_webAPI.Controllers
 
             //Retorna um status code 201 - Created.
             return StatusCode(201);
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult PutUrl(int id, GeneroDomain generoAtualizado)
+        {
+            GeneroDomain generoBuscado = _GeneroRepository.BuscarPorId(id);
+
+            if (generoBuscado == null)
+            {
+                return NotFound
+                    (new
+                    {
+                        mensagem = "Gênero não encontrado!",
+                        erro = true
+                    });
+            }
+
+            try
+            {
+                _GeneroRepository.AtualizarIdUrl(id, generoAtualizado);
+
+                return NoContent();
+            }
+            catch (Exception erro)
+            {
+                return BadRequest(erro);
+            }
+        }
+
+        [HttpPut]
+        public IActionResult PutBody(GeneroDomain generoAtualizado)
+        {
+            if (generoAtualizado.nomeGenero != null || generoAtualizado.idGenero == 0)
+            {
+                return BadRequest(
+                    new
+                    {
+                        mensagemErro = "Nome do gênero ou id do gênero não foi informado!"
+                    }
+                );
+            }
+
+            GeneroDomain generoBuscado = _GeneroRepository.BuscarPorId(generoAtualizado.idGenero);
+
+            if (generoBuscado != null)
+            {
+                try
+                {
+                    _GeneroRepository.AtualizarIdCorpo(generoAtualizado);
+
+                    return NoContent();
+                }
+                catch (Exception ex)
+                {
+                    return BadRequest(ex);
+                }
+            }
+
+            return NotFound(
+                    new
+                    {
+                        mensagemErro = "Gênero não encontrado!",
+                        codErro = true
+                    }
+                );
         }
 
         /// <summary>
