@@ -18,7 +18,7 @@ Criar um projeto chamado Senai.Rental.WebApi;
 Criar os domínios correspondentes;
 Criar as interfaces correspondentes que contenham as ações de: listar, buscar por id, deletar, atualizar e inserir;
 Criar os repositórios correspondentes à interface;
-Criar os controlleres contendo os métodos(verbos) de um CRUD básico para alugéis, veículos e clientes. 
+Criar os controllers contendo os métodos(verbos) de um CRUD básico para alugéis, veículos e clientes. 
 Por exemplo:
 
 GET 		/api/alugueis
