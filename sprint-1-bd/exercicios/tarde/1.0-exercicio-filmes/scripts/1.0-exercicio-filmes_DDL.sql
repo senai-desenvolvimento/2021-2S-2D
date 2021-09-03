@@ -35,5 +35,13 @@ CREATE TABLE FILME(
 );
 
 
+CREATE TABLE USUARIOS(
+   
+   idUsuario int primary key identity,
+   email varchar(100) not null unique,
+   senha varchar(10) not null,
+   permissao varchar(30) not null
+);
+GO
 
 

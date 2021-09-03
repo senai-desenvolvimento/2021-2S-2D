@@ -51,3 +51,20 @@ ON FILME.idGenero = GENERO.idGenero;
 --ON FILME.idDiretor = DIRETOR.idDiretor;
 
 SELECT nomeGenero, idGenero FROM GENERO WHERE idGenero = 6;
+
+
+
+
+
+SELECT * FROM USUARIOS 
+
+-->Busca um usuário através do e-mail e da senha
+
+  SELECT    idUsuario
+			,email
+			,senha
+			,permissao
+  FROM USUARIOS 
+  WHERE email = 'adm@email.com'
+  and senha = '123'
+
