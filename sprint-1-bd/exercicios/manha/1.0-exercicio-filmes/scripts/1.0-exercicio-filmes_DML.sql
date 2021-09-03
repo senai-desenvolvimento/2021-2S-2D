@@ -50,3 +50,8 @@ UPDATE GENERO
 SET nomeGenero = 'Suspense'
 WHERE idGenero = 5; 
 GO
+
+INSERT INTO USUARIO (email, senha, permissao)
+VALUES ('saulo@email.com','123','administrador'),
+      ('lucas@email.com','123','comum');
+

@@ -38,6 +38,14 @@ GO
 
 
 
+CREATE TABLE USUARIO(
+   idUsuario  int primary key identity,
+   email varchar(200) not null unique,
+   senha varchar(10) not null,
+   permissao varchar(50)
+);
+GO 
+
 
 
 
