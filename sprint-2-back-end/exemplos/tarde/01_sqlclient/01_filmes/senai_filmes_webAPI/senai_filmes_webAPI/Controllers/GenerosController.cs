@@ -38,7 +38,7 @@ namespace senai_filmes_webAPI.Controllers
         /// Lista todos os gêneros
         /// </summary>
         /// <returns>Uma lista de gêneros e um status code.</returns>
-        [HttpGet]
+        [HttpGet]       
         public IActionResult Get()
         {
             //Criar uma lista nomeada listaGeneros para receber os dados.
