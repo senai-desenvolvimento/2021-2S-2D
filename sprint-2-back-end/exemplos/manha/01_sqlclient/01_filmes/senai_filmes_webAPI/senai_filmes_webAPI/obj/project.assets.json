@@ -454,19 +454,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\saulo.santos\\.nuget\\packages\\": {}
+    "C:\\Users\\lucas\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\saulo.santos\\Downloads\\SENAI\\CT\\2021-2S-2D\\senai-dev-2s2021-alunos\\sprint-2-back-end\\exemplos\\manha\\01_sqlclient\\01_filmes\\senai_filmes_webAPI\\senai_filmes_webAPI\\senai_filmes_webAPI.csproj",
+      "projectUniqueName": "C:\\Projetos\\Pessoal\\2021-2S-2D\\sprint-2-back-end\\exemplos\\manha\\01_sqlclient\\01_filmes\\senai_filmes_webAPI\\senai_filmes_webAPI\\senai_filmes_webAPI.csproj",
       "projectName": "senai_filmes_webAPI",
-      "projectPath": "C:\\Users\\saulo.santos\\Downloads\\SENAI\\CT\\2021-2S-2D\\senai-dev-2s2021-alunos\\sprint-2-back-end\\exemplos\\manha\\01_sqlclient\\01_filmes\\senai_filmes_webAPI\\senai_filmes_webAPI\\senai_filmes_webAPI.csproj",
-      "packagesPath": "C:\\Users\\saulo.santos\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\saulo.santos\\Downloads\\SENAI\\CT\\2021-2S-2D\\senai-dev-2s2021-alunos\\sprint-2-back-end\\exemplos\\manha\\01_sqlclient\\01_filmes\\senai_filmes_webAPI\\senai_filmes_webAPI\\obj\\",
+      "projectPath": "C:\\Projetos\\Pessoal\\2021-2S-2D\\sprint-2-back-end\\exemplos\\manha\\01_sqlclient\\01_filmes\\senai_filmes_webAPI\\senai_filmes_webAPI\\senai_filmes_webAPI.csproj",
+      "packagesPath": "C:\\Users\\lucas\\.nuget\\packages\\",
+      "outputPath": "C:\\Projetos\\Pessoal\\2021-2S-2D\\sprint-2-back-end\\exemplos\\manha\\01_sqlclient\\01_filmes\\senai_filmes_webAPI\\senai_filmes_webAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\saulo.santos\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
