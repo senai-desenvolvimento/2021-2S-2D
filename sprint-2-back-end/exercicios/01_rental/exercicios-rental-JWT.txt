@@ -1,0 +1,19 @@
+- Implementar autenticação e autorização no Projeto Rental
+
+- Criar CRUD para TipoUsuario e Usuario
+
+- Permissões
+
+Veiculos
+	Listar, BuscarPorId - Comum
+	Cadastrar, Atualizar, Deletar - Adm
+
+Clientes
+	ListarNomesCompletos, ListarOrdenado - Adm
+
+Usuario
+	Cadastrar, Atualizar - Público
+	Listar, BuscarPorId, Deletar - Adm
+
+TipoUsuario
+	Listar, BuscarPorId, Cadastrar, Atualizar, Deletar - Adm

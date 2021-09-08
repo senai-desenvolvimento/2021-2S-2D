@@ -9,7 +9,6 @@
 --atalho
 --escrever depois crtl + k , crtk + c 
 
-
 ---COMANDOS DDL
 
 --CREATE.
@@ -27,7 +26,7 @@ CREATE TABLE GENERO (
 GO
 
 ---COMANDO PARA ANALISAR A TABELA
-   -- ALT + F1 COM A TABELA SELECIONADA.
+-- ALT + F1 COM A TABELA SELECIONADA.
 
 CREATE TABLE FILME (
    idFilme SMALLINT PRIMARY KEY IDENTITY(1,1),
@@ -36,20 +35,10 @@ CREATE TABLE FILME (
 );
 GO 
 
-
-
 CREATE TABLE USUARIO(
-   idUsuario  int primary key identity,
-   email varchar(200) not null unique,
-   senha varchar(10) not null,
-   permissao varchar(50)
+   idUsuario  INT PRIMARY KEY IDENTITY,
+   email VARCHAR(200) NOT NULL UNIQUE,
+   senha VARCHAR(10) NOT NULL,
+   permissao VARCHAR(50)
 );
-GO 
-
-
-
-
-
-
-
-
+GO

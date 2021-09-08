@@ -26,8 +26,6 @@ SET tituloFilme = 'GENTE GRANDE'
 WHERE idFilme = 6; 
 GO
 
-
-
 --DELETE FROM GENERO 
 --WHERE idGenero = 2;
 --GO
@@ -52,6 +50,6 @@ WHERE idGenero = 5;
 GO
 
 INSERT INTO USUARIO (email, senha, permissao)
-VALUES ('saulo@email.com','123','administrador'),
-      ('lucas@email.com','123','comum');
-
+VALUES				('saulo@email.com','123','administrador'),
+					('lucas@email.com','123','comum');
+GO
