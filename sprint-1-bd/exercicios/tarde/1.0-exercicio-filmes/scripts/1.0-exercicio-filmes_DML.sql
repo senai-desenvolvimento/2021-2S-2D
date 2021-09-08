@@ -36,7 +36,5 @@ UPDATE GENERO SET nomeGenero = 'Suspense' WHERE idGenero = 5
 
 INSERT INTO USUARIOS (email, senha, permissao)
 VALUES ('lucas@email.com', '123','comum'),
-       ('adm@emai.com', '123','administraoor');
+       ('adm@email.com', '123','administrador');
 GO
-
-

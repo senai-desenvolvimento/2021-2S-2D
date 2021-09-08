@@ -34,14 +34,10 @@ CREATE TABLE FILME(
   tituloFilme VARCHAR(50) NOT NULL
 );
 
-
-CREATE TABLE USUARIOS(
-   
-   idUsuario int primary key identity,
-   email varchar(100) not null unique,
-   senha varchar(10) not null,
-   permissao varchar(30) not null
+CREATE TABLE USUARIOS(   
+   idUsuario INT PRIMARY KEY IDENTITY,
+   email VARCHAR(100) NOT NULL UNIQUE,
+   senha VARCHAR(10) NOT NULL,
+   permissao VARCHAR(30) NOT NULL
 );
 GO
-
-

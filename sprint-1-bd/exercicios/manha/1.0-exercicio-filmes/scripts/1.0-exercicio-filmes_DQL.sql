@@ -60,11 +60,14 @@ ON FILME.idGenero = GENERO.idGenero;
 
 SELECT nomeGenero, idGenero FROM GENERO WHERE idGenero = 3;
 
-
 SELECT * FROM USUARIO;
 
 --Busca um usuário através do e-mail e senha
-SELECT  idUsuario,email, senha, permissao
+SELECT  idUsuario, email, senha, permissao
 FROM usuario
-WHERE email  = 'saulo@email.com' AND senha = '123';
+WHERE email = 'saulo@email.com' AND senha = '123';
 
+--Busca um usuário através do idUsuario
+SELECT  idUsuario, email, senha, permissao
+FROM usuario
+WHERE idUsuario = 1;

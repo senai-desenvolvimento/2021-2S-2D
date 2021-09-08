@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using senai_filmes_webAPI.Domains;
 using senai_filmes_webAPI.Interfaces;
@@ -7,9 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-/// <summary>
-/// Controller responsavel pelos endpoints referentes aos generos.
-/// </summary>
+
 namespace senai_filmes_webAPI.Controllers
 {
     //Define que o tipo de resposta da API será no formato JSON
@@ -21,6 +20,13 @@ namespace senai_filmes_webAPI.Controllers
     //Define que é um controlador de API.
     [ApiController]
     
+    // Define que todos os endpoints serão restritos
+    // ou seja, apenas usuários logados podem acessar
+    [Authorize]
+
+    /// <summary>
+    /// Controller responsavel pelos endpoints referentes aos generos.
+    /// </summary>
     public class GenerosController : ControllerBase
     {
         /// <summary>
@@ -38,7 +44,7 @@ namespace senai_filmes_webAPI.Controllers
         /// Lista todos os gêneros
         /// </summary>
         /// <returns>Uma lista de gêneros e um status code.</returns>
-        [HttpGet]       
+        [HttpGet]
         public IActionResult Get()
         {
             //Criar uma lista nomeada listaGeneros para receber os dados.
@@ -49,6 +55,7 @@ namespace senai_filmes_webAPI.Controllers
 
         }
 
+        [Authorize(Roles = "administrador, comum")]
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
@@ -66,7 +73,6 @@ namespace senai_filmes_webAPI.Controllers
         /// Cadastra um novo gênero
         /// </summary>
         /// <returns>Um status code 201 - Created</returns>
-        
         [HttpPost]
         public IActionResult Post(GeneroDomain novoGenero)
         {

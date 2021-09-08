@@ -10,8 +10,9 @@ namespace senai_filmes_webAPI.Repositories
 {
     public class UsuarioRepository : IUsuarioRepository
     {
-        private string stringConexao = "Data Source=DESKTOP-U20H53U; initial catalog=catalogo_tarde; user id=sa; pwd=Senai@132";
+        //private string stringConexao = "Data Source=DESKTOP-U20H53U; initial catalog=catalogo_tarde; user id=sa; pwd=Senai@132";
 
+        private string stringConexao = "Data Source=DESKTOP-30RGV41\\SQLEXPRESS; initial catalog=CATALOGO_T; user id=sa; pwd=senai@132";
 
         public UsuarioDomain BuscarPorEmailSenha(string email, string senha)
         {
@@ -49,9 +50,6 @@ namespace senai_filmes_webAPI.Repositories
                         };
 
                         //jwt.ex=  
-
-
-
 
                         //retorna o usuario buscado
                         return usuarioBuscado;
