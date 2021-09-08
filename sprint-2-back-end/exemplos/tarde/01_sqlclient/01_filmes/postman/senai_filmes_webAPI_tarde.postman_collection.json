@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "5c642cb1-4ea7-4255-ab94-417f3b1cab90",
+		"_postman_id": "19e8f94a-5f5f-41b0-a051-40ab3ba493b7",
 		"name": "senai_filmes_webAPI_tarde",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -11,6 +11,16 @@
 				{
 					"name": "Generos.ListarTodos",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imx1Y2FzQGVtYWlsLmNvbSIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJjb211bSIsIkNsYWltIHBlcnNvbmFsaXphZGEiOiJWYWxvciBUZXN0ZSIsImV4cCI6MTYzMTEzMjI2MSwiaXNzIjoiRmlsbWVzLndlYkFQSSIsImF1ZCI6IkZpbG1lcy53ZWJBUEkifQ.vEKSsZdia_IoL6ESWokO7UqqFeWPwZVr3yw_aaQlytk",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -31,10 +41,20 @@
 				{
 					"name": "Generos.BuscarPorId",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imx1Y2FzQGVtYWlsLmNvbSIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJjb211bSIsIkNsYWltIHBlcnNvbmFsaXphZGEiOiJWYWxvciBUZXN0ZSIsImV4cCI6MTYzMTEzMjI2MSwiaXNzIjoiRmlsbWVzLndlYkFQSSIsImF1ZCI6IkZpbG1lcy53ZWJBUEkifQ.vEKSsZdia_IoL6ESWokO7UqqFeWPwZVr3yw_aaQlytk",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/api/generos/5",
+							"raw": "http://localhost:5000/api/generos/3",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -43,7 +63,7 @@
 							"path": [
 								"api",
 								"generos",
-								"5"
+								"3"
 							]
 						}
 					},
@@ -153,6 +173,42 @@
 								"api",
 								"generos",
 								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Usuarios",
+			"item": [
+				{
+					"name": "Usuarios.Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"lucas@email.com\",\r\n    \"senha\" : \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/usuarios/login/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"usuarios",
+								"login",
+								""
 							]
 						}
 					},
