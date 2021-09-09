@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = senai_filmes_webAPI
-build_property.ProjectDir = C:\Users\saulo.santos\Downloads\SENAI\CT\2021-2S-2D\senai-dev-2s2021-alunos\sprint-2-back-end\exemplos\tarde\01_sqlclient\01_filmes\senai_filmes_webAPI\senai_filmes_webAPI\
+build_property.ProjectDir = C:\Projetos\Pessoal\2021-2S-2D\sprint-2-back-end\exemplos\tarde\01_sqlclient\01_filmes\senai_filmes_webAPI\senai_filmes_webAPI\

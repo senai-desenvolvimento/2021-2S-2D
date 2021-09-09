@@ -19,7 +19,7 @@ namespace senai_filmes_webAPI.Repositories
         /// integrated security = Faz a autenticação com o usuario do sistema (Windows).
         /// </summary>
         //private string stringConexao = "Data Source=DESKTOP-U20H53U; initial catalog=catalogo_manha; user id=sa; pwd=Senai@132";
-        private string stringConexao = "Data Source=DESKTOP-30RGV41\\SQLEXPRESS; initial catalog=CATALOGO_M; user id=sa; pwd=senai@132";
+        private string stringConexao = "Data Source=DESKTOP-U20H53U; initial catalog=catalogo_tarde; user id=sa; pwd=Senai@132";
 
         //private string stringConexao = "Data Source=DESKTOP-U20H53U; initial catalog=catalogo_manha; integrated security=true";
 
