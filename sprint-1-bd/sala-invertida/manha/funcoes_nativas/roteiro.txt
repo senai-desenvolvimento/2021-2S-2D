@@ -1,0 +1,25 @@
+[INTEGRANTE 1] Bom dia, nós, do grupo 7, vamos apresentar um pequeno seminário sobre funções nativas no desenvolvimento de um banco de dados SQL, com exemplos práticos e explicativos no uso dessas funções.
+[INTEGRANTE 1] No desenvolvimento dos bancos de dado SQL, utilizamos o Microsoft SQL server, utilizando da própria linguagem SQL e o TSQL, uma expansão da Microsoft.
+[INTEGRANTE 1] As funções, assim como eram no C#, não fogem da regra, são listas de comando que quando referenciadas, são executadas. Quando dizemos que são 
+funções "nativas", dizemos que são funções fornecidas pelo ambiente de desenvolvimento, e não escritas pelo próprio usuário do ambiente.
+
+[INTEGRANTE 2] Funções agregadas são funções que efetuam um um calculo simples relacionado a um grupo de valores quando utilizadas junto a um select, recebendo um conjunto e retornando um unico valor. As funções de agregação são determinísticas, o que significa que elas sempre retornam o mesmo valor quando são executadas nos mesmos valores de entrada. 
+[INTEGRANTE 2]As funções analíticas, por outro lado, são funções que também computam valores baseados em um grupo de valores, mas podem vir a retornar mais de uma linha para cada grupo de valores.
+
+[INTEGRANTE 3] As funções de classificação são funções que recebem um conjunto e imprimem um valor de classificação para cada linha nesse conjunto de valores
+
+[INTEGRANTE 4] Funções do conjunto de linhas são funções que recebem um valor de caracteres na entrada, executa a operação e retorna uma cadeia de caracteres ou valor numérico
+[INTEGRANTE 4] Funções escalares são funções que recebem um valor para cada consulta realizada, e retornam outro valor baseado num tipo de dado específico, podem ser utilizadas para converter valores, processar data e hora e outros. Existem funções escalares de cadeia de caracteres, funções escalares numéricas, de sistema, de hora, data e intervalo e outros.
+
+[INTEGRANTE 3] Agora que sabemos o significado desses grupos, podemos ir a fundo na lista das funções. Podemos identificar na tabela de funções de agrupamento alguns comandos que não são novos para nós, a exemplo do COUNT que é utilizado para contar quantas linhas existem num conjunto. Há também o MAX que retorna o valor máximo da coluna, o MIN, que faz justamente o contrário, o AVG que retorna o valor médio do grupo especificado, SUM que retorna a soma e outros. Nesse slide também há o nome do tipo de partes que podem ser utilizados em data, e uma função de conversão
+
+
+[INTEGRANTE 5] Podemos observar aqui algumas funções de sistema, como COL_LENGTH, que retorna o tamanho da tabela, COL_NAME, que retorna o nome da coluna, DB_NAME, que retorna o nome do banco de dados, funções que trazem informações sobre o usuario que está acessando o sql server, além de outras funções, como ISNULL que verifica se certo valor é nulo, etc. Também temos funções numéricas, como RAND que gera um numero aleatorio entre 0 e 1, ROUND, que arredonda um numero, SIN e TAN, que retornam o seno e a tangente do numero, respectivamente, SQRT e SQUARE que retornam a raiz quadrada e o quadrado do numero, respectivamente.
+
+
+[INTEGRANTE 6]  Aqui temos mais funções matemáticas, como CEILING, que retorna o menor inteiro maior ou igual ao numero informado, degreesm que transforma radianos em graus, RADIANS que faz o contrário, PI, que retorna o valor de pi, LOG, que faz o logarítimo do número, FLOOR, que retorna o maior inteiro que seja menor ou igual ao numero especificado, além de outras funções. Além disso, temos algumas das funções de manipulação de string, como UPPER e LOWER, que transformam os caracteres recebidos em maiusculo e minusculo, respectivamente, LEN, que identifica o comprimento da string inputada em caracteres, e outros.
+
+
+[INTEGRANTE 7] *Exemplos*
+
+[INTEGRANTES 1-6] *Exercício*

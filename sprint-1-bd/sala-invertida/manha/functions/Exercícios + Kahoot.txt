@@ -1,0 +1,7 @@
+Enunciado escalar:
+Uma determinada empresa de vendas optou pela seguinte regra de negócio: Compras acima de 200 reais receberão um desconto de 15% em seu valor final. Utilizando uma UDF escalar, realize a função que retorne seus valores, caso sejam aptos a desconto, com a ´porcentagem já descontada
+
+Enunciado table valued:
+No HROADS, existe uma habilidade que bloqueia o uso de mana de classes com a mana menor ou igual a 75. Utilizando a estrutura table valued, retorne a tabela de personagens que seriam afetados pela habilidade
+
+https://create.kahoot.it/share/funcoes/9523a7d8-5d80-41a0-8587-ff5e73935bc6

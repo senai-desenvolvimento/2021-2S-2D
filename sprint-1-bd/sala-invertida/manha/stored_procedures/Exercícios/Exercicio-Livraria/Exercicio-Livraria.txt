@@ -1,0 +1,13 @@
+Uma livraria possui diversos livros e cada livro possui um nome, um autor, uma categoria e um preço.
+
+1)
+-Crie um banco de dados chamado Livraria;
+-Crie as tabelas correspondentes;
+-Liste todos os livros com seus respectivos autores, categorias e preços;
+-Crie uma Procendure que retornem o nome e o preço do livro;
+
+2)
+-Crie uma Procendure que retornem os livros de apenas uma livraria (possui parâmetro);
+
+3)
+-Crie uma Procendure que altere o preço de todos os livros de aventura de uma livraria; 

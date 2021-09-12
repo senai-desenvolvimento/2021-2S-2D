@@ -1,0 +1,5 @@
+Uma empresa de comunicações pretende utilizar dois métodos diferentes para mostrar informações de seus clientes, cada usúario cadastra seu nome, sobrenome, telefone e email. Sua tarefa será:
+
+Criar uma database que guarde o nome, o telefone, o email e o sobrenome de uma pessoa;
+Criar um procedimento que encontre o nome e o telefone da pessoa 1;
+Criar um procedimento que encontre o nome, email e sobrenome da pessoa2.

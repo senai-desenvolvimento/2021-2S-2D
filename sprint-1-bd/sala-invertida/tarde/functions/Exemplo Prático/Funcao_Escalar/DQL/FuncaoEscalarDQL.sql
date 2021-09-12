@@ -1,0 +1,19 @@
+USE BOLETIM;
+GO
+
+CREATE FUNCTION MEDIA(@nomeAluno VARCHAR(50))
+RETURNS REAL
+AS 
+BEGIN
+ DECLARE @MEDIA REAL
+ SELECT @MEDIA = (nota1 + nota2 + nota3)/3.00 FROM ALUNOS
+ INNER JOIN NOTAS
+ ON ALUNOS.idNotas = NOTAS.idNotas
+ WHERE nomeAluno = @nomeAluno
+ RETURN @MEDIA
+END;
+
+SELECT nomeAluno AS Aluno ,dbo.MEDIA(nomeAluno) AS Media FROM ALUNOS
+
+
+

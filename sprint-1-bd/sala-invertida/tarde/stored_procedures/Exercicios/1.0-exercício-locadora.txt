@@ -1,0 +1,2 @@
+Utilizando o exercicio 1.2 (locadora), faça dois stored procedures, ambos com o intuito de qual a marca do veiculo, mas enquanto o primeiro deve utilizar o id do veiculo, o segundo deve ser utilizar a placa do carro.
+

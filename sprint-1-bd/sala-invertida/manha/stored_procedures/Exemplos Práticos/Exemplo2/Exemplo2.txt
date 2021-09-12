@@ -1,0 +1,14 @@
+Parabéns, você foi contratado pela The Cambridge Analytica! Pois é, você provavelmente
+não fazia ideia do que se tratava, mas essa foi uma das maiores empresas de
+manipulação de resultados do mundo. Já que você não pode recusar a oferta agora, lá
+vem sua primeira tarefa:
+
+A Cambridge passou pra você um banco de dados com milhares de informações e posts dos
+usuários do Facebook. Crie uma stored procedure que filtre os posts descobrindo
+usuários dispostos a adquirir os serviços de alguma empresa parceira. E lembre ninguém
+pode descobrir!
+
+Empresas parceiras:
+	* Growth Suplementos
+	* IFood
+ 

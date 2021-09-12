@@ -1,0 +1,32 @@
+FUNÇÕES NATIVAS
+
+CONCEITO
+
+Funções nativas, ou funções internas, como também são chamadas, são aquelas que já se encontram previamente disponiveis aos desenvolvedores para utilização no ambiente SQL. Elas já estão prontas e disponiveis desde a instalação, não necessitando serem desenvolvidas, como as functions que veremos adiante.
+Em nosso projeto HROADS, já utilizamos algumas funções nativas, mesmo sem saber deste conceito. Vamos agora entender em quais categorias elas se agrupam/se subdividem:
+
+*FUNÇÕES DE AGREGAÇÃO
+	*DETERMINISTICAS;
+	*NÃO DETERMINISTICAS;
+
+*FUNÇÕES ANALÍTICAS
+
+*FUNÇÕES DE CLASSIFICAÇÃO
+
+*FUNÇÕES DO CONJUNTO DE LINHAS
+
+*FUNÇÕES ESCALARES
+	Categoria da função 				Descrição
+	Funções de configuração 			Retornam informações sobre a configuração atual.
+	Funções de conversão 				Suporte para conversão de tipos de dados.
+	Funções de cursor 				Retornam informações sobre cursores.
+	Tipos de dados e funções de data e hora 	Executam operações em uma data e valores de entrada de hora e retornam valores de cadeia de 							caracteres, numéricos ou de data e hora.
+	Funções JSON 					Validam, consultam ou alteram dados JSON.
+	Funções lógicas 				Executam operações lógicas.
+	Funções matemáticas 				Executam cálculos baseados em valores de entrada fornecidos como parâmetros às funções e retorna valores numéricos.
+	Funções de metadados 				Retornam informações sobre o banco de dados e objetos de banco de dados.
+	Funções de segurança 				Retornam informações sobre usuários e funções.
+	Funções de cadeia de caracteres 		Executam operações em um valor de entrada de cadeia de caracteres (char ou varchar) e retornam uma cadeia de caracteres ou um valor numérico.
+	Funções do Sistema 				Executam operações e informações de retorno sobre valores, objetos e configurações em uma instância do SQL Server.
+	Funções estatísticas do sistema 		Retornam informações estatísticas sobre o sistema.
+	Funções de texto e imagem 			Executam operações em valores de entrada de texto ou imagem ou colunas e retornam informações sobre o valor.

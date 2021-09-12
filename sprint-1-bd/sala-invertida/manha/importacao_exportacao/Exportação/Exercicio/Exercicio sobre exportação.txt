@@ -1,0 +1,57 @@
+Exercício de Exportação
+Execute esse script em uma nova consulta e exporte os dados para um novo banco de dados de acordo com o que foi mostrado em aula.
+Obs.: Qualquer dúvida é só me chamar que eu ajudo.
+
+
+CREATE DATABASE exemploExportacao
+GO
+
+USE exemploExportacao
+GO
+
+--DDL
+CREATE TABLE pais(
+    idPais INT PRIMARY KEY IDENTITY(1,1),
+    nomePais VARCHAR(30) NOT NULL UNIQUE
+);
+GO
+
+CREATE TABLE estado(
+    idEstado INT PRIMARY KEY IDENTITY(1,1),
+    idPais INT FOREIGN KEY REFERENCES pais(idPais),
+    nomeEstado VARCHAR(30) NOT NULL UNIQUE
+);
+GO
+
+CREATE TABLE cidade(
+    idCidade INT PRIMARY KEY IDENTITY(1,1),
+    idEstado INT FOREIGN KEY REFERENCES estado(idEstado),
+    nomeCidade VARCHAR(30) NOT NULL
+);
+GO
+
+
+--DML
+INSERT INTO pais (nomePais)
+VALUES ('Brasil (BR)'), ('Estados Unidos (US)'), ('Canadá (CA)'), ('Argentina (AR)')
+GO
+
+INSERT INTO estado (idPais, nomeEstado)
+VALUES (1,'São Paulo (SP)'), (2,'New York (NY)'), (3,'Ontário (ON)'), (4,'Río Negro (RG)')
+GO
+
+INSERT INTO cidade (idEstado, nomeCidade)
+VALUES (1,'Campos do Jordão'), (2,'Geneva'), (3,'Toronto'), (4,'Viedma')
+
+
+--DQL
+SELECT * FROM pais
+ORDER BY idPais
+SELECT * FROM estado
+SELECT * FROM cidade
+
+SELECT nomePais, nomeEstado, nomeCidade FROM cidade
+FULL OUTER JOIN estado
+ON cidade.idEstado = estado.idEstado
+FULL OUTER JOIN pais
+ON estado.idPais = pais.idPais

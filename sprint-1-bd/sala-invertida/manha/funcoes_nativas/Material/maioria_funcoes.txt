@@ -1,0 +1,133 @@
+Procedures úteis do SQL SERVER
+
+sp_depends object -> Visualiza o conjunto de dependências do objeto.
+
+Exemplo : sp_depends tabela1 visualizaria todas as tabelas,procedures,views e etc relacionadas a tabela 1 
+
+sp_helptext -> visualiza o conteudo do objeto do tipo stored procedure
+
+sp_help -> visualiza o contéudo da tabela.
+sp_rename (Transact-SQL)
+Altera o nome de um objeto criado pelo usuário no banco de dados atual. Esse objeto pode ser uma tabela, índice, coluna, tipo de dados de alias ou tipo de
+
+-----------------------------------------------------------------------------------------------------------
+Funcões úteis do SQL SERVER
+
+Funções de agrupamento:
+
+AVG() = Retorna o valor médio de uma coluna específica
+BINARY_CHECKSUM() = O valor do BINARY_CHECKSUM computado sobre uma linha ou uma tabela ou sobre uma lista de expressões. BINARY CHECKSUM é usada para detectar alterações em uma linha ou uma tabela.
+CHECKSUM() = O valor de CHECKSUM computado sobre uma linha ou uma tabela, ou sobre uma lista de expressões. CHECKSUM é usada para construir índices de hash.
+CHECKSUM_AGG() = O valor de CHECKSUM de um grupo. Valores nulos são ignorados.
+COUNT() = Retorna o número de linhas
+COUNT_BIG() = igual ao COUNT mas o COUNT_BIG sempre retorna um tipo de dados bigint.
+MAX() = Retorna o valor máximo de uma coluna específica
+MIN() = Retorna o valor mínimo de uma coluna específica
+SUM() = Retorna a soma de uma coluna específica
+STDEV() = Desvio padrão de todos os valores
+STDEVP() = Desvio padrão da população
+VAR() = Variância estatistica de todos os valores
+VARP() = Variância estatística de todos os valores da população
+
+Funções de manipulação de strings:
+
+ASCII(string) = pega o valor em ASCII da string
+CHAR(integer) = troca inteiro do ASCII em um caracter
+LEN(string) = Identifica o comprimento de uma expressão em caracteres
+LOWER(string) = converte uma string uppercase para lowercase.
+LTRIM(string) = remove os espaços em branco
+PATINDEX(posicao, expressao) = devolve a posicão de uma string dentro de um texto. Se não encontrar, retorna zero.
+REPLICATE(string, integer) = Repete N vezes um caractere especificado
+REVERSE(string) = retorna o inverso de uma expressao
+RTRIM (string) = remove os espaços em branco à direita de uma string
+SPACE(integer) = que retorna o número de espaços em branco informados no parâmetro
+STUFF(string texto, X, Y, string texto_a_inserir) = apaga da string "texto" os y caracteres a partir da posição x e os substitui por "texto_a_inserir"
+SUBSTRING(string texto, posicao_inicial, tamanho) = retorna uma string com o comprimento definido em "tamanho" extraida da string "texto", a partir da "posicao_inicial"
+UPPER(string) = retorna string em maiusculas
+
+Funções de manipulação de data/hora:
+
+nomes das partes de data:
+
+Year = yy, yyyy
+Quarter = qualquer, que
+Month = mm, m
+Dayofyear = dy, y
+Day = dd, d
+Week = wk, ww
+Hour = hh
+Minute = mi, n
+Second = ss, s
+Millisecond = ms
+
+DATEADD (parte, numero, data) = adiciona um valor a parte de uma data
+DATEDIFF (parte, data inicial, data final) = subtrai a data inicial da data final, indicando o resultado na unidade definida em "parte"
+GETDATE() = retorna a data atual do sistema
+DATENAME (parte, data) = retorna o nome da parte de uma data
+DATEPART(parte, data) = retorna a parte de uma data
+
+Funções de Sistema:
+
+CAST(expressao as datatype) = converte uma expressao no datatype informado
+COL_LENGTH(nome_da_tabela, nome_da_coluna) = retorna o tamanho da coluna
+COL_NAME(id_da_tabela, id_da_coluna) = retorna o nome da coluna
+DATALENGTH(expressao) = retorna o numero de bytes usados para armazenar a expressao
+DB_ID(nome_do_banco) = retorna o ID do banco informado
+DB_NAME(id_do_banco) = retorna o nome do banco
+HOST_ID() = retorna a ID da estação que está acessando o SQL Server
+HOST_NAME() = retorna o nome da estação que está acessando o SQL Server
+IDENT_INCR(nome_da_tabela_ou_view) = retorna o valor incrementado
+IDENT_SEED(tabela_ou_view) = retorna o valor inicial da coluna
+INDEX_COL(nome_da_tabela, indice_id, chave_id) = retorna o nome da coluna que participa do índice
+ISNULL(expressao, valor) = se a expressao for null, troca pelo valor especificado
+ISNUMERIC(expressao) = retorna 1 se a expressao for numerica e 0 se não for
+NEWID() = retorna um novo valor do tipo uniqueidentifier
+NULLIF(expressao_1, expressao_2) = retorna nulo se as duas expressoes forem equivalentes. Se não forem, retorna a primeira expressao.
+OBJECT_ID(nome_do_objeto) = retorna o ID de um objeto, a partir do nome fornecido
+OBJECT_NAME(ID_do_objeto) = retorna o nome do objeto, a partir do ID fornecido
+PARSENAME(objeto, parte) = retorna a parte do nome de um objeto, desde que tenha sido qualificado
+STATS_DATE(tabela_id, indice_id) = retorna a data em que as estatísticas do índice foram atualizadas
+SUSER_SID(nome_do_usuario) = retorna o ID do usuario informado
+SUSER_NAME(usuario_id) = retorna o id do usuário no servidor. O argumento é opcional.
+SUSER_SNAME(id_do_usuario) = retorna o nome do usuario informado. Se nenhum ID de usuario for passado para a função, retorna o nome do usuario logado
+USER_ID(nome_do_usuario) = retorna o ID do usuario informado para o BD em uso
+USER_NAME(id_do_usuario) = retorna o usuario conectado ao BD
+
+Funções Matematicas:
+
+ABS(numero) = retorna o valor absoluto do numero
+ACOS(float) = retorna o arco-coseno do numero informado
+ASIN(float) = retorna o arco-seno do numero informado
+ATAN(float) = retorna o arco-tangente do numero informado
+ATN2(Float expressao_1, float expressao_2) = Arco-tangente do valor definido pela divisão da primeira expressão pela segunda
+CEILING(numero) = retorna o menor inteiro que seja maior ou igual ao numero informado
+COS(float) = retorna o coseno do numero informado
+COT(float) = retorna o cotangente do numero informado
+DEGREES(numero) = converte radianos para graus
+EXP(float) = retorna o exponencial de um numero especificado
+FLOOR(numero) = retorna o maior inteiro que seja menor ou igual ao numero informado
+LOG(float) = retorna o logaritmo natural do numero informado
+LOG10(float) = retorna o logaritmo base 10 do numero informado
+PI() = retorna o valor de PI 3.1415926535897931.
+POWER(numero, potencia) = retorna o valor elevado à potencia informada
+RADIANS(numero) = converte graus para radianos
+RAND(expressao) = um número aleatório entre 0 e 1. Expressão é opcional e será usada como semente da cadeia pseudo-aleatória
+ROUND(numero, precisao, arredonda_ou_trancar) = arredonda ou tranca o numero fornecido de acordo com a precisao informada. Se o terceiro parametro não for passado para a funçao, o numero é arredondado. Se quiser que o numero seja truncado, deve-se fornecer o valor 1
+SIGN(numero) = retorna sinal positivo, negativo ou zero do numero
+SIN(float) = retorna o seno do angulo especificado
+SQRT(float) = retorna a raiz quadrada de um numero
+TAN(float) = retorna a tangente de um numero informado
+SQUARE(float) = retorna o quadrado de um numero
+
+Função de conversão:
+
+CONVERT(tipo(tamanho), expressão, estilo) = converte a expressão para o tipo de dado. O tamanho e o estilo são opcionais
+CAST
+
+Referências:
+http://www.sqlmagazine.com.br/Artigos/sqls...omandos_SQL.asp
+http://treinamento.nce.ufrj.br/programacao...o/SqlBasico.doc
+http://www.devmedia.com.br/articles/viewcomp.asp?comp=2601
+http://office.microsoft.com/pt-br/assistan...0839231046.aspx
+http://rgabarra-sql2000.blogspot.com/
+http://www.marciobueno.com

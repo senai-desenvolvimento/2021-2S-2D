@@ -1,0 +1,8 @@
+Um Cinema quer produzir cartazes para os filmes novos que vão ser anunciados, e para isso vamos precisar de um "Trigger".
+
+- Faça um Trigger que quando um novo filme for inserido no catálogo, o mesmo crie um cartaz anunciando esse novo filme;
+
+Proposta Extra:
+- Faça um trigger que crie um histórico dos filmes que foram inseridos no catálogo.
+
+OBS: "As tabelas "Filme" e "Cartaz" já estão criadas no Script do exercício

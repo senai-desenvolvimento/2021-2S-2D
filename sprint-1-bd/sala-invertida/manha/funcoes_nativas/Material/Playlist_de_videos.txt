@@ -1,0 +1,37 @@
+Funções de agrupamento:
+
+https://youtu.be/4B3adlQpHSo
+
+
+
+Funções de manipulação de strings:
+
+https://youtu.be/kOv1vaEt3DY
+
+
+
+Funções de manipulação de data/hora:
+
+https://youtu.be/nEviqXgpmo0
+
+
+
+Funções de Sistema:
+
+--apenas o ISNULL, NULLIF o resto precisa pesquisar separado
+
+https://youtu.be/3MTLbQcIVco
+
+
+
+Funções matemáticas:
+
+https://youtu.be/B4PVL4TQ5_8
+
+
+
+Função de conversão:
+
+CONVERT e CAST
+
+https://youtu.be/KDwx66tzvpI

@@ -1,0 +1,5 @@
+1 - Crie um procedimento que altere o nome e a quilometragem de um determinado circuito
+
+2 - Crie um procedimento para excluir ou adicionar dados de um mecânico da competição
+
+3 - Com base nos dados fornecidos, crie um procedimento que retorne o motor que possibilitou a vitória de uma determinada corrida

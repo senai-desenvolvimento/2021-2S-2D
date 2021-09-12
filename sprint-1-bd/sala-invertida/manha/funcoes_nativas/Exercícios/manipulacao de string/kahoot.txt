@@ -1,0 +1,55 @@
+
+  Manipulação de strings
+
+  Uma loja quer destacar o nome dos cinco primeiros clientes com a letra Maiúscula, qual comando certo para isso:
+
+   SELECT TOP 5 UPPER (Coluna) FROM Tabela  (Certo)
+   SELECT UPPERCASE (Coluna) FROM Tabela, 1 + 5
+   SELECT LENGTH 5 (Coluna) FROM Tabela
+   SELECT (Coluna) FROM Tabela
+
+
+
+  Uma loja quer destacar o nome de TODOS clientes com letra Minúscula, qual comando certo para isso:
+
+  SELECT TOP 5 LOW (Coluna) FROM Tabela
+  SELECT LOWER (Coluna) FROM Tabela (Certo)
+  SELECT (Coluna) LOWER FROM Tabela
+  SELECT (Coluna) FROM Tabela
+
+
+
+  Para fazer a contagem de quantas letras possuem os nomes que estão em uma coluna qual seria o comando correto:
+
+  SELECT (Coluna), LENGTH FROM Tabela;
+  SELECT Coluna FROM Tabela COUNT;
+  SELECT Coluna, COUNT FROM Tabela;
+  SELECT Coluna, LEN (Coluna) FROM Tabela; (Certo)
+
+
+
+  Uma empresa gostaria de pegar as 3 primeiras letras dos nomes que estão em uma Coluna, 
+  qual seria o comando mais adequado:
+
+  SELECT Coluna GET 1,3 FROM Tabela;
+  SELECT Coluna FROM Tabela GET 3;
+  SELECT Coluna, SUBSTRING (Coluna,1,3) FROM Tabela; (Certo)
+  SELECT Coluna FROM Tabela; 
+
+
+
+  Para trocar uma ‘a’ pela letra ‘o’ dos nomes que estão em uma coluna, qual seria o comando certo:
+
+  SELECT Coluna, REPLACE (Coluna,’a’,’o’) FROM Tabela; (Certo)
+  SELECT Coluna, CHANGE (Coluna, ‘a’,’o’) FROM Tabela;
+  SELECT Coluna, (Coluna, a for o) FROM Tabela;
+  SELECT Coluna, SWITCH ‘a’ to ‘o’ FROM Tabela;
+
+
+
+
+
+
+
+
+

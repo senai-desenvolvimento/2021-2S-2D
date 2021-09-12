@@ -1,0 +1,36 @@
+GETDATE: Retorna a data e hora atual;
+DATEDIFF: Retorna a diferença de tempo entre duas datas;
+DATEADD: Adiciona ou subtrai o tempo de uma datas;
+DATEPART: Retorna um fragmento da data, em qual mês do ano a data está localizada, por exemplo;
+DATENAME: Retorna o nome da parte de uma data;
+BETWEEN: Retorna todas as datas de uma tabela que estão entre duas outras datas informadas.
+
+
+   Manipulação de data e hora:
+
+
+   Um usuário deseja descobrir a idade, em anos, de todas as pessoas que têm suas datas de nascimento cadastradas em uma tabela, o comando que faz isso é:
+
+      SELECT DATEPART(month, (Coluna da data de nascimento), getdate()) FROM Tabela
+      SELECT DATENAME(year, getdate() - (Coluna da data de nascimento)) FROM Tabela
+      SELECT DATEDIFF(year, (Coluna da data de nascimento), getdate()) FROM Tabela (RESPOSTA CERTA)
+      SELECT DATEDIFF(day, (Coluna da data de nascimento), getdate()) FROM Tabela
+
+
+
+   O mesmo usuário deseja descobrir até que data as pessoas da tabela viveriam se vivessem por 80 anos cada. O comando que faz isso é:
+
+      SELECT DATEADD (year, +80, (Coluna da data de nascimento)) FROM Tabela (RESPOSTA CERTA)
+      SELECT DATEDIFF(year, (Coluna da data de nascimento), getdate()) FROM Tabela
+      SELECT DATEDIFF (year, +80, (Coluna da data de nascimento)) FROM Tabela
+      SELECT DATEADD (month, +80, getdate()) FROM Tabela
+
+
+
+   Qual comando deve ser usado para retornar apenas o ano de nascimento das pessoas da tabela que nasceram entre '01/01/2000' e '01/01/2010'?
+
+      SELECT * FROM Tabela WHERE (Coluna da data de nascimento) BETWEEN '2000-01-01' and '2010-01-01'
+      SELECT DATEPART(year, (Coluna da data de nascimento)) FROM Tabela WHERE (Coluna da data de nascimento) BETWEEN '2000-01-01' and '2010-01-01' (RESPOSTA CERTA)
+      SELECT DATENAME (day, getdate()) FROM Tabela WHERE (Coluna da data de nascimento) BETWEEN '2000-01-01' and '2010-01-01'
+      SELECT * FROM Tabela WHERE (getdate()) BETWEEN '2000-01-01' and '2010-01-01'
+

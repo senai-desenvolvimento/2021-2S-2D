@@ -1,0 +1,10 @@
+Utilizando o banco de dados OPTUS:
+
+Somar todos os minutos dos albuns,
+Fazer a média de minutos dos álbuns,
+Selecione a tabela de artistas e ache a posição do int ou texto que você deseja rastrear,
+Utilizando RANK, organize a tabela de albuns em ordem decrescente,
+Na tabela onde foi criada a coluna da data de lançamento dos álbuns, crie uma coluna dataAtualizacao e insira a data atual utilizando a função GETDATE,
+Utilize a função UPPER para retornar o nome dos estilos de álbum em caixa alta,
+Calcule o intervalo de anos entre a data atual e a data de lançamento do album, utilizando a função DATEDIFF;
+

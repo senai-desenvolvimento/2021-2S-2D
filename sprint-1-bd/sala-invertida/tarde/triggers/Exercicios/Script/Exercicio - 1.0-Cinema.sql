@@ -1,0 +1,18 @@
+CREATE DATABASE Exercicio_Trigger
+GO
+
+USE Exercicio_Trigger
+GO
+
+CREATE TABLE Filme(
+ idFilme TINYINT PRIMARY KEY IDENTITY (1,1),
+ nomeFilme VARCHAR(50),
+ Genero VARCHAR(50)
+);
+
+
+CREATE TABLE Cartaz(
+ idCartaz TINYINT PRIMARY KEY IDENTITY (1,1),
+ idFilme TINYINT FOREIGN KEY REFERENCES Filme(idFilme),
+ nomeCartaz VARCHAR(100)
+);

@@ -1,0 +1,6 @@
+Exercício Proposto:
+
+O HROADS foi um jogo de RPG online, com diversos personagens, classes, habilidades, etc. Dessa vez o cliente solicitou uma atualização, onde cada personagem possuirá um limite máximo e mínimo de mana e vida, sendo que o limite máximo equivale a 100 e o mínimo a 10.
+Tarefa:
+
+-Solucionar o exercício utilizando trigger com if.

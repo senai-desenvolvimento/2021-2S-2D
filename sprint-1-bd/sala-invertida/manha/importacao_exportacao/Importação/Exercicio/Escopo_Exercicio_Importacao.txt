@@ -1,0 +1,3 @@
+Uma loja de tênis, decidiu mudar seu sistema de dados, ele utilizavam o Excel porém agora querem passar seu trabalho para um banco de dados para em um futuro proximo, criar o seu site.
+
+Você devera passar os dados do Excel para o SQL utilizando as ferramentas de importação.

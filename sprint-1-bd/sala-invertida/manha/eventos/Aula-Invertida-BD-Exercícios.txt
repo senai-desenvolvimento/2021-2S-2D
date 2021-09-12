@@ -1,0 +1,7 @@
+Proposta de Exercício
+
+Após compreender o tema vizualizando o mateiral de apoio, é sempre fundamental que façamos exercícios para fixar os conceitos de determinado tópico, portado nesse arquivo há algumas propostas de exercícios para melhor compreensão do assunto.
+
+1. Criar um pequeno banco de dados com apenas algumas informações, as quais serão de sua escolha (contanto que o primeiro projeto seja pequeno), no entanto, desde sua criação os Extended Events mostrados em sala terão de ser usados para monitorar todo o processo, e dessa forma, ser enviada como "print".
+
+2. Você terá de utilizar os eventos listados durante a aula e/ou no material de apoio, para melhor aprofundação e compreensão, criando assim, ao final da atividade, um pequeno arquivo relatando sua experiência e listando as ocorrências geradas durante o processo.
