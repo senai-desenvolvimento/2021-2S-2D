@@ -1,0 +1,48 @@
+CREATE DATABASE Optus;
+GO
+
+USE Optus;
+GO
+
+CREATE TABLE Artistas 
+(
+    IdArtista	INT PRIMARY KEY IDENTITY
+    ,Nome		VARCHAR(200) UNIQUE NOT NULL
+);
+GO
+
+CREATE TABLE Estilos
+(
+    IdEstilo	INT PRIMARY KEY IDENTITY
+    ,Nome		VARCHAR(200) UNIQUE NOT NULL
+);
+GO
+
+CREATE TABLE Albuns
+(
+	IdAlbum				INT PRIMARY KEY IDENTITY
+	,Titulo				VARCHAR(200) NOT NULL
+	,DataLancamento		DATE NOT NULL
+	,Localizacao		VARCHAR(200) NOT NULL
+	,QtdMinutos			INT NOT NULL
+	,Ativo				BIT DEFAULT (1)
+	,IdArtista			INT FOREIGN KEY REFERENCES Artistas(IdArtista)
+);
+GO
+
+CREATE TABLE AlbunsEstilos
+(
+    IdAlbum		INT FOREIGN KEY REFERENCES Albuns (IdAlbum)
+    ,IdEstilo	INT FOREIGN KEY REFERENCES Estilos (IdEstilo)
+);
+GO
+
+CREATE TABLE Usuarios
+(
+	IdUsuario		INT PRIMARY KEY IDENTITY
+	,Nome			VARCHAR(200) NOT NULL
+	,Email			VARCHAR(200) UNIQUE NOT NULL
+	,Senha			VARCHAR(200) NOT NULL
+	,Permissao		VARCHAR(200) NOT NULL
+);
+GO

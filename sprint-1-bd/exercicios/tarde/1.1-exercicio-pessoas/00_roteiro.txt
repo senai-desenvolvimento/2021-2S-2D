@@ -1,7 +1,0 @@
-Construa a modelagem que represente pessoas e seus dados, observando que:
-
-- uma pessoa pode ter vários telefones e vários emails, porém, pode possuir somente uma CNH.
-
-DQL
-
-- listar as pessoas em ordem alfabética reversa, mostrando seus telefones, seus e-mails e suas CNHs
