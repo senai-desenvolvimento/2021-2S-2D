@@ -1,0 +1,145 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>senai.inLock.webAPI</name>
+    </assembly>
+    <members>
+        <member name="P:senai.inLock.webAPI.Controllers.EstudiosController._estudioRepository">
+            <summary>
+            Objeto _estudioRepository que irá receber todos os métodos definidos na interface IEstudioRepository
+            </summary>
+        </member>
+        <member name="M:senai.inLock.webAPI.Controllers.EstudiosController.#ctor">
+            <summary>
+            Instancia o objeto _estudioRepository para que haja a referência aos métodos no repositório
+            </summary>
+        </member>
+        <member name="M:senai.inLock.webAPI.Controllers.EstudiosController.ListarTodos">
+            <summary>
+            Lista todos os estúdios
+            </summary>
+            <returns>Uma lista de estúdios com um status code 200 - Ok</returns>
+        </member>
+        <member name="P:senai.inLock.webAPI.Controllers.JogosController._jogoRepository">
+            <summary>
+            Objeto _jogoRepository que irá receber todos os métodos definidos na interface IJogoRepository
+            </summary>
+        </member>
+        <member name="M:senai.inLock.webAPI.Controllers.JogosController.#ctor">
+            <summary>
+            Instancia o objeto _usuarioRepository para que haja a referência aos métodos no repositório
+            </summary>
+        </member>
+        <member name="M:senai.inLock.webAPI.Controllers.JogosController.ListarTodos">
+            <summary>
+            Lista todos os jogos
+            </summary>
+            <returns>Uma lista de jogos com um status code 200 - Ok</returns>
+        </member>
+        <member name="M:senai.inLock.webAPI.Controllers.JogosController.Cadastrar(senai.inLock.webAPI.Domains.Jogo)">
+            <summary>
+            Cadastra um novo jogo
+            </summary>
+            <param name="novoJogo">Objeto novoJogo com as informações</param>
+            <returns>Retorna um status code 201 - Created</returns>
+        </member>
+        <member name="P:senai.inLock.webAPI.Controllers.UsuariosController._usuarioRepository">
+            <summary>
+            Objeto _usuarioRepository que irá receber todos os métodos definidos na interface IUsuarioRepository
+            </summary>
+        </member>
+        <member name="M:senai.inLock.webAPI.Controllers.UsuariosController.#ctor">
+            <summary>
+            Instancia o objeto _usuarioRepository para que haja a referência aos métodos no repositório
+            </summary>
+        </member>
+        <member name="M:senai.inLock.webAPI.Controllers.UsuariosController.Login(senai.inLock.webAPI.Domains.Usuario)">
+            <summary>
+            Faz a autenticação do usuário
+            </summary>
+            <param name="login">objeto com os dados de e-mail e senha</param>
+            <returns>Um status code e, em caso de sucesso, os dados do usuário buscado</returns>
+        </member>
+        <member name="T:senai.inLock.webAPI.Domains.Estudio">
+            <summary>
+            Classe que representa a entidade (tabela) de estúdios
+            </summary>
+        </member>
+        <member name="T:senai.inLock.webAPI.Domains.Jogo">
+            <summary>
+            Classe que representa a entidade (tabela) de jogos
+            </summary>
+        </member>
+        <member name="T:senai.inLock.webAPI.Domains.TipoUsuario">
+            <summary>
+            Classe que representa a entidade (tabela) de tipos de usuários
+            </summary>
+        </member>
+        <member name="T:senai.inLock.webAPI.Domains.Usuario">
+            <summary>
+            Classe que representa a entidade (tabela) de usuários
+            </summary>
+        </member>
+        <member name="T:senai.inLock.webAPI.Interfaces.IEstudioRepository">
+            <summary>
+            Interface responsável pelo EstudioRepository
+            </summary>
+        </member>
+        <member name="M:senai.inLock.webAPI.Interfaces.IEstudioRepository.ListarComJogos">
+            <summary>
+            Lista todos os estúdios com suas respectivas listas de jogos
+            </summary>
+            <returns>Uma lista de estúdios com seus jogos</returns>
+        </member>
+        <member name="T:senai.inLock.webAPI.Interfaces.IJogoRepository">
+            <summary>
+            Interface responsável pelo JogoRepository
+            </summary>
+        </member>
+        <member name="M:senai.inLock.webAPI.Interfaces.IJogoRepository.ListarTodos">
+            <summary>
+            Lista todos os jogos
+            </summary>
+            <returns>Uma lista de jogos</returns>
+        </member>
+        <member name="M:senai.inLock.webAPI.Interfaces.IJogoRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca um jogo através do ID
+            </summary>
+            <param name="id">ID do jogo que será buscado</param>
+            <returns>Um jogo buscado</returns>
+        </member>
+        <member name="M:senai.inLock.webAPI.Interfaces.IJogoRepository.Cadastrar(senai.inLock.webAPI.Domains.Jogo)">
+            <summary>
+            Cadastra um novo jogo
+            </summary>
+            <param name="novoJogo">Objeto novoJogo que será cadastrado</param>
+        </member>
+        <member name="M:senai.inLock.webAPI.Interfaces.IJogoRepository.Atualizar(System.Int32,senai.inLock.webAPI.Domains.Jogo)">
+            <summary>
+            Atualiza um jogo existente
+            </summary>
+            <param name="id">ID do jogo que será atualizado</param>
+            <param name="jogoAtualizado">Objeto com as novas informações</param>
+        </member>
+        <member name="M:senai.inLock.webAPI.Interfaces.IJogoRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta um jogo existente
+            </summary>
+            <param name="id">ID do jogo que será deletado</param>
+        </member>
+        <member name="T:senai.inLock.webAPI.Interfaces.IUsuarioRepository">
+            <summary>
+            Interface responsável pelo UsuarioRepository
+            </summary>
+        </member>
+        <member name="M:senai.inLock.webAPI.Interfaces.IUsuarioRepository.Login(System.String,System.String)">
+            <summary>
+            Valida o usuário
+            </summary>
+            <param name="email">e-mail do usuário</param>
+            <param name="senha">senha do usuário</param>
+            <returns>Um objeto do tipo Usuario que foi buscado</returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,83 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Works\\senai_132\\2021-2S-2D\\senai-dev-2s2021\\sprint-2-back-end\\exercicios\\02_InLock\\backend\\senai.inLock.webAPI\\senai.inLock.webAPI\\senai.inLock.webAPI.csproj": {}
+  },
+  "projects": {
+    "D:\\Works\\senai_132\\2021-2S-2D\\senai-dev-2s2021\\sprint-2-back-end\\exercicios\\02_InLock\\backend\\senai.inLock.webAPI\\senai.inLock.webAPI\\senai.inLock.webAPI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Works\\senai_132\\2021-2S-2D\\senai-dev-2s2021\\sprint-2-back-end\\exercicios\\02_InLock\\backend\\senai.inLock.webAPI\\senai.inLock.webAPI\\senai.inLock.webAPI.csproj",
+        "projectName": "senai.inLock.webAPI",
+        "projectPath": "D:\\Works\\senai_132\\2021-2S-2D\\senai-dev-2s2021\\sprint-2-back-end\\exercicios\\02_InLock\\backend\\senai.inLock.webAPI\\senai.inLock.webAPI\\senai.inLock.webAPI.csproj",
+        "packagesPath": "C:\\Users\\saulo\\.nuget\\packages\\",
+        "outputPath": "D:\\Works\\senai_132\\2021-2S-2D\\senai-dev-2s2021\\sprint-2-back-end\\exercicios\\02_InLock\\backend\\senai.inLock.webAPI\\senai.inLock.webAPI\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\saulo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[5.0.9, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.2.1, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.2, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.12.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
