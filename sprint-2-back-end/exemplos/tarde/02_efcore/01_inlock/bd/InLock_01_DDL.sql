@@ -17,7 +17,7 @@ CREATE TABLE usuario(
 	idUsuario		INT PRIMARY KEY IDENTITY
 	,email			VARCHAR (255) UNIQUE NOT NULL
 	,senha			VARCHAR (255) NOT NULL
-	,idTipoUsuario	INT FOREIGN KEY REFERENCES tipoUsuario(idTipoUsuario)
+	,idTipoUsuario	INT FOREIGN KEY REFERENCES tipoUsuario(idTipoUsuario) NOT NULL
 );
 GO
 
