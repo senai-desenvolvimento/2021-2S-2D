@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>senai_gufi_webAPI</name>
+    </assembly>
+    <members>
+        <member name="M:senai_gufi_webAPI.Controllers.LoginController.Login(senai_gufi_webAPI.ViewModels.LoginViewModel)">
+            <summary>
+            Valida o usuário
+            </summary>
+            <param name="login">Objeto login que contém o e-mail e a senha do usuário</param>
+            <returns>Retorna um token com as informações do usuário</returns>
+            dominio/api/Login
+        </member>
+        <member name="T:senai_gufi_webAPI.Domains.Usuario">
+            <summary>
+            Classe que representa e entidade (tabela) de Usuários
+            </summary>
+        </member>
+        <member name="M:senai_gufi_webAPI.Interfaces.IUsuarioRepository.Login(System.String,System.String)">
+            <summary>
+            Valida o usuário
+            </summary>
+            <param name="email">E-mail do usuário</param>
+            <param name="senha">Senha do usuário</param>
+            <returns>Um objeto do tipo Usuario que foi encontrado</returns>
+        </member>
+        <member name="T:senai_gufi_webAPI.ViewModels.LoginViewModel">
+            <summary>
+            Classe responsável pelo modelo de Login
+            </summary>
+        </member>
+    </members>
+</doc>
