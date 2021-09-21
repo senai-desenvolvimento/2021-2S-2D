@@ -42,7 +42,7 @@ namespace senai_gufi_webAPI.Controllers
                 return BadRequest(new
                 {
                     mensagem = "Não é possível mostrar as presenças se o usuário não estiver logado!"
-                    error
+                    
                 });
             }
         }
