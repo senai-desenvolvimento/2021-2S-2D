@@ -1,10 +1,8 @@
-
 CREATE DATABASE GUFI_TARDE;
 GO 
 
-USE GUFI_TARDE 
-
-
+USE GUFI_TARDE;
+GO
 
 --- TIPOUSUARIO
 
@@ -20,8 +18,6 @@ CREATE TABLE tipoEvento(
  tituloTipoEvento VARCHAR(100) UNIQUE NOT  NULL
 );
 GO
-
-
 
 -- SITUACAO
 CREATE TABLE situacao (
@@ -53,6 +49,7 @@ CREATE TABLE usuario (
 
 );
 GO
+
 -- EVENTO
 CREATE TABLE evento(
 	idEvento INT PRIMARY KEY IDENTITY,
@@ -64,9 +61,6 @@ CREATE TABLE evento(
 	acessoLivre BIT DEFAULT (1)
 );
 GO
-
-
-
 
 -- PRESENCA
 CREATE TABLE presenca (
