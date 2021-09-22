@@ -135,3 +135,4 @@ C:\Projetos\Pessoal\2021-2S-2D\sprint-2-back-end\gufi\manha\senai_gufi_webAPI\se
 C:\Projetos\Pessoal\2021-2S-2D\sprint-2-back-end\gufi\manha\senai_gufi_webAPI\senai_gufi_webAPI\obj\Debug\net5.0\senai_gufi_webAPI.RazorTargetAssemblyInfo.cache
 C:\Projetos\Pessoal\2021-2S-2D\sprint-2-back-end\gufi\manha\senai_gufi_webAPI\senai_gufi_webAPI\obj\Debug\net5.0\senai_gufi_webAPI.csproj.CopyComplete
 C:\Projetos\Pessoal\2021-2S-2D\sprint-2-back-end\gufi\manha\senai_gufi_webAPI\senai_gufi_webAPI\obj\Debug\net5.0\senai_gufi_webAPI.genruntimeconfig.cache
+C:\Projetos\Pessoal\2021-2S-2D\sprint-2-back-end\gufi\manha\senai_gufi_webAPI\senai_gufi_webAPI\obj\Debug\net5.0\senai_gufi_webAPI.csproj.AssemblyReference.cache

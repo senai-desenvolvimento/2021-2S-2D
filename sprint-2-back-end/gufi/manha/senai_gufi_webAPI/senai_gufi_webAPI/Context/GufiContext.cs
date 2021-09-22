@@ -5,26 +5,6 @@ using senai_gufi_webAPI.Domains;
 
 #nullable disable
 
-// Documentação EF Core
-// https://docs.microsoft.com/pt-br/ef/core/managing-schemas/scaffolding
-
-/*
-    Dependências do EF Core
-    
-    Microsoft.EntityFrameworkCore.Design
-    Microsoft.EntityFrameworkCore.Tools
-    Microsoft.EntityFrameworkCore.SqlServer
-*/
-
-// Scaffold-DbContext "Data Source=DESKTOP-30RGV41\SQLEXPRESS; Initial Catalog=GUFI_MANHA; user id=sa; pwd=senai@132;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Domains -ContextDir Context -Context GufiContext
-
-// Comando: 					            Scaffold-DbContext
-// String de conexão:				        "Data Source[...]user Id=sa; pwd=senai@132;"
-// Provedor utilizado:				        Microsoft.EntityFrameworkCore.SqlServer
-// Nome da pasta onde ficarão os domínios:	-OutputDir Domains
-// Nome da pasta onde ficará o contexto:	-ContextDir Contexts
-// Nome do arquivo de contexto:	            -Context GufiContext
-
 namespace senai_gufi_webAPI.Context
 {
     public partial class GufiContext : DbContext
@@ -39,6 +19,7 @@ namespace senai_gufi_webAPI.Context
         }
 
         public virtual DbSet<Evento> Eventos { get; set; }
+        public virtual DbSet<ImagemUsuario> ImagemUsuarios { get; set; }
         public virtual DbSet<Instituicao> Instituicaos { get; set; }
         public virtual DbSet<Presenca> Presencas { get; set; }
         public virtual DbSet<Situacao> Situacaos { get; set; }
@@ -50,8 +31,8 @@ namespace senai_gufi_webAPI.Context
         {
             if (!optionsBuilder.IsConfigured)
             {
-//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Data Source=DESKTOP-30RGV41\\SQLEXPRESS; Initial Catalog=GUFI_MANHA; user id=sa; pwd=senai@132;");
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+                optionsBuilder.UseSqlServer("Data Source=DESKTOP-U20H53U; Initial Catalog=GUFI_MANHA; user id=sa; pwd=Senai@132;");
             }
         }
 
@@ -62,7 +43,7 @@ namespace senai_gufi_webAPI.Context
             modelBuilder.Entity<Evento>(entity =>
             {
                 entity.HasKey(e => e.IdEvento)
-                    .HasName("PK__evento__C8DC7BDA9F86853C");
+                    .HasName("PK__evento__C8DC7BDACB2E4DF5");
 
                 entity.ToTable("evento");
 
@@ -95,28 +76,70 @@ namespace senai_gufi_webAPI.Context
                 entity.HasOne(d => d.IdInstituicaoNavigation)
                     .WithMany(p => p.Eventos)
                     .HasForeignKey(d => d.IdInstituicao)
-                    .HasConstraintName("FK__evento__idInstit__35BCFE0A");
+                    .HasConstraintName("FK__evento__idInstit__5AEE82B9");
 
                 entity.HasOne(d => d.IdTipoEventoNavigation)
                     .WithMany(p => p.Eventos)
                     .HasForeignKey(d => d.IdTipoEvento)
-                    .HasConstraintName("FK__evento__idTipoEv__34C8D9D1");
+                    .HasConstraintName("FK__evento__idTipoEv__59FA5E80");
+            });
+
+            modelBuilder.Entity<ImagemUsuario>(entity =>
+            {
+                entity.HasKey(e => e.IdImagemUsuario)
+                    .HasName("PK__imagemUs__078BE970C51328DD");
+
+                entity.ToTable("imagemUsuario");
+
+                entity.HasIndex(e => e.IdUsuario, "UQ__imagemUs__645723A7891A2D60")
+                    .IsUnique();
+
+                entity.Property(e => e.IdImagemUsuario).HasColumnName("idImagemUsuario");
+
+                entity.Property(e => e.Binario)
+                    .IsRequired()
+                    .HasColumnName("binario");
+
+                entity.Property(e => e.DataInclusao)
+                    .HasColumnType("datetime")
+                    .HasColumnName("data_inclusao")
+                    .HasDefaultValueSql("(getdate())");
+
+                entity.Property(e => e.IdUsuario).HasColumnName("idUsuario");
+
+                entity.Property(e => e.MimeType)
+                    .IsRequired()
+                    .HasMaxLength(80)
+                    .IsUnicode(false)
+                    .HasColumnName("mimeType");
+
+                entity.Property(e => e.NomeArquivo)
+                    .IsRequired()
+                    .HasMaxLength(250)
+                    .IsUnicode(false)
+                    .HasColumnName("nomeArquivo");
+
+                entity.HasOne(d => d.IdUsuarioNavigation)
+                    .WithOne(p => p.ImagemUsuario)
+                    .HasForeignKey<ImagemUsuario>(d => d.IdUsuario)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK__imagemUsu__idUsu__03F0984C");
             });
 
             modelBuilder.Entity<Instituicao>(entity =>
             {
                 entity.HasKey(e => e.IdInstituicao)
-                    .HasName("PK__institui__8EA7AB00C5074E40");
+                    .HasName("PK__institui__8EA7AB00D59A64B3");
 
                 entity.ToTable("instituicao");
 
-                entity.HasIndex(e => e.Cnpj, "UQ__institui__35BD3E480F124DFB")
+                entity.HasIndex(e => e.Cnpj, "UQ__institui__35BD3E48D58B4E3E")
                     .IsUnique();
 
-                entity.HasIndex(e => e.Endereco, "UQ__institui__9456D4060B0D5B02")
+                entity.HasIndex(e => e.Endereco, "UQ__institui__9456D40621C53616")
                     .IsUnique();
 
-                entity.HasIndex(e => e.NomeFantasia, "UQ__institui__E7ADFC7033F702B6")
+                entity.HasIndex(e => e.NomeFantasia, "UQ__institui__E7ADFC7032659F70")
                     .IsUnique();
 
                 entity.Property(e => e.IdInstituicao).HasColumnName("idInstituicao");
@@ -144,7 +167,7 @@ namespace senai_gufi_webAPI.Context
             modelBuilder.Entity<Presenca>(entity =>
             {
                 entity.HasKey(e => e.IdPresenca)
-                    .HasName("PK__presenca__44CEA427465FE6CA");
+                    .HasName("PK__presenca__44CEA427666FF8DC");
 
                 entity.ToTable("presenca");
 
@@ -161,23 +184,23 @@ namespace senai_gufi_webAPI.Context
                 entity.HasOne(d => d.IdEventoNavigation)
                     .WithMany(p => p.Presencas)
                     .HasForeignKey(d => d.IdEvento)
-                    .HasConstraintName("FK__presenca__idEven__3A81B327");
+                    .HasConstraintName("FK__presenca__idEven__6477ECF3");
 
                 entity.HasOne(d => d.IdSituacaoNavigation)
                     .WithMany(p => p.Presencas)
                     .HasForeignKey(d => d.IdSituacao)
-                    .HasConstraintName("FK__presenca__idSitu__3B75D760");
+                    .HasConstraintName("FK__presenca__idSitu__656C112C");
 
                 entity.HasOne(d => d.IdUsuarioNavigation)
                     .WithMany(p => p.Presencas)
                     .HasForeignKey(d => d.IdUsuario)
-                    .HasConstraintName("FK__presenca__idUsua__398D8EEE");
+                    .HasConstraintName("FK__presenca__idUsua__6383C8BA");
             });
 
             modelBuilder.Entity<Situacao>(entity =>
             {
                 entity.HasKey(e => e.IdSituacao)
-                    .HasName("PK__situacao__12AFD1972490471B");
+                    .HasName("PK__situacao__12AFD197B0145C41");
 
                 entity.ToTable("situacao");
 
@@ -192,11 +215,11 @@ namespace senai_gufi_webAPI.Context
             modelBuilder.Entity<TipoEvento>(entity =>
             {
                 entity.HasKey(e => e.IdTipoEvento)
-                    .HasName("PK__tipoEven__09EED93A3E34209D");
+                    .HasName("PK__tipoEven__09EED93A37472583");
 
                 entity.ToTable("tipoEvento");
 
-                entity.HasIndex(e => e.TituloTipoEvento, "UQ__tipoEven__D2A1CBBB421AE1E4")
+                entity.HasIndex(e => e.TituloTipoEvento, "UQ__tipoEven__D2A1CBBBCCF2E3B9")
                     .IsUnique();
 
                 entity.Property(e => e.IdTipoEvento).HasColumnName("idTipoEvento");
@@ -211,11 +234,11 @@ namespace senai_gufi_webAPI.Context
             modelBuilder.Entity<TipoUsuario>(entity =>
             {
                 entity.HasKey(e => e.IdTipoUsuario)
-                    .HasName("PK__tipoUsua__03006BFFE4E91BF0");
+                    .HasName("PK__tipoUsua__03006BFF6C762FAE");
 
                 entity.ToTable("tipoUsuario");
 
-                entity.HasIndex(e => e.TituloTipoUsuario, "UQ__tipoUsua__C6B29FC3FF028316")
+                entity.HasIndex(e => e.TituloTipoUsuario, "UQ__tipoUsua__C6B29FC3FE99E117")
                     .IsUnique();
 
                 entity.Property(e => e.IdTipoUsuario).HasColumnName("idTipoUsuario");
@@ -230,11 +253,11 @@ namespace senai_gufi_webAPI.Context
             modelBuilder.Entity<Usuario>(entity =>
             {
                 entity.HasKey(e => e.IdUsuario)
-                    .HasName("PK__usuario__645723A67CE6D833");
+                    .HasName("PK__usuario__645723A6F758FD3A");
 
                 entity.ToTable("usuario");
 
-                entity.HasIndex(e => e.Email, "UQ__usuario__AB6E6164474733B3")
+                entity.HasIndex(e => e.Email, "UQ__usuario__AB6E61640694FAA9")
                     .IsUnique();
 
                 entity.Property(e => e.IdUsuario).HasColumnName("idUsuario");
@@ -262,7 +285,7 @@ namespace senai_gufi_webAPI.Context
                 entity.HasOne(d => d.IdTipoUsuarioNavigation)
                     .WithMany(p => p.Usuarios)
                     .HasForeignKey(d => d.IdTipoUsuario)
-                    .HasConstraintName("FK__usuario__idTipoU__31EC6D26");
+                    .HasConstraintName("FK__usuario__idTipoU__571DF1D5");
             });
 
             OnModelCreatingPartial(modelBuilder);

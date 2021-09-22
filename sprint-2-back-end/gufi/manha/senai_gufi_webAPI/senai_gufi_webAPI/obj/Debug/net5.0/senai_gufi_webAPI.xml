@@ -12,11 +12,6 @@
             <returns>Retorna um token com as informações do usuário</returns>
             dominio/api/Login
         </member>
-        <member name="T:senai_gufi_webAPI.Domains.Usuario">
-            <summary>
-            Classe que representa e entidade (tabela) de Usuários
-            </summary>
-        </member>
         <member name="T:senai_gufi_webAPI.Interfaces.IPresencaRepository">
             <summary>
             Interface responsável pelo PresencaRepository

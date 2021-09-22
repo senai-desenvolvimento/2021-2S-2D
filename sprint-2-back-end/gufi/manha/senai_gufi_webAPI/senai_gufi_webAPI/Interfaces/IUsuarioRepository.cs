@@ -1,4 +1,5 @@
-﻿using senai_gufi_webAPI.Domains;
+﻿using Microsoft.AspNetCore.Http;
+using senai_gufi_webAPI.Domains;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,5 +16,13 @@ namespace senai_gufi_webAPI.Interfaces
         /// <param name="senha">Senha do usuário</param>
         /// <returns>Um objeto do tipo Usuario que foi encontrado</returns>
         Usuario Login(string email, string senha);
+
+        //IFormFile Representa um arquivo enviado com o HttpRequest.
+        void SalvarPerfilBD(IFormFile foto, int id_usuario);
+        void SalvarPerfilDir(IFormFile foto, int id_usuario);
+        string ConsultarPerfilBD(int id_usuario);
+        string ConsultarPerfilDir(int id_usuario);        
+       
+
     }
 }

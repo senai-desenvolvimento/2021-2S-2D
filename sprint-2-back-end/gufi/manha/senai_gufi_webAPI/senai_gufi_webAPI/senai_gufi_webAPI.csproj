@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <Folder Include="Domains\" />
+    <Folder Include="Perfil\" />
   </ItemGroup>
 
   <PropertyGroup>
