@@ -11,11 +11,6 @@
             <param name="login">Objeto login com o e-mail e a senha do usuário</param>
             <returns>Um status code 200 - Ok com o token do usuário autenticado</returns>
         </member>
-        <member name="T:senai_gufi_webAPI.Domains.Usuario">
-            <summary>
-            Classe que representa a entidade (tabela) de usuários
-            </summary>
-        </member>
         <member name="T:senai_gufi_webAPI.Interfaces.IPresencaRepository">
             <summary>
             Interface responsável pelo PresencaRepository
