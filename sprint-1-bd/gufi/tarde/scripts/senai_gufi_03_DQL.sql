@@ -1,4 +1,4 @@
-USE GUFI_TARDE;
+USE gufi_tarde;
 GO
 
 -- Lista todos os tipos de usuários
@@ -27,16 +27,16 @@ GO
    FROM usuario U
    INNER JOIN tipoUsuario T ON U.idTipoUsuario = T.idTipoUsuario
    	  
- -- Seleciona os dados dos eventos, da instituição e dos tipos de eventos
-    SELECT E.nomeEvento Evento,
-           I.nomeFantasia Instituição,
-		   TE.tituloTipoEvento [Tipo do Evento]
-    FROM evento E
-    INNER JOIN tipoEvento TE ON E.idTipoEvento = TE.idTipoEvento
-    INNER JOIN instituicao I ON E.idInstituicao = I.idInstituicao
+-- Seleciona os dados dos eventos, da instituição e dos tipos de eventos
+   SELECT E.nomeEvento Evento,
+          I.nomeFantasia Instituição,
+	      TE.tituloTipoEvento [Tipo do Evento]
+   FROM evento E
+   INNER JOIN tipoEvento TE ON E.idTipoEvento = TE.idTipoEvento
+   INNER JOIN instituicao I ON E.idInstituicao = I.idInstituicao
    	  
 -- Seleciona os dados dos eventos, da instituição, 
---dos tipos de eventos e dos usuários
+-- dos tipos de eventos e dos usuários
 -- e a situacao da presenca
    SELECT U.nomeUsuario Usuário,
           TU.tituloTipoUsuario [Tipo de Usuário],
@@ -60,4 +60,4 @@ GO
    SELECT nomeUsuario, email, senha 
    FROM usuario 
    WHERE email = 'adm@adm.com'
-   AND senha = 'adm12345'   	   
+   AND senha = 'adm12345';

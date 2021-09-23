@@ -1,104 +1,89 @@
-CREATE DATABASE GUFI_MANHA;
-GO 
+CREATE DATABASE gufi_manha;
+GO
 
-USE GUFI_MANHA 
+USE gufi_manha;
+GO
 
 -- TIPO USUARIO
-
 CREATE TABLE tipoUsuario(
-  idTipoUsuario int primary key identity,
-  tituloTipoUsuario varchar(30) UNIQUE NOT NULL
+	idTipoUsuario INT PRIMARY KEY IDENTITY,
+	tituloTipoUsuario VARCHAR(30) UNIQUE NOT NULL
 );
 GO
 
 -- TIPO EVENTO
 CREATE TABLE tipoEvento(
-  idTipoEvento int primary key identity,
-  tituloTipoEvento varchar(50) UNIQUE NOT NULL
+	idTipoEvento INT PRIMARY KEY IDENTITY,
+	tituloTipoEvento VARCHAR(50) UNIQUE NOT NULL
 );
 GO
 
--- INSTITUICAO 
-
+-- INSTITUICAO
 CREATE TABLE instituicao(
-   idInstituicao int primary key identity,
-   cnpj char(14) unique not null,
-   nomeFantasia varchar(100) not null unique,
-   endereco varchar(250) unique not null
+	idInstituicao INT PRIMARY KEY IDENTITY,
+	cnpj CHAR(14) UNIQUE NOT NULL,
+	nomeFantasia VARCHAR(100) NOT NULL UNIQUE,
+	endereco VARCHAR(250) UNIQUE NOT NULL
 );
 GO
 
 -- SITUACAO
-create table situacao (
-idSituacao int primary key identity,
-descricao varchar(50)
+CREATE TABLE situacao (
+	idSituacao INT PRIMARY KEY IDENTITY,
+	descricao VARCHAR(50)
 );
 GO
-
 
 --USUARIO
-create table usuario (
-   idUsuario int primary key identity,
-   idTipoUsuario  int foreign key  references tipoUsuario(idTipoUsuario),
-   nomeUsuario varchar(50) NOT NULL,
-   email varchar(200) UNIQUE  NOT NULL,
-   senha varchar(10) NOT NULL
+CREATE TABLE usuario (
+	idUsuario INT PRIMARY KEY IDENTITY,
+	idTipoUsuario INT FOREIGN KEY REFERENCES tipoUsuario(idTipoUsuario),
+	nomeUsuario VARCHAR(50) NOT NULL,
+	email VARCHAR(200) UNIQUE NOT NULL,
+	senha VARCHAR(10) NOT NULL
 );
 GO
 
-
 -- EVENTO
-create table evento(
-  idEvento int  primary key identity,
-  idTipoEvento int foreign key  references tipoEvento(idTipoEvento),
-  idInstituicao int foreign key  references instituicao(idInstituicao),
-  nomeEvento varchar(100) NOT NULL,
-  descricao varchar(500) NOT NULL,
-  acessoLivre  BIT DEFAULT (1),
-  dataEvento DATETIME NOT NULL
-  );
+CREATE TABLE evento(
+	idEvento INT PRIMARY KEY IDENTITY,
+	idTipoEvento INT FOREIGN KEY REFERENCES tipoEvento(idTipoEvento),
+	idInstituicao INT FOREIGN KEY REFERENCES instituicao(idInstituicao),
+	nomeEvento VARCHAR(100) NOT NULL,
+	descricao VARCHAR(500) NOT NULL,
+	acessoLivre BIT DEFAULT (1),
+	dataEvento DATETIME NOT NULL
+);
 GO
 
 --PRESENCA
-create table presenca(
-
- idPresenca int  primary key identity,
- idUsuario int foreign key  references usuario(idUsuario),
- idEvento int  foreign key  references evento(idEvento),
- idSituacao int  foreign key  references situacao(idSituacao) DEFAULT (3)
-
+CREATE TABLE presenca(
+	idPresenca INT PRIMARY KEY IDENTITY,
+	idUsuario INT FOREIGN KEY REFERENCES usuario(idUsuario),
+	idEvento INT FOREIGN KEY REFERENCES evento(idEvento),
+	idSituacao INT FOREIGN KEY REFERENCES situacao(idSituacao) DEFAULT (3)
 );
 GO
-
---tabela para a aula de upload
 
 --IMAGEM USUARIO
 CREATE TABLE imagemUsuario (
-	id int primary key identity(1,1),
-	idUsuario int not null unique foreign key references usuario(idUsuario),
-	binario varbinary(max) not null,
-	mimeType varchar(30) not null,
-	nomeArquivo varchar(250) not null,
-	data_inclusao datetime default getdate() null
+	id INT PRIMARY KEY IDENTITY(1,1),
+	idUsuario INT NOT NULL UNIQUE FOREIGN KEY REFERENCES usuario(idUsuario),
+	binario VARBINARY(MAX) NOT NULL,
+	mimeType VARCHAR(30) NOT NULL,
+	nomeArquivo VARCHAR(250) NOT NULL,
+	data_inclusao DATETIME DEFAULT GETDATE() NULL
 );
 GO
 
-
-
-
-/* RESUMO
-
- PRIMARY KEY = CHAVE PRIMARIA
- FOREIGN KEY = CHAVE ESTRANGEIRA
- IDENTITY = Define que o campo será auto-incremento e unico e (1,1) 
-            inicia do 1 e vai de 1 em 1.
- NOT NULL = Não pode ser nulo, ou seja, é obrigatorio.
- UNIQUE = Campo é unique , ou seja , não se repete.
- DEFAULT = Defineum valor padrão, caso nenhum seja informado.
- GO = Pausa a leitura e executa o bloco de codigo acima.
-
+/* 
+	RESUMO
+	PRIMARY KEY = CHAVE PRIMARIA
+	FOREIGN KEY = CHAVE ESTRANGEIRA
+	IDENTITY = Define que o campo será auto-incremento e unico e (1,1) 
+			   inicia do 1 e vai de 1 em 1.
+	NOT NULL = Não pode ser nulo, ou seja, é obrigatorio.
+	UNIQUE = Campo é UNIQUE , ou seja , não se repete.
+	DEFAULT = Defineum valor padrão, caso nenhum seja informado.
+	GO = Pausa a leitura e executa o bloco de codigo acima.
 */
-
-
-
-
