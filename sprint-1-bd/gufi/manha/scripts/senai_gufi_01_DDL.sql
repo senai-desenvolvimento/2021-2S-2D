@@ -34,7 +34,7 @@ CREATE TABLE situacao (
 );
 GO
 
---USUARIO
+-- USUARIO
 CREATE TABLE usuario (
 	idUsuario INT PRIMARY KEY IDENTITY,
 	idTipoUsuario INT FOREIGN KEY REFERENCES tipoUsuario(idTipoUsuario),
@@ -56,7 +56,7 @@ CREATE TABLE evento(
 );
 GO
 
---PRESENCA
+-- PRESENCA
 CREATE TABLE presenca(
 	idPresenca INT PRIMARY KEY IDENTITY,
 	idUsuario INT FOREIGN KEY REFERENCES usuario(idUsuario),
@@ -65,7 +65,7 @@ CREATE TABLE presenca(
 );
 GO
 
---IMAGEM USUARIO
+-- IMAGEM USUARIO
 CREATE TABLE imagemUsuario (
 	id INT PRIMARY KEY IDENTITY(1,1),
 	idUsuario INT NOT NULL UNIQUE FOREIGN KEY REFERENCES usuario(idUsuario),

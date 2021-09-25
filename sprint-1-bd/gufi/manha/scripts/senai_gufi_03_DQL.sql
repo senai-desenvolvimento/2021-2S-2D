@@ -2,30 +2,30 @@ USE gufi_manha;
 GO 
 
 --> LISTA TODOS OS TIPO DE USUARIO
-	SELECT * FROM tipoUsuario 
+	SELECT * FROM tipoUsuario; 
 
 --> LISTA TODOS OS USUARIOS
-    SELECT * FROM usuario 
+    SELECT * FROM usuario; 
 
 --> LISTA TODAS AS INSTUICOES
-    SELECT * FROM instituicao 
+    SELECT * FROM instituicao; 
 
 --> LISTA TODOS OS TIPOS DE EVENTOS
-    SELECT * FROM tipoEvento 
+    SELECT * FROM tipoEvento; 
 
 --> LISTA DE TODAS AS PRESENCAS
-    SELECT * FROM presenca 
+    SELECT * FROM presenca; 
 
 --> SELECIONAR OS DADOS DOS EVENTOS , DA INSTITUICAO E DOS TIPOS DE EVENTOS
 	SELECT  I.nomeFantasia, TE.tituloTipoEvento, E.nomeEvento, E.descricao, E.acessoLivre, E.dataEvento
 	FROM evento E
 	INNER JOIN tipoEvento te ON E.idTipoEvento = TE.idTipoEvento
-	INNER JOIN instituicao i ON E.idInstituicao = i.idInstituicao
+	INNER JOIN instituicao i ON E.idInstituicao = i.idInstituicao;
 
 --> Seleciona os dados dos usuários mostrando o tipo de usuário
 	SELECT U.nomeUsuario [Usuario] , TU.tituloTipoUsuario
 	FROM usuario U
-	INNER JOIN tipoUsuario TU ON U.idTipoUsuario = TU.idTipoUsuario
+	INNER JOIN tipoUsuario TU ON U.idTipoUsuario = TU.idTipoUsuario;
 
 --> Seleciona os dados dos eventos, da instituição, dos tipos de eventos 
 --	e dos usuários
@@ -53,5 +53,5 @@ GO
 		   U.senha Senha
 	FROM usuario u
 	JOIN tipoUsuario tu on u.idTipoUsuario = tu.idTipoUsuario
-	WHERE email = 'lucas@lucas.com'
+	WHERE email = 'lucas@email.com'
 	AND senha = 'lucas123';
