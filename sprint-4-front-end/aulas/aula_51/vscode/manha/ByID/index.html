@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Exemplo getElementById</title>
+
+  <style>
+    .verde {
+        color: green;
+    }
+    
+
+  </style>
+
+  <script>
+  function mudarCor(novaCor) {
+   // var elemento = document.getElementsByClassName("par");
+    debugger;
+    var elemento = document.querySelectorAll(".par");
+
+
+    Array.from(elemento).forEach(
+    function(element, index, array) {
+        element.style.color = novaCor
+    }
+);
+
+    //elemento[0].style.color = novaCor;
+    //elemento[1].style.color = novaCor;
+   // elemento[2].style.color = novaCor;
+    //elemento[3].style.color = novaCor;
+    //elemento[4].style.color = novaCor;
+  }
+
+function trocarcss(){ 
+
+   var elemento = document.getElementById("para1");
+
+   elemento.style.color = "green";
+
+}
+
+
+  </script>
+</head>
+<body>
+  <p class="par" >Algum texto de exemplo</p>
+  <p class="par" >Algum texto de exemplo</p>
+  <p class="par" >Algum texto de exemplo</p>
+  <p class="par" >Algum texto de exemplo</p>
+  <p class="par" >Algum texto de exemplo</p>
+  <button onclick="mudarCor('blue');">Azul</button>
+  <button onclick="mudarCor('red');">Vermelho</button>
+  <button onclick="trocarcss()">trocar pelo css</button>
+</body>
+</html>

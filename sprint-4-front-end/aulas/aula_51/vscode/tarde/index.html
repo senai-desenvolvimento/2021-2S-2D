@@ -1,0 +1,33 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+      <title>Exemplo de evento DOM</title>
+      <style>
+          #t { border: 1px solid red;}
+          #t1 {background-color: pink;}
+      </style>
+    
+      <script>
+          function modificarTexto(){
+              debugger;
+              const linha2 = document.getElementById("t2");
+              linha2.firstChild.nodeValue = "três";
+          }
+
+          function load(){
+             const linha2_tabela = document.getElementById("t2");
+             linha2_tabela.addEventListener("click",modificarTexto)     
+          }
+
+        document.addEventListener("DOMContentLoaded", load)        
+
+
+      </script>
+    </head>
+    <body>
+          <table id="t">
+             <tr><td id=t1>UM</td></tr>
+             <tr><td id=t2>DOIS</td></tr> 
+          </table>
+    </body>
+</html>
