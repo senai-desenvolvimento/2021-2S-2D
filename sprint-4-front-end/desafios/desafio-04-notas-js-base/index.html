@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Notas</title>
+</head>
+
+<body>
+
+    <h1>Cálculo de notas (média aritmética)</h1>
+
+    <form id="formnotas">
+        <input type="number" required name="notaum" id="notaum">
+        <input type="number" name="notadois" id="notadois" required>
+        <button type="submit" id="btnCalcular">Calcular</button>
+    </form>
+
+    <script>
+
+        let inputNotaUm = document.querySelector('#notaum');
+        // let inputNotaUm = document.getElementById('notaum');
+
+        let inputNotaDois = document.querySelector('#notadois');
+
+        let btnCalcular = document.querySelector('#btnCalcular');
+
+        btnCalcular.addEventListener('click', function(pagina) {
+
+            pagina.preventDefault();
+
+            let media = ( parseInt(inputNotaUm.value) + parseInt(inputNotaDois.value) ) / 2;
+
+            console.log(media);
+
+        });
+
+    </script>
+
+</body>
+
+</html>
