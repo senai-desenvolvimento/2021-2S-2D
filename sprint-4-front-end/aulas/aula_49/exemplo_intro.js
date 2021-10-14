@@ -37,10 +37,6 @@ const nota = 0              // number
 const sobrenome = 'santos'  // string
 const naoDefinida           // undefined
 
-function minhaFuncao(params) {
-    
-}
-
 if (true) {
     var escopoBlocoGlobal = 'Possuo valor fora do escopo de bloco';
 }
