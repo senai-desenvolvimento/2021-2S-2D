@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios</title>
+
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+        let personagens = [{
+            nome: "Capitão Cometa",
+            dataAparicao: 1951,
+            editora: "DC"
+        }, {
+            nome: "Lanterna Verde",
+            dataAparicao: 1940,
+            editora: "DC"
+        }, {
+            nome: "Ciborgue",
+            dataAparicao: 1980,
+            editora: "DC"
+        }, {
+            nome: "Homem Aranha",
+            dataAparicao: 1962,
+            editora: "Marvel"
+        }, {
+            nome: "Homem de Ferro",
+            dataAparicao: 1963,
+            editora: "Marvel"
+        }, {
+            nome: "Capitão América",
+            dataAparicao: 1940,
+            editora: "Marvel"
+        }];
+
+        // 1.   Liste somente os personagens cuja editora seja Marvel;
+        console.log('1. Lista somente os personagens cuja editora seja Marvel.');
+
+        let personagensMarvel = personagens.filter( (personagem) => {
+            return personagem.editora === 'Marvel';
+        } );
+
+        console.log(personagensMarvel);
+
+        // 2.	Liste somente os personagem cuja data de Aparição seja superior a 1950;
+        //
+
+        // 3.	Some a idade de todos os personagens;
+        //
+        
+        // 4.	Traga somente os nomes dos personagens;
+        //
+
+        // 5.	Adicione mais um personagem chamado Capitã Marvel, data de Aparição 1977 e editora Marvel;
+        //
+
+        // 6. Mostre a quantidade de personagens da Marvel que possuem na lista
+        //
+
+        // 7. Mostre o nome e a idade dos personagens
+        // 
+    </script>
+
+</body>
+
+</html>
