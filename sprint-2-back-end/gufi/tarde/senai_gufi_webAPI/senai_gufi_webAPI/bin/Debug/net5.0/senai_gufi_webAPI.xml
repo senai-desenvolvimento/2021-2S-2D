@@ -11,6 +11,56 @@
             <param name="login">Objeto login com o e-mail e a senha do usuário</param>
             <returns>Um status code 200 - Ok com o token do usuário autenticado</returns>
         </member>
+        <member name="T:senai_gufi_webAPI.Controllers.TipoEventosController">
+            <summary>
+            Controller responsável pelos endpoints (URLs) referentes aos tipos de eventos
+            </summary>
+        </member>
+        <member name="P:senai_gufi_webAPI.Controllers.TipoEventosController._TipoEventoRepository">
+            <summary>
+            Objeto _TipoEventoRepository que irá receber todos os métodos definidos na interface ITipoEventoRepository
+            </summary>
+        </member>
+        <member name="M:senai_gufi_webAPI.Controllers.TipoEventosController.#ctor">
+            <summary>
+            Instancia o objeto _TipoEventoRepository para que haja a referência aos métodos no repositório
+            </summary>
+        </member>
+        <member name="M:senai_gufi_webAPI.Controllers.TipoEventosController.Get">
+            <summary>
+            Lista todos os tipos de eventos
+            </summary>
+            <returns>Uma lista de tipos de eventos e um status code 200 - Ok</returns>
+        </member>
+        <member name="M:senai_gufi_webAPI.Controllers.TipoEventosController.GetById(System.Int32)">
+            <summary>
+            Busca um tipo de evento através do ID
+            </summary>
+            <param name="id">ID do tipo de evento que será buscado</param>
+            <returns>Um tipo de evento buscado e um status code 200 - Ok</returns>
+        </member>
+        <member name="M:senai_gufi_webAPI.Controllers.TipoEventosController.Post(senai_gufi_webAPI.Domains.TipoEvento)">
+            <summary>
+            Cadastra um novo tipo de evento
+            </summary>
+            <param name="novoTipoEvento">Objeto novoTipoEvento que será cadastrado</param>
+            <returns>Um status code 201 - Created</returns>
+        </member>
+        <member name="M:senai_gufi_webAPI.Controllers.TipoEventosController.Put(System.Int32,senai_gufi_webAPI.Domains.TipoEvento)">
+            <summary>
+            Atualiza um tipo de evento existente
+            </summary>
+            <param name="id">ID do tipo de evento que será atualizado</param>
+            <param name="tipoEventoAtualizado">Objeto com as novas informações</param>
+            <returns>Um status code 204 - No Content</returns>
+        </member>
+        <member name="M:senai_gufi_webAPI.Controllers.TipoEventosController.Delete(System.Int32)">
+            <summary>
+            Deleta um tipo de evento existente
+            </summary>
+            <param name="id">ID do tipo de evento que será deletado</param>
+            <returns>Um status code 204 - No Content</returns>
+        </member>
         <member name="T:senai_gufi_webAPI.Interfaces.IPresencaRepository">
             <summary>
             Interface responsável pelo PresencaRepository
@@ -36,6 +86,38 @@
             <param name="idPresenca">ID da presença que terá a situação alterada</param>
             <param name="status">Parâmetro que atualiza a situação da presença para 1 - APROVADA, 2 - RECUSADA ou 3 - AGUARDANDO</param>
         </member>
+        <member name="M:senai_gufi_webAPI.Interfaces.ITipoEventoRepository.Listar">
+            <summary>
+            Lista todos os tipos de eventos
+            </summary>
+            <returns>Uma lista de tipos de eventos</returns>
+        </member>
+        <member name="M:senai_gufi_webAPI.Interfaces.ITipoEventoRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca um tipo de evento através do ID
+            </summary>
+            <param name="id">ID do tipo de evento que será buscado</param>
+            <returns>Um tipo de evento buscado</returns>
+        </member>
+        <member name="M:senai_gufi_webAPI.Interfaces.ITipoEventoRepository.Cadastrar(senai_gufi_webAPI.Domains.TipoEvento)">
+            <summary>
+            Cadastra um novo tipo de evento
+            </summary>
+            <param name="novoTipoEvento">Objeto novoTipoEvento que será cadastrado</param>
+        </member>
+        <member name="M:senai_gufi_webAPI.Interfaces.ITipoEventoRepository.Atualizar(System.Int32,senai_gufi_webAPI.Domains.TipoEvento)">
+            <summary>
+            Atualiza um tipo de evento existente
+            </summary>
+            <param name="id">ID do tipo de evento que será atualizado</param>
+            <param name="tipoEventoAtualizado">Objeto com as novas informações</param>
+        </member>
+        <member name="M:senai_gufi_webAPI.Interfaces.ITipoEventoRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta um tipo de evento existente
+            </summary>
+            <param name="id">ID do tipo de evento que será deletado</param>
+        </member>
         <member name="M:senai_gufi_webAPI.Interfaces.IUsuarioRepository.Login(System.String,System.String)">
             <summary>
             Valida o usuário
@@ -53,6 +135,48 @@
             <summary>
             Objeto contexto por onde serão chamados os métodos do EF Core
             </summary>
+        </member>
+        <member name="T:senai_gufi_webAPI.Repositories.TipoEventoRepository">
+            <summary>
+            Classe responsável pelo repositório dos tipos de eventos
+            </summary>
+        </member>
+        <member name="F:senai_gufi_webAPI.Repositories.TipoEventoRepository.ctx">
+            <summary>
+            Objeto contexto por onde serão chamados os métodos do EF Core
+            </summary>
+        </member>
+        <member name="M:senai_gufi_webAPI.Repositories.TipoEventoRepository.Atualizar(System.Int32,senai_gufi_webAPI.Domains.TipoEvento)">
+            <summary>
+            Atualiza um tipo de evento existente
+            </summary>
+            <param name="id">ID do tipo de evento que será atualizado</param>
+            <param name="tipoEventoAtualizado">Objeto com as novas informações</param>
+        </member>
+        <member name="M:senai_gufi_webAPI.Repositories.TipoEventoRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca um tipo de evento através do ID
+            </summary>
+            <param name="id">ID do tipo de evento que será buscado</param>
+            <returns>Um tipo de evento buscado</returns>
+        </member>
+        <member name="M:senai_gufi_webAPI.Repositories.TipoEventoRepository.Cadastrar(senai_gufi_webAPI.Domains.TipoEvento)">
+            <summary>
+            Cadastra um novo tipo de evento
+            </summary>
+            <param name="novoTipoEvento">Objeto novoTipoEvento que será cadastrado</param>
+        </member>
+        <member name="M:senai_gufi_webAPI.Repositories.TipoEventoRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta um tipo de evento existente
+            </summary>
+            <param name="id">ID do tipo de evento que será deletado</param>
+        </member>
+        <member name="M:senai_gufi_webAPI.Repositories.TipoEventoRepository.Listar">
+            <summary>
+            Lista todos os tipos de eventos
+            </summary>
+            <returns>Uma lista de tipos de eventos</returns>
         </member>
         <member name="T:senai_gufi_webAPI.ViewModels.LoginViewModel">
             <summary>
