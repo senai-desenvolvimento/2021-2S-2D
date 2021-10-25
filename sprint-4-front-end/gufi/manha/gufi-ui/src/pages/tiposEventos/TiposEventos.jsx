@@ -16,7 +16,7 @@ export default class TiposEventos extends Component {
         //funcao nativa JS, ele é uma API com métodos.
 
         //dentro dos parenteses vamos informar qual é o end point.
-        fetch('http://localhost:5000/api/tipoeventos')
+        fetch('http://localhost:5000/api/tiposeventos')
             //por padrao ele sempre inicia como GET.
 
             .then(resposta => resposta.json())
@@ -58,7 +58,7 @@ export default class TiposEventos extends Component {
         if (this.state.idTipoEventoAlterado !== 0) {
 
             // faz a chamada para a API usando fetch e passando o ID do Tipo de Evento que será atualizado na URL da requisição
-            fetch('http://localhost:5000/api/tipoeventos/' + this.state.idTipoEventoAlterado, {
+            fetch('http://localhost:5000/api/tiposeventos/' + this.state.idTipoEventoAlterado, {
 
                 // Define o método da requisição ( PUT )
                 method: 'PUT',
@@ -96,7 +96,7 @@ export default class TiposEventos extends Component {
 
         else {
 
-            fetch('http://localhost:5000/api/tipoeventos', {
+            fetch('http://localhost:5000/api/tiposeventos', {
 
                 method: 'POST',
 
@@ -138,6 +138,27 @@ export default class TiposEventos extends Component {
         });
     };
 
+    // Função responsável por excluir um Tipo de Evento
+    excluirTipoEvento = (tipoEvento) => {
+        console.log('O Tipo de Evento ' + tipoEvento.idTipoEvento + ' foi selecionado!');
+
+        fetch('http://localhost:5000/api/TiposEventos/' + tipoEvento.idTipoEvento,
+        {
+            method: 'DELETE'
+        })
+
+        .then(resposta => {
+            if (resposta.status === 204) {
+                console.log('Tipo de Evento ' + tipoEvento.idTipoEvento + ' foi excluído!')
+            };
+        })
+
+        //caso ocorra algum erro, mostra no console do navegador.
+        .catch(erro => console.log(erro))
+
+        .then(this.buscarTipoEventos);
+    };
+
     limparCampos = () => {
         this.setState({
             titulo : '',
@@ -171,6 +192,8 @@ export default class TiposEventos extends Component {
                                                 <td>{tipoEvento.tituloTipoEvento}</td>
 
                                                 <td><button onClick={() => this.buscarTipoEventoPorId(tipoEvento)} >Editar</button></td>
+
+                                                <td><button onClick={() => this.excluirTipoEvento(tipoEvento)} >Excluir</button></td>
                                             </tr>
                                         )
                                     })

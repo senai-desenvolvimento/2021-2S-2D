@@ -5,7 +5,7 @@ import { Route, BrowserRouter as Router, Redirect ,Switch } from 'react-router-d
 import './index.css';
 
 import Home from './pages/home/App';
-import TiposEventos from './pages/tiposEventos/TiposEventos';
+import TiposEventos from './pages/tiposEventos/TiposEventos.jsx';
 import NotFound from './pages/notFound/NotFound';
 
 import reportWebVitals from './reportWebVitals';
