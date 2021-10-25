@@ -98,6 +98,7 @@ export default class TiposEventos extends Component {
             //body: { tituloTipoEvento = this.state.titulo } //lembrando que aqui é o objeto JS, e nao JSON;
 
             body: JSON.stringify({ tituloTipoEvento: this.state.titulo }),
+
             headers: { "Content-Type": "application/json" }
         })
 
@@ -131,7 +132,27 @@ export default class TiposEventos extends Component {
                 'e o valor do state título é: ' + this.state.titulo
             )
         })
-    }
+    };
+
+    exlcuirTipoEvento = (tipoEvento) => {
+        console.log('O Tipo de Evento ' + tipoEvento.idTipoEvento + ' foi selecionado!');
+        
+        fetch('http://localhost:5000/api/TiposEventos/' + tipoEvento.idTipoEvento, {
+            method : 'DELETE'
+        })
+
+        .then(resposta => {
+            if (resposta.status === 204) {
+                // deu certo
+                console.log('Tipo de Evento ' + tipoEvento.idTipoEvento + ' foi excluído!')
+            }
+        })
+
+        // caso ocorra algum erro, mostra no console do navegador.
+        .catch(erro => console.log(erro))
+
+        .then(this.buscarTiposEventos);
+    };
 
     // Reseta os states titulo e idTipoEventoAlterado
     limparCampos = () => {
@@ -141,7 +162,7 @@ export default class TiposEventos extends Component {
         })
         // Exibe no console do navegador a mensagem abaixo
         console.log('Os states foram resetados!')
-    }
+    };
 
     render() {
         return (
@@ -170,6 +191,8 @@ export default class TiposEventos extends Component {
 
                                                 {/* Faz a chamada da função buscarTipoEventoPorId passando o Tipo de Evento selecionado como parâmetro */}
                                                 <td><button onClick={() => this.buscarTipoEventoPorId(tipoEvento)}>Editar</button></td>
+
+                                                <td><button onClick={() => this.exlcuirTipoEvento(tipoEvento)}>Excluir</button></td>
                                             </tr>
                                         )
                                     })
