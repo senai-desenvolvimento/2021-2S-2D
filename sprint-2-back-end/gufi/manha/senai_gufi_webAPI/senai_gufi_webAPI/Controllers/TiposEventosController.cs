@@ -27,7 +27,7 @@ namespace senai_gufi_webAPI.Controllers
 
     // Define que somente o administrador pode acessar os métodos
     //[Authorize(Roles = "1")]
-    public class TipoEventosController : ControllerBase
+    public class TiposEventosController : ControllerBase
     {
         /// <summary>
         /// Objeto _TipoEventoRepository que irá receber todos os métodos definidos na interface ITipoEventoRepository
@@ -37,7 +37,7 @@ namespace senai_gufi_webAPI.Controllers
         /// <summary>
         /// Instancia o objeto _TipoEventoRepository para que haja a referência aos métodos no repositório
         /// </summary>
-        public TipoEventosController()
+        public TiposEventosController()
         {
             _TipoEventoRepository = new TiposEventoRepository();
         }

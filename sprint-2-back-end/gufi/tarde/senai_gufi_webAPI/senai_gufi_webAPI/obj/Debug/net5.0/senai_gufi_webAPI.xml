@@ -11,42 +11,42 @@
             <param name="login">Objeto login com o e-mail e a senha do usuário</param>
             <returns>Um status code 200 - Ok com o token do usuário autenticado</returns>
         </member>
-        <member name="T:senai_gufi_webAPI.Controllers.TipoEventosController">
+        <member name="T:senai_gufi_webAPI.Controllers.TiposEventosController">
             <summary>
             Controller responsável pelos endpoints (URLs) referentes aos tipos de eventos
             </summary>
         </member>
-        <member name="P:senai_gufi_webAPI.Controllers.TipoEventosController._TipoEventoRepository">
+        <member name="P:senai_gufi_webAPI.Controllers.TiposEventosController._TipoEventoRepository">
             <summary>
             Objeto _TipoEventoRepository que irá receber todos os métodos definidos na interface ITipoEventoRepository
             </summary>
         </member>
-        <member name="M:senai_gufi_webAPI.Controllers.TipoEventosController.#ctor">
+        <member name="M:senai_gufi_webAPI.Controllers.TiposEventosController.#ctor">
             <summary>
             Instancia o objeto _TipoEventoRepository para que haja a referência aos métodos no repositório
             </summary>
         </member>
-        <member name="M:senai_gufi_webAPI.Controllers.TipoEventosController.Get">
+        <member name="M:senai_gufi_webAPI.Controllers.TiposEventosController.Get">
             <summary>
             Lista todos os tipos de eventos
             </summary>
             <returns>Uma lista de tipos de eventos e um status code 200 - Ok</returns>
         </member>
-        <member name="M:senai_gufi_webAPI.Controllers.TipoEventosController.GetById(System.Int32)">
+        <member name="M:senai_gufi_webAPI.Controllers.TiposEventosController.GetById(System.Int32)">
             <summary>
             Busca um tipo de evento através do ID
             </summary>
             <param name="id">ID do tipo de evento que será buscado</param>
             <returns>Um tipo de evento buscado e um status code 200 - Ok</returns>
         </member>
-        <member name="M:senai_gufi_webAPI.Controllers.TipoEventosController.Post(senai_gufi_webAPI.Domains.TipoEvento)">
+        <member name="M:senai_gufi_webAPI.Controllers.TiposEventosController.Post(senai_gufi_webAPI.Domains.TipoEvento)">
             <summary>
             Cadastra um novo tipo de evento
             </summary>
             <param name="novoTipoEvento">Objeto novoTipoEvento que será cadastrado</param>
             <returns>Um status code 201 - Created</returns>
         </member>
-        <member name="M:senai_gufi_webAPI.Controllers.TipoEventosController.Put(System.Int32,senai_gufi_webAPI.Domains.TipoEvento)">
+        <member name="M:senai_gufi_webAPI.Controllers.TiposEventosController.Put(System.Int32,senai_gufi_webAPI.Domains.TipoEvento)">
             <summary>
             Atualiza um tipo de evento existente
             </summary>
@@ -54,7 +54,7 @@
             <param name="tipoEventoAtualizado">Objeto com as novas informações</param>
             <returns>Um status code 204 - No Content</returns>
         </member>
-        <member name="M:senai_gufi_webAPI.Controllers.TipoEventosController.Delete(System.Int32)">
+        <member name="M:senai_gufi_webAPI.Controllers.TiposEventosController.Delete(System.Int32)">
             <summary>
             Deleta um tipo de evento existente
             </summary>
