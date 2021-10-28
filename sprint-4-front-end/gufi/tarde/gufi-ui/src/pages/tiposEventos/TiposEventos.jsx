@@ -1,4 +1,9 @@
 import { Component } from 'react';
+//imagens
+import logo from "../../assets/img/logo.png"
+import Rodape from '../../components/rodape/rodape';
+import Titulo from '../../components/titulo/titulo';
+
 
 export default class TiposEventos extends Component {
     constructor(props) {
@@ -6,7 +11,8 @@ export default class TiposEventos extends Component {
         this.state = {
             listaTiposEventos : [],
             titulo : '',
-            idTipoEventoAlterado : 0
+            idTipoEventoAlterado : 0,
+            titulosecao: "Lista Tipos Eventos"
         };
     };
 
@@ -168,45 +174,59 @@ export default class TiposEventos extends Component {
         return (
             // JSX
             <div>
-                <main>
+                  <header className="cabecalhoPrincipal">
+                    <div className="container">
+                    <img src={logo} alt="Logo da Gufi" />
+
+                    <nav className="cabecalhoPrincipal-nav">
+                        Administrador
+                    </nav>
+                    </div>
+                </header>
+                <main  className="conteudoPrincipal">
                     {/* Lista de tipos de eventos */}
-                    <section>
-                        <h2>Lista de tipos de eventos</h2>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Título</th>
-                                    <th>Ações</th>
-                                </tr>
-                            </thead>
+                    <section className="conteudoPrincipal-cadastro">
+                    <Titulo titulosecao={this.state.titulosecao} />
+                    {/* <h2 class="conteudoPrincipal-cadastro-titulo">Tipos de Eventos</h2> */}
+                       <div class="container" id="conteudoPrincipal-lista">
+            
+                            <table id="tabela-lista">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Título</th>
+                                        <th>Ações</th>
+                                    </tr>
+                                </thead>
 
-                            <tbody>
-                                {
-                                    this.state.listaTiposEventos.map((tipoEvento) => {
-                                        return (
-                                            <tr key={tipoEvento.idTipoEvento}>
-                                                <td>{tipoEvento.idTipoEvento}</td>
-                                                <td>{tipoEvento.tituloTipoEvento}</td>
+                                <tbody id="tabela-lista-corpo">
+                                    {
+                                        this.state.listaTiposEventos.map((tipoEvento) => {
+                                            return (
+                                                <tr key={tipoEvento.idTipoEvento}>
+                                                    <td>{tipoEvento.idTipoEvento}</td>
+                                                    <td>{tipoEvento.tituloTipoEvento}</td>
 
-                                                {/* Faz a chamada da função buscarTipoEventoPorId passando o Tipo de Evento selecionado como parâmetro */}
-                                                <td><button onClick={() => this.buscarTipoEventoPorId(tipoEvento)}>Editar</button></td>
-
-                                                <td><button onClick={() => this.exlcuirTipoEvento(tipoEvento)}>Excluir</button></td>
-                                            </tr>
-                                        )
-                                    })
-                                }
-                            </tbody>
-                        </table>
+                                                    {/* Faz a chamada da função buscarTipoEventoPorId passando o Tipo de Evento selecionado como parâmetro */}
+                                                    <td><button onClick={() => this.buscarTipoEventoPorId(tipoEvento)}>Editar</button>
+                                                    <button onClick={() => this.exlcuirTipoEvento(tipoEvento)}>Excluir</button></td>
+                                                </tr>
+                                            )
+                                        })
+                                    }
+                                </tbody>
+                            </table>
+                          </div>  
                     </section>
 
                     {/* Cadastro de tipos de eventos */}
 
-                    <section>
-                        <h2>Cadastro de tipo de evento</h2>
+                    <section className="container" id="conteudoPrincipal-cadastro">
+
+                        <Titulo titulosecao="Cadastro de Tipo de Evento" />
+                         {/* <h2  className="conteudoPrincipal-cadastro-titulo">Cadastro de tipo de evento</h2>  */}
                         <form onSubmit={this.cadastrarTipoEvento}>
-                            <div>
+                            <div className="container">
                                 <input 
                                     type="text"
                                     //atualiza o tipo de input
@@ -238,12 +258,12 @@ export default class TiposEventos extends Component {
                                 */}
 
                                 {
-                                    <button type="submit" disabled={this.state.titulo === '' ? 'none' : ''}>
+                                    <button type="submit" class="conteudoPrincipal-btn conteudoPrincipal-btn-cadastro" disabled={this.state.titulo === '' ? 'none' : ''}>
                                         {this.state.idTipoEventoAlterado === 0 ? 'Cadastrar' : 'Atualizar'}
                                     </button>
                                 }
 
-                                <button type="button" onClick={this.limparCampos} style={{ display : '' }}>
+                                <button type="button" class="conteudoPrincipal-btn conteudoPrincipal-btn-cadastro" onClick={this.limparCampos} style={{ display : '' }}>
                                     Cancelar
                                 </button>
 
@@ -263,6 +283,7 @@ export default class TiposEventos extends Component {
                         </form>
                     </section>
                 </main>
+                <Rodape />
             </div>
         )
     }
