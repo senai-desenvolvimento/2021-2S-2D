@@ -1,0 +1,168 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gufi - Eventos públicos e privados</title>
+    <!-- Estilos -->
+    <link rel="stylesheet" href="./assets/css/flexbox.css" />
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <!-- Fontes -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+      integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <div>
+      <header class="cabecalhoPrincipal">
+        <div class="container">
+          <img src="./assets/img/logo.png" alt="Logo da Gufi" />
+
+          <nav class="cabecalhoPrincipal-nav">
+            Administrador
+          </nav>
+        </div>
+      </header>
+
+      <main class="conteudoPrincipal">
+        <section class="conteudoPrincipal-cadastro">
+          <h2 class="conteudoPrincipal-cadastro-titulo">Tipos de Eventos</h2>
+          <div class="container" id="conteudoPrincipal-lista">
+            <table id="tabela-lista">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Título</th>
+                  <th>Ação</th>
+                </tr>
+              </thead>
+
+              <tbody id="tabela-lista-corpo">
+
+              </tbody>
+            </table>
+          </div>
+
+          <section class="container" id="conteudoPrincipal-cadastro">
+            <h2 class="conteudoPrincipal-cadastro-titulo">
+              Cadastrar Tipo de Evento
+            </h2>
+            <form>
+              <div class="container">
+                <input
+                  type="text"
+                  id="nome-tipo-evento"
+                  placeholder="tipo do evento"
+                />
+                <button
+                  class="conteudoPrincipal-btn conteudoPrincipal-btn-cadastro"
+                >
+                  Cadastrar
+                </button>
+              </div>
+            </form>
+          </section>
+        </section>
+      </main>
+
+      <footer class="rodapePrincipal">
+        <section class="rodapePrincipal-patrocinadores">
+          <div class="container">
+            <p>Escola SENAI de Informática - 2021</p>
+          </div>
+        </section>
+      </footer>
+    </div>
+
+    <script>
+      // array
+      // let tiposEventos = ["Evento A", "Evento C", "Evento B"];
+      // console.log(tiposEventos[1]);
+      // console.log(tiposEventos.length);
+
+      // for (let indice = 0; indice < tiposEventos.length; indice++) {
+      //   console.log(tiposEventos[indice]);
+      // }
+
+      // tiposEventos.forEach(element => {
+      //   console.log(element);
+      // });
+
+      // tiposEventos.push("Evento D");
+      // console.log(tiposEventos);
+
+      // tiposEventos.pop();
+      // console.log(tiposEventos);
+
+      // console.log(tiposEventos);
+      // // junção
+      // console.log(tiposEventos.join(" - "));
+      // // ordenação
+      // console.log(tiposEventos.sort());
+      // // a - b - c -> c - b - a      |          a - c - b ->  b - c - a      
+      // console.log(tiposEventos.reverse());
+      // console.log(tiposEventos.sort().reverse().join(" * "));
+
+      // map
+      // let numeros = [
+      //                 {numero: 1, descricao: "um"},
+      //                 {numero: 2, descricao: "dois"},
+      //                 {numero: 3, descricao: "tres"},
+      //               ];
+
+      // let saida = [];
+
+      // // for (let i = 0; i < numeros.length; i++) {
+      // //   saida.push(numeros[i].numero);
+      // // }
+      // // console.log(saida);
+
+      // saida = numeros.map(function(cadaItemDaLista) {
+      //   return cadaItemDaLista.numero;
+      // });
+      // console.log(saida);
+
+      // saida = numeros.map((cadaItemDaLista) => {
+      //   return cadaItemDaLista.numero;
+      // });
+      // console.log(saida);
+     
+      // saida = numeros.map(cadaItemDaLista => {
+      //   return cadaItemDaLista.numero;
+      // });
+      // console.log(saida);
+
+      // saida = numeros.map(cadaItemDaLista => cadaItemDaLista.numero);
+      // console.log(saida);
+
+      // // filter
+      // let somenteNumeros = [10, 20, 30, 40];
+
+      // let maioresOuIgualATrinta = somenteNumeros.filter(cadaItemDaLista => cadaItemDaLista >= 30);
+      // console.log(maioresOuIgualATrinta);
+
+      // // for (let i = 0; i < somenteNumeros.length; i++) {
+      // //   if (somenteNumeros[i] == 10) {
+      // //     // push num novo array
+      // //   }
+      // //   // retorna o array
+      // // }
+
+      // let somenteDez = somenteNumeros.filter(cadaItemDaLista => cadaItemDaLista == 10);
+      // console.log(somenteDez);
+      
+      
+    </script>
+
+  </body>
+</html>
