@@ -7,6 +7,7 @@ import './index.css';
 import Home from './pages/home/App';
 import TiposEventos from './pages/tiposEventos/TiposEventos.jsx';
 import NotFound from './pages/notFound/NotFound';
+import Login from './pages/login/login';
 
 import reportWebVitals from './reportWebVitals';
 
@@ -16,6 +17,7 @@ const routing = (
       <Switch>
         <Route exact path="/" component={Home} /> {/* Home */}
         <Route path="/tiposEventos" component={TiposEventos} /> {/* Tipos Eventos */}
+        <Route path="/login" component={Login} /> {/* Login */}
         <Route path="/notFound" component={NotFound} /> {/* Not Found */}
         <Redirect to="/notFound" /> {/* Redireciona para Not Found caso não encontre nenhuma rota */}
       </Switch>
