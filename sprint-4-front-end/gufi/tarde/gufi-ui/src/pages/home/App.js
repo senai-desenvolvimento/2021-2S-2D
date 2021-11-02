@@ -18,10 +18,10 @@ function App() {
         <img src={logo} alt="Logo da Gufi" />
 
         <nav className="cabecalhoPrincipal-nav">
-          <a>Home</a>
+          {/* <a>Home</a>
           <a>Eventos</a>
           <a>Contato</a>
-          <a className="cabecalhoPrincipal-nav-login" href="login.html">Login</a>
+          <a className="cabecalhoPrincipal-nav-login" href="login.html">Login</a> */}
         </nav>
       </div>
     </header>
