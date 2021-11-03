@@ -4,6 +4,56 @@
         <name>senai_gufi_webAPI</name>
     </assembly>
     <members>
+        <member name="T:senai_gufi_webAPI.Controllers.EventosController">
+            <summary>
+            Controller responsável pelos endpoints (URLs) referentes aos eventos
+            </summary>
+        </member>
+        <member name="P:senai_gufi_webAPI.Controllers.EventosController._eventoRepository">
+            <summary>
+            Objeto _eventoRepository que irá receber todos os métodos definidos na interface IEventoRepository
+            </summary>
+        </member>
+        <member name="M:senai_gufi_webAPI.Controllers.EventosController.#ctor">
+            <summary>
+            Instancia o objeto _eventoRepository para que haja a referência aos métodos no repositório
+            </summary>
+        </member>
+        <member name="M:senai_gufi_webAPI.Controllers.EventosController.Get">
+            <summary>
+            Lista todos os eventos
+            </summary>
+            <returns>Uma lista de eventos e um status code 200 - Ok</returns>
+        </member>
+        <member name="M:senai_gufi_webAPI.Controllers.EventosController.GetById(System.Int32)">
+            <summary>
+            Busca um evento através do ID
+            </summary>
+            <param name="id">ID do evento que será buscado</param>
+            <returns>Um evento buscado e um status code 200 - Ok</returns>
+        </member>
+        <member name="M:senai_gufi_webAPI.Controllers.EventosController.Post(senai_gufi_webAPI.Domains.Evento)">
+            <summary>
+            Cadastra um novo evento
+            </summary>
+            <param name="novoEvento">Objeto novoEvento que será cadastrado</param>
+            <returns>Um status code 201 - Created</returns>
+        </member>
+        <member name="M:senai_gufi_webAPI.Controllers.EventosController.Put(System.Int32,senai_gufi_webAPI.Domains.Evento)">
+            <summary>
+            Atualiza um evento existente
+            </summary>
+            <param name="id">ID do evento que será atualizado</param>
+            <param name="eventoAtualizado">Objeto com as novas informações</param>
+            <returns>Um status code 204 - No Content</returns>
+        </member>
+        <member name="M:senai_gufi_webAPI.Controllers.EventosController.Delete(System.Int32)">
+            <summary>
+            Deleta um evento existente
+            </summary>
+            <param name="id">ID do evento que será deletado</param>
+            <returns>Um status code 204 - No Content</returns>
+        </member>
         <member name="M:senai_gufi_webAPI.Controllers.LoginController.Login(senai_gufi_webAPI.ViewModels.LoginViewModel)">
             <summary>
             Valida o usuário
@@ -60,6 +110,143 @@
             </summary>
             <param name="id">ID do tipo de evento que será deletado</param>
             <returns>Um status code 204 - No Content</returns>
+        </member>
+        <member name="T:senai_gufi_webAPI.Controllers.TiposUsuariosController">
+            <summary>
+            Controller responsável pelos endpoints (URLs) referentes aos tipos de usuários
+            </summary>
+        </member>
+        <member name="P:senai_gufi_webAPI.Controllers.TiposUsuariosController._tiposUsuarioRepository">
+            <summary>
+            Objeto _tiposUsuarioRepository que irá receber todos os métodos definidos na interface ITiposUsuarioRepository
+            </summary>
+        </member>
+        <member name="M:senai_gufi_webAPI.Controllers.TiposUsuariosController.#ctor">
+            <summary>
+            Instancia o objeto _tiposUsuarioRepository para que haja a referência aos métodos no repositório
+            </summary>
+        </member>
+        <member name="M:senai_gufi_webAPI.Controllers.TiposUsuariosController.Get">
+            <summary>
+            Lista todos os tipos de usuários
+            </summary>
+            <returns>Uma lista de tipos de usuários e um status code 200 - Ok</returns>
+        </member>
+        <member name="M:senai_gufi_webAPI.Controllers.TiposUsuariosController.GetById(System.Int32)">
+            <summary>
+            Busca um tipo de usuário através do ID
+            </summary>
+            <param name="id">ID do tipo de usuário que será buscado</param>
+            <returns>Um tipo de usuário buscado e um status code 200 - Ok</returns>
+        </member>
+        <member name="M:senai_gufi_webAPI.Controllers.TiposUsuariosController.Post(senai_gufi_webAPI.Domains.TipoUsuario)">
+            <summary>
+            Cadastra um novo tipo de usuário
+            </summary>
+            <param name="novoTipousuario">Objeto novoTipoUsuario que será cadastrado</param>
+            <returns>Um status code 201 - Created</returns>
+        </member>
+        <member name="M:senai_gufi_webAPI.Controllers.TiposUsuariosController.Put(System.Int32,senai_gufi_webAPI.Domains.TipoUsuario)">
+            <summary>
+            Atualiza um tipo de usuário existente
+            </summary>
+            <param name="id">ID do tipo de usuário que será atualizado</param>
+            <param name="tipoUsuarioAtualizado">Objeto com as novas informações</param>
+            <returns>Um status code 204 - No Content</returns>
+        </member>
+        <member name="M:senai_gufi_webAPI.Controllers.TiposUsuariosController.Delete(System.Int32)">
+            <summary>
+            Deleta um tipo de usuário existente
+            </summary>
+            <param name="id">ID do tipo de usuário que será deletado</param>
+            <returns>Um status code 204 - No Content</returns>
+        </member>
+        <member name="T:senai_gufi_webAPI.Controllers.UsuariosController">
+            <summary>
+            Controller responsável pelos endpoints (URLs) referentes aos usuários
+            </summary>
+        </member>
+        <member name="P:senai_gufi_webAPI.Controllers.UsuariosController._usuarioRepository">
+            <summary>
+            Objeto _usuarioRepository que irá receber todos os métodos definidos na interface IuUsuarioRepository
+            </summary>
+        </member>
+        <member name="M:senai_gufi_webAPI.Controllers.UsuariosController.#ctor">
+            <summary>
+            Instancia o objeto _usuarioRepository para que haja a referência aos métodos no repositório
+            </summary>
+        </member>
+        <member name="M:senai_gufi_webAPI.Controllers.UsuariosController.Get">
+            <summary>
+            Lista todos os usuários
+            </summary>
+            <returns>Uma lista de usuários e um status code 200 - Ok</returns>
+        </member>
+        <member name="M:senai_gufi_webAPI.Controllers.UsuariosController.GetById(System.Int32)">
+            <summary>
+            Busca um usuário através do ID
+            </summary>
+            <param name="id">ID do usuário que será buscado</param>
+            <returns>Um usuário buscado e um status code 200 - Ok</returns>
+        </member>
+        <member name="M:senai_gufi_webAPI.Controllers.UsuariosController.Post(senai_gufi_webAPI.Domains.Usuario)">
+            <summary>
+            Cadastra um novo usuário
+            </summary>
+            <param name="novoUsuario">Objeto novoUsuario que será cadastrado</param>
+            <returns>Um status code 201 - Created</returns>
+        </member>
+        <member name="M:senai_gufi_webAPI.Controllers.UsuariosController.Put(System.Int32,senai_gufi_webAPI.Domains.Usuario)">
+            <summary>
+            Atualiza um usuário existente
+            </summary>
+            <param name="id">ID do usuário que será atualizado</param>
+            <param name="usuarioAtualizado">Objeto com as novas informações</param>
+            <returns>Um status code 204 - No Content</returns>
+        </member>
+        <member name="M:senai_gufi_webAPI.Controllers.UsuariosController.Delete(System.Int32)">
+            <summary>
+            Deleta um usuário existente
+            </summary>
+            <param name="id">ID do usuário que será deletado</param>
+            <returns>Um status code 204 - No Content</returns>
+        </member>
+        <member name="T:senai_gufi_webAPI.Interfaces.IEventoRepository">
+            <summary>
+            Interface responsável pelo EventoRepository
+            </summary>
+        </member>
+        <member name="M:senai_gufi_webAPI.Interfaces.IEventoRepository.Listar">
+            <summary>
+            Lista todos os eventos
+            </summary>
+            <returns>Uma lista de eventos</returns>
+        </member>
+        <member name="M:senai_gufi_webAPI.Interfaces.IEventoRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca um evento através do ID
+            </summary>
+            <param name="id">ID do evento que será buscado</param>
+            <returns>Um evento buscado</returns>
+        </member>
+        <member name="M:senai_gufi_webAPI.Interfaces.IEventoRepository.Cadastrar(senai_gufi_webAPI.Domains.Evento)">
+            <summary>
+            Cadastra um novo evento
+            </summary>
+            <param name="novoEvento">Objeto novoEvento que será cadastrado</param>
+        </member>
+        <member name="M:senai_gufi_webAPI.Interfaces.IEventoRepository.Atualizar(System.Int32,senai_gufi_webAPI.Domains.Evento)">
+            <summary>
+            Atualiza um evento existente
+            </summary>
+            <param name="id">ID do evento que será atualizado</param>
+            <param name="eventoAtualizado">Objeto com as novas informações</param>
+        </member>
+        <member name="M:senai_gufi_webAPI.Interfaces.IEventoRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta um evento existente
+            </summary>
+            <param name="id">ID do evento que será deletado</param>
         </member>
         <member name="T:senai_gufi_webAPI.Interfaces.IPresencaRepository">
             <summary>
@@ -118,13 +305,124 @@
             </summary>
             <param name="id">ID do tipo de evento que será deletado</param>
         </member>
+        <member name="T:senai_gufi_webAPI.Interfaces.ITiposUsuarioRepository">
+            <summary>
+            Interface responsável pelo ITiposUsuarioRepository
+            </summary>
+        </member>
+        <member name="M:senai_gufi_webAPI.Interfaces.ITiposUsuarioRepository.Listar">
+            <summary>
+            Lista todos os tipos de usuários
+            </summary>
+            <returns>Uma lista de tipos de usuários</returns>
+        </member>
+        <member name="M:senai_gufi_webAPI.Interfaces.ITiposUsuarioRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca um tipo de usuário através do ID
+            </summary>
+            <param name="id">ID do tipo de usuário que será buscado</param>
+            <returns>Um tipo de usuário buscado</returns>
+        </member>
+        <member name="M:senai_gufi_webAPI.Interfaces.ITiposUsuarioRepository.Cadastrar(senai_gufi_webAPI.Domains.TipoUsuario)">
+            <summary>
+            Cadastra um novo tipo de usuário
+            </summary>
+            <param name="novoTipoUsuario">Objeto novoTipoUsuario que será cadastrado</param>
+        </member>
+        <member name="M:senai_gufi_webAPI.Interfaces.ITiposUsuarioRepository.Atualizar(System.Int32,senai_gufi_webAPI.Domains.TipoUsuario)">
+            <summary>
+            Atualiza um tipo de usuário existente
+            </summary>
+            <param name="id">ID do tipo de usuário que será atualizado</param>
+            <param name="tipoUsuarioAtualizado">Objeto com as novas informações</param>
+        </member>
+        <member name="M:senai_gufi_webAPI.Interfaces.ITiposUsuarioRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta um tipo de usuário existente
+            </summary>
+            <param name="id">ID do tipo de usuário que será deletado</param>
+        </member>
         <member name="M:senai_gufi_webAPI.Interfaces.IUsuarioRepository.Login(System.String,System.String)">
             <summary>
             Valida o usuário
             </summary>
             <param name="email">E-mail do usuário</param>
             <param name="senha">Senha do usuário</param>
-            <returns>Um objeto do tipo Usuario que foi buscado</returns>
+            <returns>Um objeto do tipo Usuario que foi encontrado</returns>
+        </member>
+        <member name="M:senai_gufi_webAPI.Interfaces.IUsuarioRepository.Listar">
+            <summary>
+            Lista todos os usuários
+            </summary>
+            <returns>Uma lista de usuários</returns>
+        </member>
+        <member name="M:senai_gufi_webAPI.Interfaces.IUsuarioRepository.Cadastrar(senai_gufi_webAPI.Domains.Usuario)">
+            <summary>
+            Cadastra um novo usuário
+            </summary>
+            <param name="novoUsuario">Objeto novoUsuario que será cadastrado</param>
+        </member>
+        <member name="M:senai_gufi_webAPI.Interfaces.IUsuarioRepository.Atualizar(System.Int32,senai_gufi_webAPI.Domains.Usuario)">
+            <summary>
+            Atualiza um usuário existente
+            </summary>
+            <param name="id">ID do usuário que será atualizado</param>
+            <param name="usuarioAtualizado">Objeto com as novas informações</param>
+        </member>
+        <member name="M:senai_gufi_webAPI.Interfaces.IUsuarioRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta um usuário existente
+            </summary>
+            <param name="id">ID do usuário que será deletado</param>
+        </member>
+        <member name="M:senai_gufi_webAPI.Interfaces.IUsuarioRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca um usuário através do ID
+            </summary>
+            <param name="id">ID do usuário que será buscado</param>
+            <returns>Um usuário buscado</returns>
+        </member>
+        <member name="T:senai_gufi_webAPI.Repositories.EventoRepository">
+            <summary>
+            Classe responsável pelo repositório dos eventos
+            </summary>
+        </member>
+        <member name="F:senai_gufi_webAPI.Repositories.EventoRepository.ctx">
+            <summary>
+            Objeto contexto por onde serão chamados os métodos do EF Core
+            </summary>
+        </member>
+        <member name="M:senai_gufi_webAPI.Repositories.EventoRepository.Atualizar(System.Int32,senai_gufi_webAPI.Domains.Evento)">
+            <summary>
+            Atualiza um evento existente
+            </summary>
+            <param name="id">ID do evento que será atualizado</param>
+            <param name="eventoAtualizado">Objeto com as novas informações</param>
+        </member>
+        <member name="M:senai_gufi_webAPI.Repositories.EventoRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca um evento através do ID
+            </summary>
+            <param name="id">ID do evento que será buscado</param>
+            <returns>Um evento buscado</returns>
+        </member>
+        <member name="M:senai_gufi_webAPI.Repositories.EventoRepository.Cadastrar(senai_gufi_webAPI.Domains.Evento)">
+            <summary>
+            Cadastra um novo evento
+            </summary>
+            <param name="novoEvento">Objeto novoEvento que será cadastrado</param>
+        </member>
+        <member name="M:senai_gufi_webAPI.Repositories.EventoRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta um evento existente
+            </summary>
+            <param name="id">ID do evento que será deletado</param>
+        </member>
+        <member name="M:senai_gufi_webAPI.Repositories.EventoRepository.Listar">
+            <summary>
+            Lista todos os eventos
+            </summary>
+            <returns>Uma lista de eventos</returns>
         </member>
         <member name="T:senai_gufi_webAPI.Repositories.PresencaRepository">
             <summary>
@@ -177,6 +475,80 @@
             Lista todos os tipos de eventos
             </summary>
             <returns>Uma lista de tipos de eventos</returns>
+        </member>
+        <member name="T:senai_gufi_webAPI.Repositories.TiposUsuarioRepository">
+            <summary>
+            Classe responsável pelo repositório dos tipos de usuários
+            </summary>
+        </member>
+        <member name="F:senai_gufi_webAPI.Repositories.TiposUsuarioRepository.ctx">
+            <summary>
+            Objeto contexto por onde serão chamados os métodos do EF Core
+            </summary>
+        </member>
+        <member name="M:senai_gufi_webAPI.Repositories.TiposUsuarioRepository.Atualizar(System.Int32,senai_gufi_webAPI.Domains.TipoUsuario)">
+            <summary>
+            Atualiza um tipo de usuário existente
+            </summary>
+            <param name="id">ID do tipo de usuário que será atualizado</param>
+            <param name="tipoUsuarioAtualizado">Objeto com as novas informações</param>
+        </member>
+        <member name="M:senai_gufi_webAPI.Repositories.TiposUsuarioRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca um tipo de usuário através do ID
+            </summary>
+            <param name="id">ID do tipo de usuário que será buscado</param>
+            <returns>Um tipo de usuário buscado</returns>
+        </member>
+        <member name="M:senai_gufi_webAPI.Repositories.TiposUsuarioRepository.Cadastrar(senai_gufi_webAPI.Domains.TipoUsuario)">
+            <summary>
+            Cadastra um novo tipo de usuário
+            </summary>
+            <param name="novoTipoUsuario">Objeto novoTipoUsuario que será cadastrado</param>
+        </member>
+        <member name="M:senai_gufi_webAPI.Repositories.TiposUsuarioRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta um tipo de usuário existente
+            </summary>
+            <param name="id">ID do tipo de usuário que será deletado</param>
+        </member>
+        <member name="M:senai_gufi_webAPI.Repositories.TiposUsuarioRepository.Listar">
+            <summary>
+            Lista todos os tipos de usuários
+            </summary>
+            <returns>Uma lista de tipos de usuários</returns>
+        </member>
+        <member name="M:senai_gufi_webAPI.Repositories.UsuarioRepository.Atualizar(System.Int32,senai_gufi_webAPI.Domains.Usuario)">
+            <summary>
+            Atualiza um usuário existente
+            </summary>
+            <param name="id">ID do usuário que será atualizado</param>
+            <param name="usuarioAtualizado">Objeto com as novas informações</param>
+        </member>
+        <member name="M:senai_gufi_webAPI.Repositories.UsuarioRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca um usuário através do ID
+            </summary>
+            <param name="id">ID do usuário que será buscado</param>
+            <returns>Um usuário buscado</returns>
+        </member>
+        <member name="M:senai_gufi_webAPI.Repositories.UsuarioRepository.Cadastrar(senai_gufi_webAPI.Domains.Usuario)">
+            <summary>
+            Cadastra um novo usuário
+            </summary>
+            <param name="novoUsuario">Objeto novoUsuario que será cadastrado</param>
+        </member>
+        <member name="M:senai_gufi_webAPI.Repositories.UsuarioRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta um usuário existente
+            </summary>
+            <param name="id">ID do usuário que será deletado</param>
+        </member>
+        <member name="M:senai_gufi_webAPI.Repositories.UsuarioRepository.Listar">
+            <summary>
+            Lista todos os usuários
+            </summary>
+            <returns>Uma lista de usuários</returns>
         </member>
         <member name="T:senai_gufi_webAPI.ViewModels.LoginViewModel">
             <summary>
