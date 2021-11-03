@@ -188,7 +188,7 @@ export default class TiposEventos extends Component {
                     <section className="conteudoPrincipal-cadastro">
                     <Titulo titulosecao={this.state.titulosecao} />
                     {/* <h2 class="conteudoPrincipal-cadastro-titulo">Tipos de Eventos</h2> */}
-                       <div class="container" id="conteudoPrincipal-lista">
+                       <div className="container" id="conteudoPrincipal-lista">
             
                             <table id="tabela-lista">
                                 <thead>
@@ -258,12 +258,12 @@ export default class TiposEventos extends Component {
                                 */}
 
                                 {
-                                    <button type="submit" class="conteudoPrincipal-btn conteudoPrincipal-btn-cadastro" disabled={this.state.titulo === '' ? 'none' : ''}>
+                                    <button type="submit" className="conteudoPrincipal-btn conteudoPrincipal-btn-cadastro" disabled={this.state.titulo === '' ? 'none' : ''}>
                                         {this.state.idTipoEventoAlterado === 0 ? 'Cadastrar' : 'Atualizar'}
                                     </button>
                                 }
 
-                                <button type="button" class="conteudoPrincipal-btn conteudoPrincipal-btn-cadastro" onClick={this.limparCampos} style={{ display : '' }}>
+                                <button type="button" className="conteudoPrincipal-btn conteudoPrincipal-btn-cadastro" onClick={this.limparCampos} style={{ display : '' }}>
                                     Cancelar
                                 </button>
 
