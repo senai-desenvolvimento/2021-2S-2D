@@ -21,7 +21,11 @@ export default class TiposEventos extends Component {
         //funcao nativa JS, ele é uma API com métodos.
 
         //dentro dos parenteses vamos informar qual é o end point.
-        fetch('http://localhost:5000/api/tiposeventos')
+        fetch('http://localhost:5000/api/tiposeventos', {
+            headers : {
+                'Authorization' : 'Bearer ' + localStorage.getItem('usuario-login')
+            }
+        })
             //por padrao ele sempre inicia como GET.
 
             .then(resposta => resposta.json())
@@ -73,7 +77,8 @@ export default class TiposEventos extends Component {
 
                 // Define o cabeçalho da requisição
                 headers: {
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json",
+                    'Authorization' : 'Bearer ' + localStorage.getItem('usuario-login')
                 }
             })
 
@@ -108,7 +113,8 @@ export default class TiposEventos extends Component {
                 body: JSON.stringify({ tituloTipoEvento: this.state.titulo }), //lembrado que aqui e um obj js e nao json.
 
                 headers: {
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json",
+                    'Authorization' : 'Bearer ' + localStorage.getItem('usuario-login')
                 }
             })
                 //Exibe no console a msg "Tipo de evento cadastrado"
@@ -149,7 +155,10 @@ export default class TiposEventos extends Component {
 
         fetch('http://localhost:5000/api/TiposEventos/' + tipoEvento.idTipoEvento,
         {
-            method: 'DELETE'
+            method: 'DELETE',
+            headers : {
+                'Authorization' : 'Bearer ' + localStorage.getItem('usuario-login')
+            }
         })
 
         .then(resposta => {
@@ -193,7 +202,7 @@ export default class TiposEventos extends Component {
 
                         {/* <h2 class="conteudoPrincipal-cadastro-titulo">Lista de Tipos de Eventos</h2> */}
                         
-                        <div class="container" id="conteudoPrincipal-lista">          
+                        <div className="container" id="conteudoPrincipal-lista">          
                             <table id="tabela-lista">
                                 <thead>
                                     <tr>
@@ -255,14 +264,14 @@ export default class TiposEventos extends Component {
                                 {/* Uma outra forma, com IF Ternário e disabled ao mesmo tempo */}
 
                                 {
-                                    <button type="submit"  class="conteudoPrincipal-btn conteudoPrincipal-btn-cadastro" disabled={ this.state.titulo === '' ? 'none' : '' }>
+                                    <button type="submit"  className="conteudoPrincipal-btn conteudoPrincipal-btn-cadastro" disabled={ this.state.titulo === '' ? 'none' : '' }>
                                         { this.state.idTipoEventoAlterado === 0 ? 'Cadastrar' : 'Atualizar' }
                                     </button>
                                 }
 
                                 {/* Faz a chamada da função limparCampos */}
 
-                                <button type="button"  class="conteudoPrincipal-btn conteudoPrincipal-btn-cadastro" onClick={this.limparCampos} style={{ display : '' }}>
+                                <button type="button"  className="conteudoPrincipal-btn conteudoPrincipal-btn-cadastro" onClick={this.limparCampos} style={{ display : '' }}>
                                     Cancelar
                                 </button>
 

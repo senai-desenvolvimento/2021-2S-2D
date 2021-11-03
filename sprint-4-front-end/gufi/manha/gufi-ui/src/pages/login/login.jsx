@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import axios from 'axios';
-import { parseJwt } from '../../services/auth';
+import { parseJwt, usuarioAutenticado } from '../../services/auth';
 
 import '../../assets/css/login.css';
 
@@ -54,11 +54,12 @@ export default class Login extends Component {
                     // console.log( parseJwt().role );
 
                     // exibe as propriedades da página
-                    // console.log(this.props);
+                    console.log(this.props);
 
                     // verifica se o usuário logado é do tipo administrador
                     if (parseJwt().role === '1' ) {
                         this.props.history.push('/tiposeventos');
+                        console.log('estou logado: ' + usuarioAutenticado())
                     }
 
                     else{
