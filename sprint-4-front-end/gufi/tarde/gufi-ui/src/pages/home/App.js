@@ -4,11 +4,7 @@ import "../../assets/css/flexbox.css"
 import "../../assets/css/reset.css"
 import "../../assets/css/style.css"
 
-//imagens
-import logo from "../../assets/img/logo.png"
-
-
-//conteudo
+import logo from '../../assets/img/logo.png'
 import Rodape from "../../components/rodape/rodape";
 
 
@@ -17,13 +13,13 @@ function App() {
     <div>
     <header className="cabecalhoPrincipal">
       <div className="container">
-        <img src={logo} alt="Logo da Gufi" />
+       <Link to="/"> <img src={logo} alt="Logo da Gufi" /> </Link>
 
         <nav className="cabecalhoPrincipal-nav">
           <Link to="/">Home</Link>
           <Link to="/eventos">Eventos</Link>
           <a href="#conteudoPrincipal-contato">Contato</a>
-          {/* <a className="cabecalhoPrincipal-nav-login" href="login.html">Login</a> */}
+          {/* <a className="cabecalhoPrincipal-nav-login" href="/login">Login</a> */}
           <Link className="cabecalhoPrincipal-nav-login" to="/login">Login</Link>
         </nav>
       </div>
@@ -111,9 +107,11 @@ function App() {
         </div>
       </section>
     </main>
-  
-       <Rodape/>
+
+      <Rodape />
+
   </div>
+
   );
 }
 

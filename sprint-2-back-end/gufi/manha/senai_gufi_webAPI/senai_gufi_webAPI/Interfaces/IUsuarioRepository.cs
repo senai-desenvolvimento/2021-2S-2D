@@ -21,8 +21,43 @@ namespace senai_gufi_webAPI.Interfaces
         void SalvarPerfilBD(IFormFile foto, int id_usuario);
         void SalvarPerfilDir(IFormFile foto, int id_usuario);
         string ConsultarPerfilBD(int id_usuario);
-        string ConsultarPerfilDir(int id_usuario);        
-       
+        string ConsultarPerfilDir(int id_usuario);
+
+
+        /// <summary>
+        /// Lista todos os usuários
+        /// </summary>
+        /// <returns>Uma lista de usuários</returns>
+        List<Usuario> Listar();
+
+
+        /// <summary>
+        /// Cadastra um novo usuário
+        /// </summary>
+        /// <param name="novoUsuario">Objeto novoUsuario que será cadastrado</param>
+        void Cadastrar(Usuario novoUsuario);
+
+        /// <summary>
+        /// Atualiza um usuário existente
+        /// </summary>
+        /// <param name="id">ID do usuário que será atualizado</param>
+        /// <param name="usuarioAtualizado">Objeto com as novas informações</param>
+        void Atualizar(int id, Usuario usuarioAtualizado);
+
+        /// <summary>
+        /// Deleta um usuário existente
+        /// </summary>
+        /// <param name="id">ID do usuário que será deletado</param>
+        void Deletar(int id);
+
+        /// <summary>
+        /// Busca um usuário através do ID
+        /// </summary>
+        /// <param name="id">ID do usuário que será buscado</param>
+        /// <returns>Um usuário buscado</returns>
+        Usuario BuscarPorId(int id);
+
+
 
     }
 }

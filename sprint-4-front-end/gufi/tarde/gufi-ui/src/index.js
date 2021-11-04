@@ -1,6 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Redirect, Route, BrowserRouter as Router, Switch } from 'react-router-dom';
+import {
+  Route,
+  BrowserRouter as Router,
+  Redirect,
+  Switch,
+} from 'react-router-dom';
 
 import './index.css';
 
@@ -47,12 +52,9 @@ const routing = (
       </Switch>
     </div>
   </Router>
-)
-
-ReactDOM.render(
-  routing,
-  document.getElementById('root')
 );
+
+ReactDOM.render(routing, document.getElementById('root'));
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
