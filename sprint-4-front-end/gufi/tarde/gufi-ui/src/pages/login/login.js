@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import axios from 'axios';
-import { parseJwt } from '../../services/auth';
+import { parseJwt, usuarioAutenticado } from '../../services/auth';
 
 import '../../assets/css/login.css';
 
@@ -53,6 +53,7 @@ export default class Login extends Component {
                     
                     if (parseJwt().role === '1') {
                         this.props.history.push('/tiposeventos');
+                        console.log('estou logado: ' + usuarioAutenticado())
                     }
 
                     else {
