@@ -54,6 +54,56 @@
             <param name="id">ID do evento que será deletado</param>
             <returns>Um status code 204 - No Content</returns>
         </member>
+        <member name="T:senai_gufi_webAPI.Controllers.InstituicoesController">
+            <summary>
+            Controller responsável pelos endpoints (URLs) referentes às instituições
+            </summary>
+        </member>
+        <member name="P:senai_gufi_webAPI.Controllers.InstituicoesController._instituicaoRepository">
+            <summary>
+            Objeto _instituicaoRepository que irá receber todos os métodos definidos na interface IInstituicaoRepository
+            </summary>
+        </member>
+        <member name="M:senai_gufi_webAPI.Controllers.InstituicoesController.#ctor">
+            <summary>
+            Instancia o objeto _instituicaoRepository para que haja a referência aos métodos no repositório
+            </summary>
+        </member>
+        <member name="M:senai_gufi_webAPI.Controllers.InstituicoesController.Get">
+            <summary>
+            Lista todas as instituições
+            </summary>
+            <returns>Uma lista de instituições e um status code 200 - Ok</returns>
+        </member>
+        <member name="M:senai_gufi_webAPI.Controllers.InstituicoesController.GetById(System.Int32)">
+            <summary>
+            Busca uma instituição através do ID
+            </summary>
+            <param name="id">ID da instituição que será buscada</param>
+            <returns>Uma instituição buscado e um status code 200 - Ok</returns>
+        </member>
+        <member name="M:senai_gufi_webAPI.Controllers.InstituicoesController.Post(senai_gufi_webAPI.Domains.Instituicao)">
+            <summary>
+            Cadastra uma instituição
+            </summary>
+            <param name="novaInstituicao">Objeto novaInstituicao que será cadastrada</param>
+            <returns>Um status code 201 - Created</returns>
+        </member>
+        <member name="M:senai_gufi_webAPI.Controllers.InstituicoesController.Put(System.Int32,senai_gufi_webAPI.Domains.Instituicao)">
+            <summary>
+            Atualiza uma instituição existente
+            </summary>
+            <param name="id">ID da instituição que será atualizada</param>
+            <param name="instituicaoAtualizada">Objeto com as novas informações</param>
+            <returns>Um status code 204 - No Content</returns>
+        </member>
+        <member name="M:senai_gufi_webAPI.Controllers.InstituicoesController.Delete(System.Int32)">
+            <summary>
+            Deleta uma instiuição existente
+            </summary>
+            <param name="id">ID da instiuição que será deletada</param>
+            <returns>Um status code 204 - No Content</returns>
+        </member>
         <member name="M:senai_gufi_webAPI.Controllers.LoginController.Login(senai_gufi_webAPI.ViewModels.LoginViewModel)">
             <summary>
             Valida o usuário
@@ -249,6 +299,43 @@
             </summary>
             <param name="id">ID do evento que será deletado</param>
         </member>
+        <member name="T:senai_gufi_webAPI.Interfaces.IInstituicaoRepository">
+            <summary>
+            Interface responsável pelo InstituicaoRepository
+            </summary>
+        </member>
+        <member name="M:senai_gufi_webAPI.Interfaces.IInstituicaoRepository.Listar">
+            <summary>
+            Lista todas as Instituicaoes
+            </summary>
+            <returns>Uma lista de Instituicaoes</returns>
+        </member>
+        <member name="M:senai_gufi_webAPI.Interfaces.IInstituicaoRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca uma instituicao através do ID
+            </summary>
+            <param name="id">ID da instituicao que será buscada</param>
+            <returns>Uma instituicao buscada</returns>
+        </member>
+        <member name="M:senai_gufi_webAPI.Interfaces.IInstituicaoRepository.Cadastrar(senai_gufi_webAPI.Domains.Instituicao)">
+            <summary>
+            Cadastra uma nova instituicao
+            </summary>
+            <param name="novaInstituicao">Objeto novaInstituicao que será cadastrada</param>
+        </member>
+        <member name="M:senai_gufi_webAPI.Interfaces.IInstituicaoRepository.Atualizar(System.Int32,senai_gufi_webAPI.Domains.Instituicao)">
+            <summary>
+            Atualiza uma instituicao existente
+            </summary>
+            <param name="id">ID da instituicao que será atualizada</param>
+            <param name="instituicaoAtualizada">Objeto com as novas informações</param>
+        </member>
+        <member name="M:senai_gufi_webAPI.Interfaces.IInstituicaoRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta uma instituicao existente
+            </summary>
+            <param name="id">ID da instituicao que será deletada</param>
+        </member>
         <member name="T:senai_gufi_webAPI.Interfaces.IPresencaRepository">
             <summary>
             Interface responsável pelo PresencaRepository
@@ -424,6 +511,48 @@
             Lista todos os eventos
             </summary>
             <returns>Uma lista de eventos</returns>
+        </member>
+        <member name="T:senai_gufi_webAPI.Repositories.InstituicaoRepository">
+            <summary>
+            Classe responsável pelo repositório das instituições
+            </summary>
+        </member>
+        <member name="F:senai_gufi_webAPI.Repositories.InstituicaoRepository.ctx">
+            <summary>
+            Objeto contexto por onde serão chamados os métodos do EF Core
+            </summary>
+        </member>
+        <member name="M:senai_gufi_webAPI.Repositories.InstituicaoRepository.Atualizar(System.Int32,senai_gufi_webAPI.Domains.Instituicao)">
+            <summary>
+            Atualiza uma instituicao existente
+            </summary>
+            <param name="id">ID da instituicao que será atualizada</param>
+            <param name="instituicaoAtualizada">Objeto com as novas informações</param>
+        </member>
+        <member name="M:senai_gufi_webAPI.Repositories.InstituicaoRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca uma instituicao através do ID
+            </summary>
+            <param name="id">ID da instituicao que será buscada</param>
+            <returns>Uma instituicao buscada</returns>
+        </member>
+        <member name="M:senai_gufi_webAPI.Repositories.InstituicaoRepository.Cadastrar(senai_gufi_webAPI.Domains.Instituicao)">
+            <summary>
+            Cadastra uma nova instituicao
+            </summary>
+            <param name="novaInstituicao">Objeto novaInstituicao que será cadastrada</param>
+        </member>
+        <member name="M:senai_gufi_webAPI.Repositories.InstituicaoRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta uma instituicao existente
+            </summary>
+            <param name="id">ID da instituicao que será deletada</param>
+        </member>
+        <member name="M:senai_gufi_webAPI.Repositories.InstituicaoRepository.Listar">
+            <summary>
+            Lista todas as instituicoes
+            </summary>
+            <returns>Uma lista de instituicoes</returns>
         </member>
         <member name="T:senai_gufi_webAPI.Repositories.PresencaRepository">
             <summary>
