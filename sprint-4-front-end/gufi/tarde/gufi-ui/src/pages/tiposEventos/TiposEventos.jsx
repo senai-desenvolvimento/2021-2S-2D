@@ -15,19 +15,8 @@ export default class TiposEventos extends Component {
     };
   }
 
-    buscarTiposEventos = () => {
-        console.log("agora vamos fazer a chamada para a API")
-
-        // informamos o end point.
-
-        fetch('http://localhost:5000/api/TiposEventos', {
-            headers : {
-                'Authorization' : 'Bearer ' + localStorage.getItem('usuario-login')
-            }
-        })
-            // nessa linha vamos 
-            // enviar a requiscao
-            // por padrao será um GET.
+  buscarTipoEventos = () => {
+    console.log('agora vamos fazer a chamada para a api.');
 
     //funcao nativa JS, ele é uma API com métodos.
 
