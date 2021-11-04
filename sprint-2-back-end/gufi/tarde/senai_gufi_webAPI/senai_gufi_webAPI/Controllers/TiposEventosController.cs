@@ -26,7 +26,7 @@ namespace senai_gufi_webAPI.Controllers
     [ApiController]
 
     // Define que somente o administrador pode acessar os métodos
-    //[Authorize(Roles = "1")]
+    [Authorize(Roles = "1")]
     public class TiposEventosController : ControllerBase
     {
         /// <summary>

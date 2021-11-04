@@ -21,7 +21,11 @@ export default class TiposEventos extends Component {
 
         // informamos o end point.
 
-        fetch('http://localhost:5000/api/TiposEventos')
+        fetch('http://localhost:5000/api/TiposEventos', {
+            headers : {
+                'Authorization' : 'Bearer ' + localStorage.getItem('usuario-login')
+            }
+        })
             // nessa linha vamos 
             // enviar a requiscao
             // por padrao será um GET.

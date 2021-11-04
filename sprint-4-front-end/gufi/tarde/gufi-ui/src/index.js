@@ -10,13 +10,36 @@ import NotFound from './pages/notFound/NotFound';
 import Login from './pages/login/login';
 
 import reportWebVitals from './reportWebVitals';
+import { parseJwt, usuarioAutenticado } from './services/auth';
+
+const PermissaoAdm = ({ component : Component }) => (
+  <Route 
+    render = { props => 
+      usuarioAutenticado() && parseJwt().role === '1' ?
+      // ... => operador spread ou de espelhamento
+      <Component {...props} /> :
+      <Redirect to="/login" />
+    }
+  />
+)
+
+const PermissaoComum = ({ component : Component }) => (
+  <Route 
+    render = { props => 
+      usuarioAutenticado() && parseJwt().role === '2' ?
+      // ... => operador spread ou de espelhamento
+      <Component {...props} /> :
+      <Redirect to="/login" />
+    }
+  />
+)
 
 const routing = (
   <Router>
     <div>
       <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/tiposeventos" component={TiposEventos} />
+        <PermissaoComum exact path="/" component={Home} />
+        <PermissaoAdm path="/tiposeventos" component={TiposEventos} />
         <Route path="/login" component={Login} />
         <Route path="/notfound" component={NotFound} />
         {/* <Route path="/*" component={NotFound} /> Outra forma */}
