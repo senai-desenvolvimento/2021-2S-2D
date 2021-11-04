@@ -1,15 +1,17 @@
-import {Component} from "react";
+
+import React,{Component} from "react";
 
 class Titulo extends Component{
 
    render(){
 
-        return(
-            <h2 className="conteudoPrincipal-cadastro-titulo">{this.props.titulosecao}</h2>                   
+       return (
+            <h2 className="conteudoPrincipal-cadastro-titulo">{this.props.titulosecao}</h2>                     
 
-        )
+       )
    }
 }
 
-export default Titulo;
+export default Titulo
+
 

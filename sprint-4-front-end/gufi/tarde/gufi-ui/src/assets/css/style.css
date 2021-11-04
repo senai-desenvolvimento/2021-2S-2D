@@ -489,6 +489,13 @@ nav .cabecalhoPrincipal-nav-login {
   box-shadow: 2px 2px 5px 0px rgba(184, 184, 184, 1);
 }
 
+.conteudoPrincipal-btn-cadastro:disabled {
+background-color: rgba(184,184,184,1);
+color: #fff;
+cursor: not-allowed;
+}
+
+
 /* TÍTULOS */
 
 .conteudoPrincipal-cadastro-titulo {
