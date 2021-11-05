@@ -7,6 +7,7 @@ export default function TiposUsuarios() {
     // const [ nomeEstado, funcaoAtualiza ] = useState( valorInicial )
     const [ listaTiposUsuarios, setListaTiposUsuarios ] = useState( [] );
     const [ titulo, setTitulo ] = useState( '' );
+    const [ isLoading, setIsLoading ] = useState( false );
 
     // função responsável por fazer a requisição e trazer a lista de tipos usuários
     function buscarTiposUsuarios(){
@@ -36,6 +37,8 @@ export default function TiposUsuarios() {
     useEffect( buscarTiposUsuarios, [] );
 
     function cadastrarTipoUsuario(evento){
+        setIsLoading( true );
+
         // evita o comportamento padrão do navegador
         evento.preventDefault();
 
@@ -51,9 +54,12 @@ export default function TiposUsuarios() {
                 console.log('O tipo de usuário foi cadastrado com sucesso!');
                 setTitulo( '' );
                 buscarTiposUsuarios();
+                setIsLoading( false );
             }
         })
-        .catch( erro => console.log(erro), setTitulo( '' ) );
+        .catch( erro => console.log(erro), setTitulo( '' ), setInterval(() => {
+            setIsLoading( false )
+        }, 5000) );
     };
 
     // console.log(titulo);
@@ -103,7 +109,26 @@ export default function TiposUsuarios() {
                                 placeholder="Título do tipo de usuário"
                             />
 
-                            <button type="submit">Cadastrar</button>
+                            {/* <button type="submit">Cadastrar</button> */}
+
+                            {
+                                isLoading === false &&
+                                <button type="submit">Cadastrar</button>
+                            }
+
+                            {
+                                isLoading === true &&
+                                <button type="submit" disabled>Carregando...</button>
+                            }
+
+                            {
+                                // outra forma
+                                // isLoading === false ? (
+                                //     <button type="submit">Cadastrar</button>
+                                // ) : (
+                                //     <button type="submit" disabled>Carregando...</button>
+                                // )
+                            }
                         </div>
                     </form>
                     
