@@ -1,0 +1,10 @@
+is_global = true
+build_property.TargetFramework = net5.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.PublishSingleFile = 
+build_property.IncludeAllContentForSelfExtract = 
+build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
+build_property.RootNamespace = senai_filmes_webAPI
+build_property.ProjectDir = c:\Users\saulo.santos\Downloads\SENAI\CT\2021-2S-2D\senai-dev-2s2021-alunos\sprint-2-back-end\exemplos\manha\01_sqlclient\01_filmes\senai_filmes_webAPI\senai_filmes_webAPI\
