@@ -14,8 +14,17 @@ using System.Threading.Tasks;
 
 namespace senai_gufi_webAPI.Controllers
 {
+    /// <summary>
+    /// Controller responsável pelos endpoints referentes ao Login
+    /// </summary>
+    
+    // Define que o tipo de resposta da API será no formato JSON
     [Produces("application/json")]
+
+    // Define que a rota de uma requisição será no formato domínio/api/NomeController
     [Route("api/[controller]")]
+
+    // Define que é um controlador de API
     [ApiController]
     public class LoginController : ControllerBase
     {
