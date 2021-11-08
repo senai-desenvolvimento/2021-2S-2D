@@ -711,4 +711,8 @@ cursor: not-allowed;
     width: 20%;
   }
 
+  .radius-img{
+    border-radius: 50%;    
+  }
+
 }

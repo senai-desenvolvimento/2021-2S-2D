@@ -18,6 +18,7 @@ import TiposUsuarios from './pages/tiposUsuarios/tiposUsuarios';
 import reportWebVitals from './reportWebVitals';
 import { parseJwt, usuarioAutenticado } from './services/auth';
 import Eventos from './pages/eventos/eventos';
+import Perfil from './pages/perfil/perfil';
 
 const PermissaoAdm = ({ component: Component }) => (
   <Route
@@ -54,6 +55,8 @@ const routing = (
         <PermissaoAdm path="/tiposUsuarios" component={TiposUsuarios} /> {/* Tipos Usuários */}
         <Route path="/login" component={Login} /> {/* Login */}
         <Route path="/eventos" component={Eventos} /> {/* Eventos */}
+        <Route path="/perfil" component={Perfil} /> {/* Eventos */}
+
         <Route path="/notFound" component={NotFound} /> {/* Not Found */}
         <Redirect to="/notFound" />
         {/* Redireciona para Not Found caso não encontre nenhuma rota */}
