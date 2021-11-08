@@ -711,4 +711,9 @@ cursor: not-allowed;
     width: 20%;
   }
 
+  .imagem-header{
+    margin-left: 10px;
+    border-radius: 50%;
+  }
+
 }

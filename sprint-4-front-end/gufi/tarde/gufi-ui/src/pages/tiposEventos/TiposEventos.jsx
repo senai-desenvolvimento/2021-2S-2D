@@ -3,6 +3,7 @@ import logo from '../../assets/img/logo.png';
 import { Link } from 'react-router-dom';
 import Rodape from '../../components/rodape/rodape';
 import Titulo from '../../components/titulo/titulo';
+import PerfilFoto from '../../components/perfilfoto/perfilfoto';
 
 export default class TiposEventos extends Component {
   constructor(props) {
@@ -194,7 +195,9 @@ export default class TiposEventos extends Component {
               <img src={logo} alt="Logo da Gufi" />{' '}
             </Link>
 
-            <nav className="cabecalhoPrincipal-nav">Administrador</nav>
+            <nav className="cabecalhoPrincipal-nav">Administrador
+              <PerfilFoto />
+            </nav>
           </div>
         </header>
         <main className="conteudoPrincipal">
