@@ -29,7 +29,7 @@ namespace senai_gufi_webAPI.Controllers
             try
             {
                 //analisar o tamanho do arquivo
-                if (arquivo.Length > 5000) //5MB
+                if (arquivo.Length > 500000000) //5MB
                     return BadRequest(new { mensagem = "O tamanho máximo da imagem foi atingido." });
 
                 //analise da extensao do arquivo
