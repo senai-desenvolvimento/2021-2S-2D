@@ -250,7 +250,7 @@ export default class Eventos extends Component {
                   </button>
                 )}
 
-                {this.state.isLoading == false && (
+                {this.state.isLoading === false && (
                   <button type="submit">Cadastrar</button>
                 )}
               </div>
