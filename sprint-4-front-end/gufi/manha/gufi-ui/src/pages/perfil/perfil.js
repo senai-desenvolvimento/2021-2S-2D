@@ -17,7 +17,7 @@ export default class Perfil extends Component {
 
   enviarArquivo = () => {
     console.log('envio');
-    if (this.state.arquivo != '') {
+    if (this.state.arquivo !== '') {
       const formData = new FormData();
 
       //FormData  - maneira facil para construir um conjunto de chave/valor, para ser utilizado no método send().
