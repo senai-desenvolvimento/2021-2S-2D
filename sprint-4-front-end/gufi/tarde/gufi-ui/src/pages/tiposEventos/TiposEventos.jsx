@@ -1,6 +1,8 @@
 import { Component } from 'react';
-import logo from '../../assets/img/logo.png';
 import { Link } from 'react-router-dom';
+
+import logo from '../../assets/img/logo.png';
+
 import Rodape from '../../components/rodape/rodape';
 import Titulo from '../../components/titulo/titulo';
 import PerfilFoto from '../../components/perfilfoto/perfilfoto';

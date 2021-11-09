@@ -6,19 +6,19 @@ import {
   Redirect,
   Switch,
 } from 'react-router-dom';
+import { parseJwt, usuarioAutenticado } from './services/auth';
 
 import './index.css';
 
 import Home from './pages/home/App';
 import TiposEventos from './pages/tiposEventos/TiposEventos.jsx';
+import Eventos from './pages/eventos/eventos';
 import TiposUsuarios from './pages/tiposUsuarios/tiposUsuarios.jsx';
-import NotFound from './pages/notFound/NotFound';
 import Login from './pages/login/login';
+import Perfil from './pages/perfil/perfil';
+import NotFound from './pages/notFound/NotFound';
 
 import reportWebVitals from './reportWebVitals';
-import { parseJwt, usuarioAutenticado } from './services/auth';
-import Eventos from './pages/eventos/eventos';
-import Perfil from './pages/perfil/perfil';
 
 const PermissaoAdm = ({ component: Component }) => (
   <Route
@@ -55,7 +55,7 @@ const routing = (
         <PermissaoAdm path="/tiposUsuarios" component={TiposUsuarios} /> {/* Tipos Usuários */}
         <Route path="/login" component={Login} /> {/* Login */}
         <Route path="/eventos" component={Eventos} /> {/* Eventos */}
-        <Route path="/perfil" component={Perfil} /> {/* Not Found */}
+        <Route path="/perfil" component={Perfil} /> {/* Perfil */}
         <Route path="/notFound" component={NotFound} /> {/* Not Found */}
         <Redirect to="/notFound" /> {/* Redireciona para Not Found caso não encontre nenhuma rota */}
       </Switch>
