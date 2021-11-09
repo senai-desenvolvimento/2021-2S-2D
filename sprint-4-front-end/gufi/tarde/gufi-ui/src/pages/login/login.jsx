@@ -11,8 +11,8 @@ export default class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: 'ADM@ADM.COM',
-      senha: 'adm12345',
+      email: '',
+      senha: '',
       erroMensagem: '',
       isLoading: false,
     };
@@ -63,7 +63,7 @@ export default class Login extends Component {
             this.props.history.push('/tiposeventos');
             console.log('estou logado: ' + usuarioAutenticado());
           } else {
-            this.props.history.push('/');
+            this.props.history.push('/meusEventos');
           }
         }
       })
