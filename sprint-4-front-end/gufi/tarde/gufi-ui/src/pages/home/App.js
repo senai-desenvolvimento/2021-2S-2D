@@ -1,4 +1,7 @@
-import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+
+import { Link, useHistory } from 'react-router-dom';
 
 import "../../assets/css/flexbox.css"
 import "../../assets/css/reset.css"
@@ -9,6 +12,41 @@ import Rodape from "../../components/rodape/rodape";
 
 
 function App() {
+  const [ listaEventos, setListaEventos ] = useState( [] );
+  let history = useHistory();
+
+  function buscarEventos(){
+    axios('http://localhost:5000/api/Eventos')
+    .then(resposta => {
+      if(resposta.status === 200){
+        setListaEventos( resposta.data );
+      }
+    })
+    .catch(erro => console.log(erro));
+  };
+
+  useEffect( buscarEventos, [] );
+
+  function inscrever(evento){
+    console.log(evento);
+
+    // axios() // get
+    // axios.post() // post
+
+    axios.post('http://localhost:5000/api/presencas/inscricao/' + evento.idEvento, {}, {
+      headers : {
+          'Authorization' : 'Bearer ' + localStorage.getItem('usuario-login')
+      }
+    })
+    .then(response => {
+      if (response.status === 201) {
+        console.log('Inscrição realizada com sucesso!');
+        history.push('/meuseventos');
+      }
+    })
+    .catch( () => history.push("/login") );
+  };
+
   return (
     <div>
     <header className="cabecalhoPrincipal">
@@ -17,7 +55,7 @@ function App() {
 
         <nav className="cabecalhoPrincipal-nav">
           <Link to="/">Home</Link>
-          <Link to="/eventos">Eventos</Link>
+          <Link to="/meusEventos">Meus eventos</Link>
           <a href="#conteudoPrincipal-contato">Contato</a>
           {/* <a className="cabecalhoPrincipal-nav-login" href="/login">Login</a> */}
           <Link className="cabecalhoPrincipal-nav-login" to="/login">Login</Link>
@@ -38,41 +76,23 @@ function App() {
         <div className="container">
           <nav>
             <ul className="conteudoPrincipal-dados">
-              <li className="conteudoPrincipal-dados-link eventos">
-                <h2>Título do Evento</h2>
-                <p>
-                  Breve descrição sobre o evento. Lorem ipsum lorem ipsum
-                  lorem ipsum.
-                </p>
-                <button>conectar</button>
-              </li>
 
-              <li className="conteudoPrincipal-dados-link eventos">
-                <h2>Título do Evento</h2>
-                <p>
-                  Breve descrição sobre o evento. Lorem ipsum lorem ipsum
-                  lorem ipsum.
-                </p>
-                <button>conectar</button>
-              </li>
-
-              <li className="conteudoPrincipal-dados-link eventos">
-                <h2>Título do Evento</h2>
-                <p>
-                  Breve descrição sobre o evento. Lorem ipsum lorem ipsum
-                  lorem ipsum.
-                </p>
-                <button>conectar</button>
-              </li>
-
-              <li className="conteudoPrincipal-dados-link eventos">
-                <h2>Título do Evento</h2>
-                <p>
-                  Breve descrição sobre o evento. Lorem ipsum lorem ipsum
-                  lorem ipsum.
-                </p>
-                <button>conectar</button>
-              </li>
+              {
+                listaEventos.map( (evento) => {
+                  return(
+                    <li key={evento.idEvento} className="conteudoPrincipal-dados-link eventos">
+                      <h2>{evento.nomeEvento}</h2>
+                      <p>{evento.descricao}</p>
+                      <p>{ Intl.DateTimeFormat("pt-BR", {
+                            year: 'numeric', month: 'short', day: 'numeric',
+                            hour: 'numeric', minute: 'numeric', hour12: true
+                        }).format(new Date(evento.dataEvento)) }</p>
+                      <button onClick={ () => inscrever(evento) } >me inscrever</button>
+                    </li>
+                  )
+                } )
+              }
+              
             </ul>
           </nav>
         </div>
