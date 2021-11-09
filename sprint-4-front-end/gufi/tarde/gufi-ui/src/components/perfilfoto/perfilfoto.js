@@ -19,7 +19,7 @@ export default class PerfilFoto extends Component {
     })
       .catch((erro) => console.log(erro))
       .then((resposta) => {
-        if (resposta.status == 200) {
+        if (resposta.status === 200) {
           console.log(resposta);
           this.setState({ imagem64: resposta.data });
         }
