@@ -490,9 +490,9 @@ nav .cabecalhoPrincipal-nav-login {
 }
 
 .conteudoPrincipal-btn-cadastro:disabled {
-background-color: rgba(184,184,184,1);
-color: #fff;
-cursor: not-allowed;
+  background-color: rgba(184,184,184,1);
+  color: #fff;
+  cursor: not-allowed;
 }
 
 
