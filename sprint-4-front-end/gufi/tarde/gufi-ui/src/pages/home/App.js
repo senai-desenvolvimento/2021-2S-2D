@@ -44,7 +44,11 @@ function App() {
         history.push('/meuseventos');
       }
     })
-    .catch( () => history.push("/login") );
+    .catch( erro => {
+      if (erro.toJSON().status === 401) {
+        history.push('/login');
+      }
+    } );
   };
 
   return (

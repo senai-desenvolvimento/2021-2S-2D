@@ -17,12 +17,12 @@ function App() {
     axios('http://localhost:5000/api/Eventos')
     .then(resposta => {
       if (resposta.status === 200) {
-        console.log('Os eventos foram atualizados')
-        setListaEventos( resposta.data )
-        console.log(history)
+        console.log('Os eventos foram atualizados');
+        setListaEventos( resposta.data );
+        // console.log(history);
       }
     })
-    .catch(erro => console.log(erro))
+    .catch(erro => console.log(erro));
   };
 
   useEffect( buscarEventos, [] );
@@ -41,7 +41,13 @@ function App() {
         history.push("/meusEventos");
       }
     })
-    .catch(erro => console.log(erro))
+    // .catch(erro => console.log(erro));
+    .catch(erro => {
+      // console.log(erro.toJSON());
+      if (erro.toJSON().status === 401) {
+        history.push("/login");
+      }
+    });
   };
 
   return (
