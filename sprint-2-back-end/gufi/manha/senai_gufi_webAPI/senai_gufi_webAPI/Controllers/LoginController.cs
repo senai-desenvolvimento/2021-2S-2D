@@ -69,7 +69,12 @@ namespace senai_gufi_webAPI.Controllers
                     new Claim(ClaimTypes.Role, usuarioBuscado.IdTipoUsuario.ToString()),
 
                     // armazena na Claim personalizada role o tipo de usuário que está logado
-                    new Claim("role", usuarioBuscado.IdTipoUsuario.ToString())
+                    new Claim("role", usuarioBuscado.IdTipoUsuario.ToString()),
+
+                    // Armazena na Claim o nome do usuário que foi autenticado
+                    new Claim(JwtRegisteredClaimNames.Name, usuarioBuscado.NomeUsuario)
+
+
                 };
 
                 var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("gufi-chave-autenticacao"));
