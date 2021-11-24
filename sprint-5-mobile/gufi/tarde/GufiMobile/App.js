@@ -9,6 +9,7 @@ const AuthStack = createStackNavigator();
 
 import Login from './src/screens/login';
 import Main from './src/screens/main';
+import CameraPerfil from './src/screens/camera';
 
 export default function Stack() {
   return (
@@ -20,6 +21,7 @@ export default function Stack() {
         }}>
         <AuthStack.Screen name="Login" component={Login} />
         <AuthStack.Screen name="Main" component={Main} />
+        <AuthStack.Screen name="Camera" component={CameraPerfil} />
       </AuthStack.Navigator>
     </NavigationContainer>
   );
