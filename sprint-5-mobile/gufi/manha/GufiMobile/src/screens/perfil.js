@@ -10,6 +10,7 @@ import {
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import jwtDecode from 'jwt-decode';
+import api from '../services/api';
 
 export default class Perfil extends Component {
   constructor(props) {
@@ -17,13 +18,32 @@ export default class Perfil extends Component {
     this.state = {
       nome: '',
       email: '',
+      base64: '',
     };
   }
+
+  consultaImgPerfil = async () => {
+    const valorToken = await AsyncStorage.getItem('userToken');
+
+    api
+      .get('/perfil/imagem/bd', {
+        headers: {
+          Authorization: 'Bearer ' + valorToken,
+        },
+      })
+      .then(resposta => {
+        if (resposta.status == 200) {
+          console.warn(resposta.data);
+          this.setState({base64: resposta.data});
+        }
+      })
+      .catch(erro => console.warn(erro));
+  };
 
   buscarDadosStorage = async () => {
     try {
       const valorToken = await AsyncStorage.getItem('userToken');
-      //ja recebe string e converte para objeto.
+
       console.warn(jwtDecode(valorToken));
 
       if (valorToken != null) {
@@ -37,6 +57,7 @@ export default class Perfil extends Component {
 
   componentDidMount() {
     this.buscarDadosStorage();
+    this.consultaImgPerfil();
   }
 
   realizarLogout = async () => {
@@ -55,9 +76,9 @@ export default class Perfil extends Component {
         {/* Cabeçalho - Header */}
         <View style={styles.mainHeader}>
           <View style={styles.buttonContainer}>
-            <TouchableOpacity onPress={this.takePicture} style={styles.capture}>
-              <Text style={styles.buttonText}> SNAP </Text>
-            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={this.takePicture}
+              style={styles.capture}></TouchableOpacity>
           </View>
           <View style={styles.mainHeaderRow}>
             <Image
@@ -76,7 +97,14 @@ export default class Perfil extends Component {
               source={imagem vinda da API}
               style={styles.mainBodyImg}
             /> */}
-            <View style={styles.mainBodyImg} />
+            {/* <View style={styles.mainBodyImg} /> */}
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('Camera')}>
+              <Image
+                source={{uri: `data:image/png;base64,${this.state.base64}`}}
+                style={styles.mainBodyImg}
+              />
+            </TouchableOpacity>
 
             <Text style={styles.mainBodyText}>{this.state.nome}</Text>
             <Text style={styles.mainBodyText}>{this.state.email}</Text>

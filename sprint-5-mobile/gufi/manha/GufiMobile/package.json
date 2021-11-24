@@ -19,7 +19,9 @@
     "jwt-decode": "^3.1.2",
     "react": "17.0.2",
     "react-native": "0.66.3",
+    "react-native-camera": "^4.2.1",
     "react-native-gesture-handler": "^1.10.3",
+    "react-native-image-base64": "^0.1.4",
     "react-native-safe-area-context": "^3.3.2",
     "react-native-screens": "^3.9.0"
   },

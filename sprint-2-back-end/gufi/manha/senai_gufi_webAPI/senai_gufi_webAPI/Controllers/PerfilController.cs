@@ -38,8 +38,8 @@ namespace senai_gufi_webAPI.Controllers
                 string extensao = arquivo.FileName.Split('.').Last();
 
 
-                if (extensao != "png")
-                    return BadRequest(new { mensagem = "Apenas arquivos .png são obrigatórios." });
+               // if (extensao != "png")
+                  //  return BadRequest(new { mensagem = "Apenas arquivos .png são obrigatórios." });
 
                 //recuperar id do usuario logado a partir do token.
                 int idUsuario = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);

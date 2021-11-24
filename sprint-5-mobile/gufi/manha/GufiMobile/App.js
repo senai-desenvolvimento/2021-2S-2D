@@ -9,6 +9,7 @@ import {StyleSheet, View} from 'react-native';
 
 import Main from './src/screens/main';
 import Login from './src/screens/login';
+import CameraPerfil from './src/screens/camera';
 
 const AuthStack = createStackNavigator();
 
@@ -22,6 +23,7 @@ class App extends Component {
           }}>
           <AuthStack.Screen name="Login" component={Login} />
           <AuthStack.Screen name="Main" component={Main} />
+          <AuthStack.Screen name="Camera" component={CameraPerfil} />
         </AuthStack.Navigator>
       </NavigationContainer>
     );

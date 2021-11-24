@@ -29,13 +29,13 @@ namespace senai_gufi_webAPI.Controllers
             try
             {
                 //analise de tamanho do arquivo.
-                if (arquivo.Length > 5000) //5MB
+                if (arquivo.Length > 5000000) //5MB
                     return BadRequest(new { mensagem = "O tamanho máximo da imagem foi atingido." });
 
                 string extensao = arquivo.FileName.Split('.').Last();
 
-                if (extensao != "png")
-                    return BadRequest(new { mensagem = "Apenas arquivos .png são permitidos." });
+                //if (extensao != "png")
+                //    return BadRequest(new { mensagem = "Apenas arquivos .png são permitidos." });
 
 
                 int idUsuario = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
