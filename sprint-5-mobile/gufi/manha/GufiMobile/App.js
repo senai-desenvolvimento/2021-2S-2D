@@ -5,7 +5,7 @@ import React, {Component} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
-import {StyleSheet, View} from 'react-native';
+import {StatusBar, StyleSheet} from 'react-native';
 
 import Main from './src/screens/main';
 import Login from './src/screens/login';
@@ -17,6 +17,9 @@ class App extends Component {
   render() {
     return (
       <NavigationContainer>
+        <StatusBar
+          hidden={true}
+        />
         <AuthStack.Navigator
           screenOptions={{
             headerShown: false,

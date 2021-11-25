@@ -1,6 +1,7 @@
 import 'react-native-gesture-handler';
 
 import React from 'react';
+import { StatusBar } from 'react-native';
 
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
@@ -14,6 +15,10 @@ import CameraPerfil from './src/screens/camera';
 export default function Stack() {
   return (
     <NavigationContainer>
+      <StatusBar
+        hidden={true}
+      />
+
       <AuthStack.Navigator
         initialRouteName="Login"
         screenOptions={{

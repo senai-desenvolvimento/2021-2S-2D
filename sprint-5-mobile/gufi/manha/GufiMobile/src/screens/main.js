@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {
   Image,
+  StatusBar,
   StyleSheet,
   View,
 } from 'react-native';
@@ -18,6 +19,9 @@ class Main extends Component {
   render(){
     return (
       <View style={styles.main}>
+        <StatusBar 
+          hidden={false}
+        />
 
           <bottomTab.Navigator
             initialRouteName='Eventos'
