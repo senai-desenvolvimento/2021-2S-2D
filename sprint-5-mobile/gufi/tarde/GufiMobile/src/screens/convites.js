@@ -4,8 +4,6 @@ import {FlatList, Image, StyleSheet, Text, View} from 'react-native';
 import api from '../services/api';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-import Intl from 'intl';
-import 'intl/locale-data/jsonp/pt-BR';
 import {TextInput, TouchableOpacity} from 'react-native-gesture-handler';
 
 export default class Convites extends Component {
@@ -93,9 +91,10 @@ export default class Convites extends Component {
           {item.idEventoNavigation.descricao}
         </Text>
         <Text style={styles.flatItemInfo}>
-          {Intl.DateTimeFormat('pt-BR').format(
-            new Date(item.idEventoNavigation.dataEvento),
-          )}
+          {Intl.DateTimeFormat("pt-BR", {
+                            year: 'numeric', month: 'short', day: 'numeric',
+                            hour: 'numeric', minute: 'numeric', hour12: true
+                        }).format(new Date(item.idEventoNavigation.dataEvento))}
         </Text>
         <Text style={styles.flatItemInfo}>
           {item.idSituacaoNavigation.descricao}
@@ -105,7 +104,7 @@ export default class Convites extends Component {
       <View style={styles.flatItemImg}>
         <Image
           source={
-            item.idSituacaoNavigation.descricao === 'APROVADA'
+            item.idSituacao === 1
               ? require('../../assets/img/check-symbol.png')
               : require('../../assets/img/no-check-symbol.png')
           }

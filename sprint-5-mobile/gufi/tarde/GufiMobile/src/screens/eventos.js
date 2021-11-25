@@ -2,8 +2,7 @@ import React, {Component} from 'react';
 import {FlatList, Image, StyleSheet, Text, View} from 'react-native';
 
 import api from '../services/api';
-import Intl from 'intl';
-import 'intl/locale-data/jsonp/pt-BR';
+
 import {TouchableOpacity} from 'react-native-gesture-handler';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -88,7 +87,10 @@ export default class Eventos extends Component {
         <Text style={styles.flatItemInfo}>{item.descricao}</Text>
 
         <Text style={styles.flatItemInfo}>
-          {Intl.DateTimeFormat('pt-BR').format(new Date(item.dataEvento))}
+          {Intl.DateTimeFormat("pt-BR", {
+                            year: 'numeric', month: 'short', day: 'numeric',
+                            hour: 'numeric', minute: 'numeric', hour12: true
+                        }).format(new Date(item.dataEvento))}
         </Text>
       </View>
 
