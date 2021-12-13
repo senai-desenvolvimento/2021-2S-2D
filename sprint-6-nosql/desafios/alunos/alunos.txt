@@ -1,0 +1,46 @@
+1.	Selecione todos os registros.
+2.	Selecione todos os registros e deixe a com apresentação melhor visível.
+3.	Selecione todos os registros em que o nome seja igual a ‘Aya’.
+4.	Selecione todos os registros em que o aluno nasceu em São Paulo.
+5.	Selecione todos os registros em que contenha a título do livro igual a “Java - Web Developers”.
+6.	Selecione todos os registros em que a aluna tenha o livro “Clean Code A” e o nome “Helena”. 
+7.	Selecione todos os registros em que a aluna não tenha nascido em sp e tenha o livro Cangaceiro JavaScript.
+8.	Selecione todos os registros em que contenham os alunos que tenham o livro Java – Web Developers ou Clean Code B. Primeiro: realize o exercício com o operador ou e posteriormente realize o exercício com o operador in.
+9.	Pegue o exercício acima e inclua também aonde o aluno pode ter nascido em sp.
+10.	Procure todos os alunos que tenham nascido em são paulo ou os livros ‘MySQL’ e ‘MongoDB’.
+11.	Selecione todos os registros em que os livros contenham em qualquer parte da palavra, 'Clean'.
+12.	Selecione todos os registros em que os títulos dos livros terminem com a letra 'S'.
+13.	Selecione todos os registros em que todos os livros terminem com a letra 't'.
+14.	Selecione todos os nomes das alunos terminem com a letra 'k' ou 'o'.
+15.	Selecione todos os registros em que os nomes comecem com a letra 'a'.
+16.	Selecione todos os registros em que nomes comecem com a letra 'a' ou 'h'.
+
+Ordenação
+1.	ordena pelo campo _id de forma crescente
+2.	ordena pelo campo _id de forma decrescente
+3.	ordena pelo campo nome de forma crescente e pega o primeiro registro
+4.	seleciona somente o primeiro registro
+ 
+Exercícios INSERT
+1.	Crie 5 novos registros de alunos.
+Deve conter os critérios abaixo. 3 em sp e 2 que não nasceram em sp.
+Deve conter pelo menos alguns dos livros colocados: HTML, CSS, Design, JavaScript, Java, C#, MySQL, MongoDB.
+A data de nascimento deve ser inferior a data atual.
+ 
+Exercícios UPDATE
+1.	Atualize os registros criados no exercício anterior, com os filtros abaixo (não se esqueça de buscar pelo _id):
+Deixe todos os registros criados acima que estiverem como true para false, e vice-versa. 
+Atualize a data de nascimento de 2 alunos.
+Inclua pelo menos 3 livros que elas tenham lido.
+
+Exercícios DELETE
+1.	Exclua 5 itens dada uma determinada condição.
+Exemplo:
+Por ordenação de inserção, os dois primeiros que foram inseridos.
+Por ordem alfabética, os dois primeiros.
+Por ordem de signo decrescente, o primeiro signo.
+
+ 
+Desafio Extra
+1.	Por ordem de habilidades, a que possui o maior registro de habilidades.
+2.	Verificar o registro que possui a maior quantidade de habilidades.

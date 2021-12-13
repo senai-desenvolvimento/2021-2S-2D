@@ -1,0 +1,10 @@
+1.	Selecione todos os registros em que as descrições contenham, em qualquer parte da palavra, 'js'.
+2.	Selecione todos os registros em que as descrições terminem com a letra 't'.
+3.	Selecione todos os registros em que as descrições terminem com a letra 'l'.
+4.	Selecione todos os registros em que as descrições terminem com a letra 't' ou 'l'.
+5.	Selecione todos os registros em que as descrições comecem com a letra 'b'.
+6.	Selecione todos os registros em que as descrições comecem com a letra 'j' ou 'h'.
+7.	Ordene pela data de inclusão.
+8.	Ordene pelas descrições.
+9.	Ordene pela quantidade de caracteres das descrições.
+10.	Procure somente registros aonde o dia da data de inclusão seja igual a 01.

@@ -1,0 +1,23 @@
+1.	Defina o uso do banco de dados "cursos"
+
+2.	Crie uma collection para armazenar as "matérias"
+
+3.	Insira 5 novos registros conforme descrições abaixo:
+
+Titulo = Titulo U
+Descrição = Java
+Concluída = verdadeiro
+
+Titulo = Titulo O
+Descrição = CSharp
+Concluída = falso
+
+Titulo = Titulo P
+Descrição = Firebase
+
+Titulo = Titulo Y
+Descrição = Microsoft
+
+Titulo = Titulo R
+Descrição = Oracle
+Data de Inclusão = data de hoje

@@ -1,0 +1,19 @@
+SQL -> NoSQL
+
+Database 		-> Database
+Table 			-> Collection
+Tuple/Registro/Linha	-> Document
+
+CRUD 
+
+INSERT			-> insert()
+			   insertOne()
+			   insertMany()
+
+SELECT			-> find()
+			   find().pretty()
+
+UPDATE			-> update()
+
+DELETE			-> drop()
+

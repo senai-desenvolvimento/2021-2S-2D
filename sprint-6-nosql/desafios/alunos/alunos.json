@@ -1,0 +1,90 @@
+[
+    {
+      "nome": "Helena",
+      "dateOfBirth": "1993-03-18T08:30:00.000Z",
+      "nasceuEmSp": true,
+      "livros": [
+        {"titulo":"Java - Web Developers" , "leu" : true},
+        {"titulo": "Eloquente JavaScript", "leu" :true},
+        {"titulo": "Clean Code A", "leu":true},
+        {"titulo": "Clean Architecture", "leu" :true}
+    ]
+    },
+    {
+      "nome": "Izadora",
+      "dateOfBirth": "1990-07-18T08:30:00.000Z",
+      "nasceuEmSp": true,
+      "livros": [
+        {"titulo":"You dont know JS" , "leu" :false},
+        {"titulo": "Eloquente JavaScript", "leu" : false},
+        {"titulo": "Clean Code A", "leu":true},
+        {"titulo": "Cangaceiro JavaScript", "leu" : false}
+    ]
+    },
+    {
+      "nome": "Luanda",
+      "dateOfBirth": "1990-07-18T08:30:00.000Z",
+      "nasceuEmSp": false,
+      "livros": [
+        {"titulo":"You dont know JS" , "leu" :false},
+        {"titulo": "Eloquente JavaScript", "leu" :true},
+        {"titulo": "Clean Code A", "leu":false},
+        {"titulo": "ECMA Script 6", "leu" : false}
+    ]
+    },
+    {
+      "nome": "Larissa",
+      "dateOfBirth": "1990-01-10T08:30:00.000Z",
+      "nasceuEmSp": true,
+      "livros": [
+        {"titulo":"You dont know JS" , "leu" : true},
+        {"titulo": "Eloquente JavaScript", "leu" : false},
+        {"titulo": "Lógica de Programação", "leu":false},
+        {"titulo": "Cangaceiro JavaScript", "leu" : false}
+    ]
+    },
+    {
+      "nome": "Maria do Bairro",
+      "dateOfBirth": "1990-01-18T08:30:00.000Z",
+      "nasceuEmSp": true,
+      "livros": [
+        {"titulo":"You dont know JS" , "leu" :false},
+        {"titulo": "Eloquente JavaScript", "leu" : false},
+        {"titulo": "Clean Code B", "leu":false},
+        {"titulo": "Cangaceiro JavaScript", "leu" : false}
+    ]
+    },
+    {
+      "nome": "Arya Stark",
+      "dateOfBirth": "1990-03-10T08:30:00.000Z",
+      "nasceuEmSp": false,
+      "livros": [
+        {"titulo":"You dont know JS" , "leu" : true},
+        {"titulo": "Eloquente JavaScript", "leu" : false},
+        {"titulo": "Clean Code B", "leu":true},
+        {"titulo": "Cangaceiro JavaScript", "leu" : false}
+    ]
+    },
+    {
+      "nome": "Frida",
+      "dateOfBirth": "1990-03-18T08:30:00.000Z",
+      "nasceuEmSp": false,
+      "livros": [
+        {"titulo":"You dont know JS" , "leu" : true},
+        {"titulo": "Eloquente JavaScript", "leu" :true},
+        {"titulo": "Clean Code", "leu":true},
+        {"titulo": "Cangaceiro JavaScript", "leu" : false}
+    ]
+    },
+    {
+      "nome": "Aya",
+      "dateOfBirth": "1993-03-18T08:30:00.000Z",
+      "nasceuEmSp": true,
+      "livros": [
+            {"titulo":"You dont know JS" , "leu" :false},
+            {"titulo": "Eloquente JavaScript", "leu" :true},
+            {"titulo": "Clean Code B", "leu":false},
+            {"titulo": "Cangaceiro JavaScript", "leu" :true}
+        ]
+    }
+]
